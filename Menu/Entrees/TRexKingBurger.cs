@@ -14,15 +14,18 @@ namespace DinoDiner.Menu.Entrees
         private bool ketchup = true;
         private bool mustard = true;
         private bool mayo = true;
-
         public double Price { get; set; }
         public uint Calories { get; set; }
 
+        
         public List<string> Ingredients
         {
             get
             {
-                List<string> ingredients = new List<string>() { "whole wheat bun","Steakburger Pattie,Steakburger Pattie,Steakburger Pattie" };
+                List<string> ingredients = new List<string>() ;
+                for (int i =0; i < 3; i++){
+                    ingredients.Add("Steakburger Pattie");
+                }
                 if (bun) ingredients.Add("Whole Wheat Bun");
                 if (lettuce) ingredients.Add("Lettuce");
                 if (tomato) ingredients.Add("Tomato");

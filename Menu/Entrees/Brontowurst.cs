@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace DinoDiner.Menu.Entree
+namespace DinoDiner.Menu.Entrees
 {
     public class Brontowurst
     {
