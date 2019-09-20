@@ -34,5 +34,12 @@ namespace DinoDiner.Menu.Sides
         /// </summary>
         public Size Size { get; set; }
 
+        public Side(double price, uint calories, List<string> ingredients, Size size)
+        {
+            this.Price = price;
+            this.Calories = calories;
+            this.Ingredients = ingredients;
+            this.Size = size;
+        }
     }
 }

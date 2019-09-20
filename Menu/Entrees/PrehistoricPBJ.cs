@@ -2,13 +2,13 @@
 
 namespace DinoDiner.Menu.Entrees
 {
-    public class PrehistoricPBJ
+    public class PrehistoricPBJ : Entree
     {
         private bool peanutButter = true;
         private bool jelly = true;
 
-        public double Price { get; set; }
-        public uint Calories { get; set; }
+        //public double Price { get; set; }
+        //public uint Calories { get; set; }
 
         public List<string> Ingredients
         {

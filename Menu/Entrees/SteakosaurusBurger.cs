@@ -4,7 +4,7 @@ using System.Text;
 
 namespace DinoDiner.Menu.Entrees
 {
-    public class SteakosaurusBurger
+    public class SteakosaurusBurger : Entree
     {
         private bool bun = true;
         private bool pickle = true;
@@ -12,8 +12,8 @@ namespace DinoDiner.Menu.Entrees
         private bool mustard = true;
 
 
-        public double Price { get; set; }
-        public uint Calories { get; set; }
+        //public double Price { get; set; }
+        //public uint Calories { get; set; }
 
         public List<string> Ingredients
         {

@@ -4,10 +4,10 @@ using System.Text;
 
 namespace DinoDiner.Menu.Entrees
 {
-    public class VelociWrap
+    public class VelociWrap : Entree
     {
-        public double Price { get; set; }
-        public uint Calories { get; set; }
+        //public double Price { get; set; }
+        //public uint Calories { get; set; }
 
      
         private bool lettuce = true;
