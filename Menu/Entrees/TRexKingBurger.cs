@@ -14,11 +14,9 @@ namespace DinoDiner.Menu.Entrees
         private bool ketchup = true;
         private bool mustard = true;
         private bool mayo = true;
-        //public double Price { get; set; }
-        //public uint Calories { get; set; }
 
         
-        public List<string> Ingredients
+        public override List<string> Ingredients
         {
             get
             {

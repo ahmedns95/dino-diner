@@ -4,13 +4,11 @@ using System.Text;
 
 namespace DinoDiner.Menu.Entrees
 {
-    public class DinoNuggets
+    public class DinoNuggets : Entree
     {
 
-        public double Price { get; set; }
-        public uint Calories { get; set; }
         private uint nuggetCount = 6;
-        public List<string> Ingredients
+        public override List<string> Ingredients
         {
              get
              {

@@ -7,10 +7,7 @@ namespace DinoDiner.Menu.Entrees
         private bool peanutButter = true;
         private bool jelly = true;
 
-        //public double Price { get; set; }
-        //public uint Calories { get; set; }
-
-        public List<string> Ingredients
+        public override List<string> Ingredients
         {
             get
             {

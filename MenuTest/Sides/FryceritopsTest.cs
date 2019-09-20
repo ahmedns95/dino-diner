@@ -25,7 +25,7 @@ namespace MenuTest.Sides
             Fryceritops ft = new Fryceritops();
             Assert.Contains<string>("Potato", ft.Ingredients);
             Assert.Contains<string>("Salt", ft.Ingredients);
-            Assert.Contains<string>("Vegtable Oil", ft.Ingredients);
+            Assert.Contains<string>("Vegatable Oil", ft.Ingredients);
             Assert.Equal<int>(3, ft.Ingredients.Count);
         }
 

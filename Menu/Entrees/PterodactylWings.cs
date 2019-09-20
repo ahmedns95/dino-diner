@@ -6,10 +6,8 @@ namespace DinoDiner.Menu.Entrees
 {
     public class PterodactylWings : Entree
     {
-        //public double Price { get; set; }
-        //public uint Calories { get; set; }
 
-        public List<string> Ingredients
+        public override List<string> Ingredients
         {
             get
             {
