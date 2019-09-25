@@ -25,7 +25,11 @@ namespace MenuTest.Sides
             Fryceritops ft = new Fryceritops();
             Assert.Contains<string>("Potato", ft.Ingredients);
             Assert.Contains<string>("Salt", ft.Ingredients);
+<<<<<<< HEAD
             Assert.Contains<string>("Vegatable Oil", ft.Ingredients);
+=======
+            Assert.Contains<string>("Vegetable Oil", ft.Ingredients);
+>>>>>>> 645c135b8b1e7c858f954968c5e7971e4e27a744
             Assert.Equal<int>(3, ft.Ingredients.Count);
         }
 
@@ -57,7 +61,7 @@ namespace MenuTest.Sides
         {
             Fryceritops ft = new Fryceritops();
             ft.Size = Size.Medium;
-            Assert.Equal<Size>(Size.Medium, Size.Medium);
+            Assert.Equal<Size>(Size.Medium, ft.Size);
         }
 
         [Fact]
@@ -81,7 +85,7 @@ namespace MenuTest.Sides
         {
             Fryceritops ft = new Fryceritops();
             ft.Size = Size.Large;
-            Assert.Equal<Size>(Size.Large, Size.Large);
+            Assert.Equal<Size>(Size.Large, ft.Size);
         }
     }
 }
