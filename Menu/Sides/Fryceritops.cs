@@ -6,11 +6,11 @@ namespace DinoDiner.Menu.Sides
 {
     public class Fryceritops : Side
     {
-        
 
         public Fryceritops() { 
             this.Ingredients.Add("Potato");
             this.Ingredients.Add("Salt");
+            this.Ingredients.Add("Vegatable Oil");
             this.Ingredients.Add("Vegatable Oil");
             this.Size = Size.Small;
 

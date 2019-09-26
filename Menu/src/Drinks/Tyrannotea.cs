@@ -3,29 +3,25 @@ using System.Collections.Generic;
 using System.Text;
 
 namespace DinoDiner.Menu.Drinks
-
 {
-    public class Sodasaurus : Drink
+    public class Tyrannotea : Drink
     {
-        public bool Ice = true;
-        private SodasaurusFlavor flavor;
-
-        public SodasaurusFlavor Flavor
-        {
-            get { return flavor; }
-            set { flavor = value; }
-        }
+        public bool sweet = false;
+        public bool lemon = false;
 
         public double Price { get { return price; } set { price = value; } }
         public uint Calories { get { return calories; } set { calories = value; } }
 
-        public Sodasaurus() {
-
+        public Tyrannotea()
+        {
             this.ingredients.Add("Water");
-            this.ingredients.Add("Natural Flavors");
-            this.ingredients.Add("Cane Sugar");
+            this.ingredients.Add("Tea");
+            if(lemon)ingredients.Add("Lemon");
+            if(sweet)ingredients.Add("Cane Sugar");
+            this.Size = Size.Small;
         }
-        public override  Size Size
+
+        public override Size Size
         {
             get { return size; }
             set
@@ -34,21 +30,27 @@ namespace DinoDiner.Menu.Drinks
                 switch (size)
                 {
                     case Size.Small:
-                        this.price = 1.50;
-                        this.calories = 112;
+                        this.price = 0.99;
+                        this.calories = 8;
                         break;
                     case Size.Medium:
-                        this.price = 2.00;
-                        this.calories = 156;
+                        this.price = 1.49;
+                        this.calories = 16;
                         break;
                     case Size.Large:
-                        this.price = 2.50;
-                        this.calories = 208;
+                        this.price = 1.99;
+                        this.calories = 32;
                         break;
                     default:
                         break;
                 }
             }
         }
+
+        public void AddLemon()
+        {
+            this.lemon = true;
+        }
+
     }
 }
