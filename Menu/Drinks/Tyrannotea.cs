@@ -9,8 +9,6 @@ namespace DinoDiner.Menu.Drinks
         public bool sweet = false;
         public bool lemon = false;
 
-        public double Price { get { return price; } set { price = value; } }
-        public uint Calories { get { return calories; } set { calories = value; } }
 
         public Tyrannotea()
         {
@@ -32,14 +30,26 @@ namespace DinoDiner.Menu.Drinks
                     case Size.Small:
                         this.price = 0.99;
                         this.calories = 8;
+                        if (lemon)
+                        {
+                            this.calories = 8 * 2;
+                        }
                         break;
                     case Size.Medium:
                         this.price = 1.49;
                         this.calories = 16;
+                        if (lemon)
+                        {
+                            this.calories = 16 * 2;
+                        }
                         break;
                     case Size.Large:
                         this.price = 1.99;
                         this.calories = 32;
+                        if (lemon)
+                        {
+                            this.calories = 32 * 2;
+                        }
                         break;
                     default:
                         break;

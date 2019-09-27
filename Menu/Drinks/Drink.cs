@@ -13,7 +13,11 @@ namespace DinoDiner.Menu.Drinks
         protected bool ice = true;
         protected Size size = Size.Small;
 
-       
+        public double Price { get { return price; } set { price = value; } }
+        public uint Calories { get { return calories; } set { calories = value; } }
+
+        public virtual List<string> Ingredients { get; }
+
         /// <summary>
         /// 
         /// </summary>

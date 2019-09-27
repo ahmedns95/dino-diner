@@ -9,8 +9,6 @@ namespace DinoDiner.Menu.Drinks
         public bool Ice = false;
         public bool RoomForCream = false;
         public bool Decaf = false;
-        public double Price { get { return price; } set { price = value; } }
-        public uint Calories { get { return calories; } set { calories = value; } }
 
         public void LeaveRoomForCream()
         {

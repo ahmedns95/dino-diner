@@ -1,16 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using DinoDiner.Menu.Drinks;
 
 namespace DinoDiner.Menu.Sides
 {
-
-    public enum Size
-    {
-        Small,
-        Medium, 
-        Large
-    }
 
     public abstract class Side
     {

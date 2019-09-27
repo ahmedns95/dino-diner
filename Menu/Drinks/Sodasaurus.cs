@@ -16,8 +16,6 @@ namespace DinoDiner.Menu.Drinks
             set { flavor = value; }
         }
 
-        public double Price { get { return price; } set { price = value; } }
-        public uint Calories { get { return calories; } set { calories = value; } }
 
         public Sodasaurus() {
 

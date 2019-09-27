@@ -7,7 +7,7 @@ namespace DinoDiner.Menu.Drinks
     public class Water : Drink
     {
         public bool lemon = false;
-
+        public bool ice = false;
         public Water()
         {
             this.ingredients.Add("water");
@@ -39,5 +39,11 @@ namespace DinoDiner.Menu.Drinks
                 }
             }
         }
+
+        public void AddLemon()
+        {
+            this.lemon = true;
+        }
+       
     }
 }
