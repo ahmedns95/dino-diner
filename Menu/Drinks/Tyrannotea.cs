@@ -30,25 +30,25 @@ namespace DinoDiner.Menu.Drinks
                     case Size.Small:
                         this.price = 0.99;
                         this.calories = 8;
-                        if (lemon)
+                        if (sweet)
                         {
-                            this.calories = 8 * 2;
+                            this.calories = 16;
                         }
                         break;
                     case Size.Medium:
                         this.price = 1.49;
                         this.calories = 16;
-                        if (lemon)
+                        if (sweet)
                         {
-                            this.calories = 16 * 2;
+                            this.calories = 32;
                         }
                         break;
                     case Size.Large:
                         this.price = 1.99;
                         this.calories = 32;
-                        if (lemon)
+                        if (sweet)
                         {
-                            this.calories = 32 * 2;
+                            this.calories = 64;
                         }
                         break;
                     default:

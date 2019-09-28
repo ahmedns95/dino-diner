@@ -13,7 +13,34 @@ namespace MenuTest.Drinks
             soda.Flavor = SodasaurusFlavor.Cherry;
             Assert.Equal<SodasaurusFlavor>(SodasaurusFlavor.Cherry, soda.Flavor);
         }
-
+        [Fact]
+        public void ShouldBeAbleToSetFlavorToCola()
+        {
+            Sodasaurus soda = new Sodasaurus();
+            soda.Flavor = SodasaurusFlavor.Cola;
+            Assert.Equal<SodasaurusFlavor>(SodasaurusFlavor.Cola, soda.Flavor);
+        }
+        [Fact]
+        public void ShouldBrAbleToSetFlavorToVanilla()
+        {
+            Sodasaurus soda = new Sodasaurus();
+            soda.Flavor = SodasaurusFlavor.Vanilla;
+            Assert.Equal<SodasaurusFlavor>(SodasaurusFlavor.Vanilla, soda.Flavor);
+        }
+        [Fact]
+        public void ShouldBrAbleToSetFlavorToRootBeer()
+        {
+            Sodasaurus soda = new Sodasaurus();
+            soda.Flavor = SodasaurusFlavor.Chocolate;
+            Assert.Equal<SodasaurusFlavor>(SodasaurusFlavor.RootBeer, soda.Flavor);
+        }
+        [Fact]
+        public void ShouldBrAbleToSetFlavorToLime()
+        {
+            Sodasaurus soda = new Sodasaurus();
+            soda.Flavor = SodasaurusFlavor.Lime;
+            Assert.Equal<SodasaurusFlavor>(SodasaurusFlavor.Lime, soda.Flavor);
+        }
         [Fact]
         public void ShouldHaveCorrectDefaultPrice()
         {

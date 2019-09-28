@@ -8,14 +8,10 @@ namespace DinoDiner.Menu.Sides
     {
         public Triceritots()
         {
-
-            {
-                this.Ingredients.Add("Potato");
-                this.Ingredients.Add("Breading");
-                this.Ingredients.Add("Vegtable Oil");
-                this.Size = Size.Small;
-
-            }
+              this.Ingredients.Add("Potato");
+              this.Ingredients.Add("Salt");
+              this.Ingredients.Add("Vegtable Oil");
+              this.Size = Size.Small;
         }
 
         public override Size Size

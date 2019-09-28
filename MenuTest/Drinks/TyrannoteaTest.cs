@@ -47,28 +47,31 @@ namespace MenuTest.Drinks
         public void ShouldHaveDefaultIce()
         {
             Tyrannotea tryanno = new Tyrannotea();
-            Assert.True(tryanno.lemon);
+            Assert.False(tryanno.lemon);
         }
         [Fact]
-        public void ShouldAfterSetSweetToSmall()
+        public void ShouldChangeCaloriesAfterSetSweetToSmall()
         {
             Tyrannotea tryanno = new Tyrannotea();
             Assert.True(tryanno.sweet);
+            tryanno.Size = Size.Small;
             Assert.Equal<uint>(16, tryanno.Calories);
         }
 
         [Fact]
-        public void ShouldAfterSetSweetToSMedium()
+        public void ShouldChangeCaloriesAfterSetSweetToSMedium()
         {
             Tyrannotea tryanno = new Tyrannotea();
             Assert.True(tryanno.sweet);
+            tryanno.Size = Size.Medium;
             Assert.Equal<uint>(32, tryanno.Calories);
 
         }
         [Fact]
-        public void ShouldAfterSetSweetToLarge()
+        public void ShouldChangeCaloriesAfterSetSweetToLarge()
         {
             Tyrannotea tryanno = new Tyrannotea();
+            tryanno.Size = Size.Large;
             Assert.True(tryanno.sweet);
             Assert.Equal<uint>(64, tryanno.Calories);
         }

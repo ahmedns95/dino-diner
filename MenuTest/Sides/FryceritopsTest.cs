@@ -1,6 +1,6 @@
 ﻿using Xunit;
 using DinoDiner.Menu.Sides;
-
+using DinoDiner.Menu.Drinks;
 namespace MenuTest.Sides
 {
     public class FryceritopsTest
