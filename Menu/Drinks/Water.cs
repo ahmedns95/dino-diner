@@ -7,11 +7,13 @@ namespace DinoDiner.Menu.Drinks
     public class Water : Drink
     {
         public bool lemon = false;
-        public bool ice = false;
+        
         public Water()
         {
             this.ingredients.Add("water");
             if (lemon) ingredients.Add("Lemon");
+            this.Size = Size.Small;
+
         }
 
         public override Size Size

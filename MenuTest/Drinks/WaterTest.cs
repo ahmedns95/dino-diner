@@ -6,6 +6,32 @@ namespace MenuTest.Drinks
 {
     public class WaterTest
     {
+
+        [Fact]
+        public void ShouldHaveCorrectDefaultPrice()
+        {
+            Water water = new Water();
+            Assert.Equal<double>(0.10, water.Price);
+        }
+        [Fact]
+        public void ShouldHaveCorrectDefaultCalories()
+        {
+            Water water = new Water();
+            Assert.Equal<uint>(0, water.Calories);
+        }
+        [Fact]
+        public void ShouldHaveDefaultSize()
+        {
+            Water water = new Water();
+            Assert.Equal<Size>(Size.Small, water.Size);
+
+        }
+        [Fact]
+        public void ShouldHaveCorrectDefaultIce()
+        {
+            Water water = new Water();
+            Assert.True(water.Ice);
+        }
         /// <summary>
         /// The correct price and calories after changing to small
         /// </summary>
@@ -43,9 +69,8 @@ namespace MenuTest.Drinks
         public void ShouldHaveInvokingHoldIce()
         {
             Water water = new Water();
-            Assert.False(water.ice);
+            Assert.True(water.Ice);
         }
-
         [Fact]
         public void ShouldHaveInvokingAddLemon()
         {

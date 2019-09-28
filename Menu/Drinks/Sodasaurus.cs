@@ -7,7 +7,7 @@ namespace DinoDiner.Menu.Drinks
 {
     public class Sodasaurus : Drink
     {
-        public bool Ice = true;
+       // public bool ice = true;
         private SodasaurusFlavor flavor;
 
         public SodasaurusFlavor Flavor
@@ -22,6 +22,8 @@ namespace DinoDiner.Menu.Drinks
             this.ingredients.Add("Water");
             this.ingredients.Add("Natural Flavors");
             this.ingredients.Add("Cane Sugar");
+            this.Size = Size.Small;
+
         }
         public override  Size Size
         {

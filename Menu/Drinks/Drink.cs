@@ -15,7 +15,7 @@ namespace DinoDiner.Menu.Drinks
 
         public double Price { get { return price; } set { price = value; } }
         public uint Calories { get { return calories; } set { calories = value; } }
-
+        public bool Ice { get { return ice; }set { ice = value; } }
         public virtual List<string> Ingredients { get; }
 
         /// <summary>

@@ -31,7 +31,7 @@ namespace MenuTest.Drinks
         public void ShouldBrAbleToSetFlavorToRootBeer()
         {
             Sodasaurus soda = new Sodasaurus();
-            soda.Flavor = SodasaurusFlavor.Chocolate;
+            soda.Flavor = SodasaurusFlavor.RootBeer;
             Assert.Equal<SodasaurusFlavor>(SodasaurusFlavor.RootBeer, soda.Flavor);
         }
         [Fact]
@@ -54,14 +54,6 @@ namespace MenuTest.Drinks
             Sodasaurus soda = new Sodasaurus();
             Assert.Equal<uint>(112, soda.Calories);
         }
-
-        [Fact]
-        public void ShouldHaveDefaultIce()
-        {
-            Sodasaurus soda = new Sodasaurus();
-            Assert.True(soda.Ice);
-        }
-
         [Fact]
         public void ShouldHaveDefaultSize()
         {
@@ -93,13 +85,17 @@ namespace MenuTest.Drinks
             soda.Size = Size.Large;
             Assert.Equal<double>(2.50, soda.Price);
         }
-       
-
+        [Fact]
+        public void ShouldHaveDefaultIce()
+        {
+            Sodasaurus soda = new Sodasaurus();
+            Assert.True(soda.Ice);
+        }
         [Fact]
         public void ShouldHaveInvokingHoldIce()
         {
             Sodasaurus soda = new Sodasaurus();
-            Assert.False(soda.Ice);
+            Assert.True(soda.Ice);
         }
     }
 
