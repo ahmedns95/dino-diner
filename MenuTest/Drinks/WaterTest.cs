@@ -32,6 +32,13 @@ namespace MenuTest.Drinks
             Water water = new Water();
             Assert.True(water.Ice);
         }
+        [Fact]
+        public void ShouldHaveCorrectDefaultLemon()
+        {
+            Water water = new Water();
+            Assert.False(water.lemon);
+        }
+
         /// <summary>
         /// The correct price and calories after changing to small
         /// </summary>
@@ -39,7 +46,7 @@ namespace MenuTest.Drinks
         public void ShouldUseCorrectPriceAfterSettingSmall()
         {
             Water water = new Water();
-            water.Size = Size.Medium;
+            water.Size = Size.Small;//change to small from meduim
             water.Size = Size.Small;
             Assert.Equal<double>(0.10, water.Price);
         }
@@ -64,7 +71,7 @@ namespace MenuTest.Drinks
             water.Size = Size.Large;
             Assert.Equal<double>(0.10, water.Price);
         }
-
+       
         [Fact]
         public void ShouldHaveInvokingHoldIce()
         {

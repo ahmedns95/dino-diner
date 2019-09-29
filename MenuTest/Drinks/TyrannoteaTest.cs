@@ -15,7 +15,7 @@ namespace MenuTest.Drinks
         public void ShouldUseCorrectPriceAfterSettingSmall()
         {
             Tyrannotea tryanno = new Tyrannotea();
-            tryanno.Size = Size.Medium;
+            //tryanno.Size = Size.Medium;
             tryanno.Size = Size.Small;
             Assert.Equal<double>(0.99, tryanno.Price);
         }
