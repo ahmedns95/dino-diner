@@ -25,7 +25,7 @@ namespace MenuTest.Drinks
         public void ShouldAddSweetToTyrannotea()
         {
             Tyrannotea tyra = new Tyrannotea();
-            Assert.True(tyra.sweet);
+            Assert.False(tyra.sweet);
         }
         [Fact]
         public void ShouldHaveCorrectDefaultPrice()
