@@ -8,6 +8,20 @@ namespace MenuTest.Drinks
     {
 
         [Fact]
+        public void ShouldHaveCorrectIngedients()
+        {
+            Water water = new Water();
+            Assert.Contains<string>("Water", water.Ingredients);
+            Assert.Single(water.Ingredients);
+        }
+        [Fact]
+        public void ShouldAddLemonToWater()
+        {
+            Water water = new Water();
+            water.AddLemon();
+            Assert.True(water.lemon);
+        }
+        [Fact]
         public void ShouldHaveCorrectDefaultPrice()
         {
             Water water = new Water();

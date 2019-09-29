@@ -11,7 +11,7 @@ namespace DinoDiner.Menu.Sides
         {
             this.Ingredients.Add("Macaroni Noodles");
             this.Ingredients.Add("Cheese Product");
-            this.Ingredients.Add("Pork Sausuage");
+            this.Ingredients.Add("Pork Sausage");
             this.Size = Size.Small;
 
         }

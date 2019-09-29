@@ -6,74 +6,153 @@ namespace MenuTest.Drinks
 {
     public class TyrannoteaTest
     {
-       
-
-        /// <summary>
-        /// The correct price and calories after changing to small, medium, and large sizes.
-        /// </summary>
         [Fact]
-        public void ShouldUseCorrectPriceAfterSettingSmall()
+        public void ShouldHaveCorrectIngedients()
         {
-            Tyrannotea tryanno = new Tyrannotea();
-            //tryanno.Size = Size.Medium;
-            tryanno.Size = Size.Small;
-            Assert.Equal<double>(0.99, tryanno.Price);
+            Tyrannotea tyra = new Tyrannotea();
+            Assert.Contains<string>("Water", tyra.Ingredients);
+            Assert.Contains<string>("Tea", tyra.Ingredients);
+            Assert.Equal<int>(2,tyra.Ingredients.Count);
         }
-        /// <summary>
-        /// The correct price and calories after changing to medium
-        /// </summary>
         [Fact]
-        public void ShouldUseCorrectPriceAfterSettingMedium()
+        public void ShouldAddLemonToTyrannotea()
         {
-            Tyrannotea tryanno = new Tyrannotea();
-            tryanno.Size = Size.Medium;
-            Assert.Equal<double>(1.49, tryanno.Price);
+            Tyrannotea tyra = new Tyrannotea();
+            tyra.AddLemon();
+            Assert.True(tyra.lemon);
         }
-
-        /// <summary>
-        /// The correct price and calories after changing to medium
-        /// </summary>
         [Fact]
-        public void ShouldUseCorrectPriceAfterSettingLarge()
+        public void ShouldAddSweetToTyrannotea()
         {
-            Tyrannotea tryanno = new Tyrannotea();
-            tryanno.Size = Size.Large;
-            Assert.Equal<double>(1.99, tryanno.Price);
+            Tyrannotea tyra = new Tyrannotea();
+            Assert.True(tyra.sweet);
         }
-        /// <summary>
-        /// 
-        /// </summary>
+        [Fact]
+        public void ShouldHaveCorrectDefaultPrice()
+        {
+            Tyrannotea tyra = new Tyrannotea();
+            Assert.Equal<double>(0.99, tyra.Price);
+        }
+        [Fact]
+        public void ShouldHaveCorrectDefaultCalories()
+        {
+            Tyrannotea tyra = new Tyrannotea();
+            Assert.Equal<uint>(8, tyra.Calories);
+        }
         [Fact]
         public void ShouldHaveDefaultIce()
         {
-            Tyrannotea tryanno = new Tyrannotea();
-            Assert.False(tryanno.lemon);
+            Tyrannotea tyra = new Tyrannotea();
+            Assert.True(tyra.Ice);
         }
         [Fact]
-        public void ShouldChangeCaloriesAfterSetSweetToSmall()
+        public void ShouldHaveDefaultSize()
         {
-            Tyrannotea tryanno = new Tyrannotea();
-            Assert.True(tryanno.sweet);
-            tryanno.Size = Size.Small;
-            Assert.Equal<uint>(16, tryanno.Calories);
-        }
-
-        [Fact]
-        public void ShouldChangeCaloriesAfterSetSweetToSMedium()
-        {
-            Tyrannotea tryanno = new Tyrannotea();
-            Assert.True(tryanno.sweet);
-            tryanno.Size = Size.Medium;
-            Assert.Equal<uint>(32, tryanno.Calories);
+            Tyrannotea tyra = new Tyrannotea();
+            Assert.Equal<Size>(Size.Small, tyra.Size);
 
         }
         [Fact]
-        public void ShouldChangeCaloriesAfterSetSweetToLarge()
+        public void ShouldHaveDefaultLemon()
         {
-            Tyrannotea tryanno = new Tyrannotea();
-            tryanno.Size = Size.Large;
-            Assert.True(tryanno.sweet);
-            Assert.Equal<uint>(64, tryanno.Calories);
+            Tyrannotea tyra = new Tyrannotea();
+            Assert.False(tyra.lemon);
+        }
+        [Fact]
+        public void ShouldHaveDefaultSweet()
+        {
+            Tyrannotea tyra = new Tyrannotea();
+            Assert.False(tyra.sweet);
+        }
+        [Fact]
+        public void ShouldUseCorrectPriceAfterSettingSmall()
+        {
+            Tyrannotea tyra = new Tyrannotea();
+            tyra.Size = Size.Medium;
+            tyra.Size = Size.Small;
+            Assert.Equal<double>(0.99, tyra.Price);
+        }
+
+        [Fact]
+        public void ShouldUseCorrectPriceAfterSettingMedium()
+        {
+            Tyrannotea tyra = new Tyrannotea();
+            tyra.Size = Size.Medium;
+            Assert.Equal<double>(1.49, tyra.Price);
+        }
+
+        [Fact]
+        public void ShouldUseCorrectPriceAfterSettingLarge()
+        {
+            Tyrannotea tyra = new Tyrannotea();
+            tyra.Size = Size.Large;
+            Assert.Equal<double>(1.99, tyra.Price);
+        }
+        [Fact]
+        public void ShouldUseCorrectCaloriesAfterSettingSmall()
+        {
+            Tyrannotea tyra = new Tyrannotea();
+            tyra.Size = Size.Small;
+            Assert.Equal<uint>(8, tyra.Calories);
+        }
+        [Fact]
+        public void ShouldUseCorrectCaloriesAfterSettingMedium()
+        {
+            Tyrannotea tyra = new Tyrannotea();
+            tyra.Size = Size.Medium;
+            Assert.Equal<uint>(16, tyra.Calories);
+        }
+        [Fact]
+        public void ShouldUseCorrectCaloriesAfterSettingLarge()
+        {
+            Tyrannotea tyra = new Tyrannotea();
+            tyra.Size = Size.Large;
+            Assert.Equal<uint>(32, tyra.Calories);
+        }
+        [Fact]
+        public void ShouldHaveInvokingHoldIce()
+        {
+            Tyrannotea tyra = new Tyrannotea();
+            Assert.True(tyra.Ice);
+        }
+        [Fact]
+        public void ShouldHaveInvokingAddLemon()
+        {
+            Tyrannotea tyra = new Tyrannotea();
+            if (tyra.lemon)
+            {
+                Assert.True(tyra.lemon);
+            }
+        }
+        [Fact]
+        public void ShouldHaveCorrectCaloriesAfterAddingSweetSettingSmall()
+        {
+            Tyrannotea tyra = new Tyrannotea();
+            tyra.Size = Size.Small;
+            if (tyra.sweet)
+            {
+                Assert.Equal<uint>(16, tyra.Calories);
+            }
+        }
+        [Fact]
+        public void ShouldHaveCorrectCaloriesAfterAddingSweetSettingMeduim()
+        {
+            Tyrannotea tyra = new Tyrannotea();
+            tyra.Size = Size.Medium;
+            if (tyra.sweet)
+            {
+                Assert.Equal<uint>(32, tyra.Calories);
+            }
+        }
+        [Fact]
+        public void ShouldHaveCorrectCaloriesAfterAddingSweetSettingLarge()
+        {
+            Tyrannotea tyra = new Tyrannotea();
+            tyra.Size = Size.Large;
+            if (tyra.sweet)
+            {
+                Assert.Equal<uint>(64, tyra.Calories);
+            }
         }
     }
 

@@ -7,6 +7,15 @@ namespace MenuTest.Drinks
     public class SodaSaurusTest
     {
         [Fact]
+        public void ShouldHaveCorrectIngedients()
+        {
+            Sodasaurus soda = new Sodasaurus();
+            Assert.Contains<string>("Water", soda.Ingredients);
+            Assert.Contains<string>("Natural Flavors", soda.Ingredients);
+            Assert.Contains<string>("Cane Sugar", soda.Ingredients);
+            Assert.Equal<int>(3, soda.Ingredients.Count);
+        }
+        [Fact]
         public void ShouldBeAbleToSetFlavorToCherry()
         {
             Sodasaurus soda = new Sodasaurus();

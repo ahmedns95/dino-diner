@@ -10,9 +10,9 @@ namespace DinoDiner.Menu.Sides
     {
         public MezzorellaSticks() 
         {
-            this.Ingredients.Add("Cheese Product");
             this.Ingredients.Add("Breading");
-            this.Ingredients.Add("Vegtable Oil");
+            this.Ingredients.Add("Cheese Product");
+            this.Ingredients.Add("Vegetable Oil");
             this.Size = Size.Small;
 
         }

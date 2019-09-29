@@ -6,13 +6,12 @@ namespace DinoDiner.Menu.Drinks
 {
     public class JurrasicJava : Drink
     {
-        public bool Ice = false;
-        public bool RoomForCream = false;
-        public bool Decaf = false;
+        public bool roomForCream = false;
+        public bool decaf = false;
 
         public void LeaveRoomForCream()
         {
-            this.RoomForCream = true;
+            this.roomForCream = true;
         }
         public void AddICe()
         {
@@ -23,6 +22,8 @@ namespace DinoDiner.Menu.Drinks
         {
             this.ingredients.Add("Water");
             this.ingredients.Add("Coffee");
+            this.Ice = false;
+            this.Size = Size.Small;
         }
 
         public override Size Size{

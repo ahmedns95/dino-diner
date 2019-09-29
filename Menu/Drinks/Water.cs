@@ -10,7 +10,7 @@ namespace DinoDiner.Menu.Drinks
         
         public Water()
         {
-            this.ingredients.Add("water");
+            this.ingredients.Add("Water");
             if (lemon) ingredients.Add("Lemon");
             this.Size = Size.Small;
 

@@ -18,7 +18,10 @@ namespace DinoDiner.Menu.Drinks
             if(sweet)ingredients.Add("Cane Sugar");
             this.Size = Size.Small;
         }
-
+        public void AddLemon()
+        {
+            this.lemon = true;
+        }
         public override Size Size
         {
             get { return size; }
@@ -57,10 +60,7 @@ namespace DinoDiner.Menu.Drinks
             }
         }
 
-        public void AddLemon()
-        {
-            this.lemon = true;
-        }
+        
 
     }
 }

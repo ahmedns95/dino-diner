@@ -23,7 +23,6 @@ namespace DinoDiner.Menu.Drinks
             this.ingredients.Add("Natural Flavors");
             this.ingredients.Add("Cane Sugar");
             this.Size = Size.Small;
-
         }
         public override  Size Size
         {

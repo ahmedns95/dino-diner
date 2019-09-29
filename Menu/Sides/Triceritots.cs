@@ -10,7 +10,7 @@ namespace DinoDiner.Menu.Sides
         {
               this.Ingredients.Add("Potato");
               this.Ingredients.Add("Salt");
-              this.Ingredients.Add("Vegtable Oil");
+              this.Ingredients.Add("Vegetable Oil");
               this.Size = Size.Small;
         }
 
