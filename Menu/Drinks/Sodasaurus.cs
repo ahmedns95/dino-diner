@@ -1,29 +1,46 @@
-﻿using System;
+﻿/*
+ * Sodasaurus.cs
+ * Author:Ahmed Alnassar
+ */
+using System;
 using System.Collections.Generic;
 using System.Text;
 
 namespace DinoDiner.Menu.Drinks
 
 {
+    /// <summary>
+    /// Class Sodasaurus thats inherits for the drinks base class
+    /// </summary>
     public class Sodasaurus : Drink
     {
-       // public bool ice = true;
+        /// <summary>
+        /// Gets or sets the flavor property
+        /// </summary>
         private SodasaurusFlavor flavor;
-
+        /// <summary>
+        /// property of Flavor of type SodasaurusFlavor
+        /// </summary>
         public SodasaurusFlavor Flavor
         {
             get { return flavor; }
             set { flavor = value; }
         }
 
-
+        /// <summary>
+        /// Constructor for Sodasaurus
+        /// Adds the ingredients
+        /// </summary>
         public Sodasaurus() {
 
-            this.ingredients.Add("Water");
-            this.ingredients.Add("Natural Flavors");
-            this.ingredients.Add("Cane Sugar");
+            this.Ingredients.Add("Water");
+            this.Ingredients.Add("Natural Flavors");
+            this.Ingredients.Add("Cane Sugar");
             this.Size = Size.Small;
         }
+        /// <summary>
+        /// method of type Size to set the price and the calories according to the size
+        /// </summary>
         public override  Size Size
         {
             get { return size; }

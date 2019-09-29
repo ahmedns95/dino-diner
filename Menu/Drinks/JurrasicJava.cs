@@ -1,31 +1,54 @@
-﻿using System;
+﻿/*
+ * JurrasicJava.cs
+ * Author: Ahmed Alnassar
+ */
+using System;
 using System.Collections.Generic;
 using System.Text;
 
 namespace DinoDiner.Menu.Drinks
 {
+    /// <summary>
+    /// Class JurrasicJava thats inherits for the drinks base class 
+    /// </summary>
     public class JurrasicJava : Drink
     {
+        /// <summary>
+        /// properties RoomForCream 
+        /// </summary>
         public bool roomForCream = false;
+        /// <summary>
+        /// properties Decaf 
+        /// </summary>
         public bool decaf = false;
-
+        /// <summary>
+        /// propertie for LeaveRoomForCream
+        /// </summary>
         public void LeaveRoomForCream()
         {
             this.roomForCream = true;
         }
+        /// <summary>
+        /// method to AddIce
+        /// </summary>
         public void AddICe()
         {
             this.Ice = true;
         }
-
+        /// <summary>
+        /// Constructor for JurrasicJava
+        /// Adds the ingredients
+        /// </summary>
         public JurrasicJava()
         {
-            this.ingredients.Add("Water");
-            this.ingredients.Add("Coffee");
+            this.Ingredients.Add("Water");
+            this.Ingredients.Add("Coffee");
             this.Ice = false;
             this.Size = Size.Small;
         }
-
+        /// <summary>
+        /// method of type Size to set the price and the calories according to the size
+        /// </summary>
         public override Size Size{
             get { return size; }
             set

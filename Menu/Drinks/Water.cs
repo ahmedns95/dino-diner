@@ -6,6 +6,9 @@ namespace DinoDiner.Menu.Drinks
 {
     public class Water : Drink
     {
+        /// <summary>
+        /// Gets or sets the lemon property
+        /// </summary>
         public bool lemon = false;
         
         public Water()
