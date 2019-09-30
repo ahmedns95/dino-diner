@@ -10,7 +10,10 @@ namespace DinoDiner.Menu.Drinks
         /// Gets or sets the lemon property
         /// </summary>
         public bool lemon = false;
-        
+        /// <summary>
+        /// Constructor for the water
+        /// adds the ingredients and check if the lemon is added
+        /// </summary>
         public Water()
         {
             this.ingredients.Add("Water");
@@ -18,7 +21,9 @@ namespace DinoDiner.Menu.Drinks
             this.Size = Size.Small;
 
         }
-
+        /// <summary>
+        /// 
+        /// </summary>
         public override Size Size
         {
             get { return size; }
