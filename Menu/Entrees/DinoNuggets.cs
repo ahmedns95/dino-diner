@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace DinoDiner.Menu.Entrees
+namespace DinoDiner.Menu
 {
     public class DinoNuggets : Entree
     {
@@ -17,12 +17,13 @@ namespace DinoDiner.Menu.Entrees
                 {
                     ingredients.Add("Chicken Nugget");
                 }
-
-                
                   return ingredients;
-                }
-            }
-
+             }
+        }
+        public override string ToString()
+        {
+            return "Dino-Nuggets";
+        }
         public DinoNuggets()
         {
              this.Price = 4.25;

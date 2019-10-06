@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
-using DinoDiner.Menu.Drinks;
+using DinoDiner.Menu;
 
 
-namespace DinoDiner.Menu.Sides
+namespace DinoDiner.Menu
 {
     public class Fryceritops : Side
     {
@@ -17,7 +17,10 @@ namespace DinoDiner.Menu.Sides
             this.Size = Size.Small;
 
         }
-
+        public override string ToString()
+        {
+            return size+" Friceritops";
+        }
         public override Size Size
         {
             set

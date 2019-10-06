@@ -6,13 +6,13 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace DinoDiner.Menu.Drinks
+namespace DinoDiner.Menu
 
 {
     /// <summary>
     /// Class Sodasaurus thats inherits for the drinks base class
     /// </summary>
-    public class Sodasaurus : Drink
+    public class Sodasaurus : Drink ,IMenuItem
     {
         /// <summary>
         /// Gets or sets the flavor property
@@ -26,7 +26,10 @@ namespace DinoDiner.Menu.Drinks
             get { return flavor; }
             set { flavor = value; }
         }
-
+        public override string ToString()
+        {
+            return size +" "+ flavor + " Sodasaurus";
+        }
         /// <summary>
         /// Constructor for Sodasaurus
         /// Adds the ingredients

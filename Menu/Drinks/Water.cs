@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace DinoDiner.Menu.Drinks
+namespace DinoDiner.Menu
 {
-    public class Water : Drink
+    public class Water : Drink , IMenuItem
     {
         /// <summary>
         /// Gets or sets the lemon property
@@ -20,6 +20,11 @@ namespace DinoDiner.Menu.Drinks
             if (lemon) ingredients.Add("Lemon");
             this.Size = Size.Small;
 
+        }
+        public override string ToString()
+        {
+            return size + " Water";
+            
         }
         /// <summary>
         /// 

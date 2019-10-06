@@ -1,5 +1,4 @@
 ﻿using Xunit;
-using DinoDiner.Menu.Drinks;
 using DinoDiner.Menu;
 
 namespace MenuTest.Drinks
@@ -25,7 +24,7 @@ namespace MenuTest.Drinks
         public void ShouldAddSweetToTyrannotea()
         {
             Tyrannotea tyra = new Tyrannotea();
-            Assert.False(tyra.sweet);
+            Assert.False(tyra.Sweet);
         }
         [Fact]
         public void ShouldHaveCorrectDefaultPrice()
@@ -62,7 +61,7 @@ namespace MenuTest.Drinks
         public void ShouldHaveDefaultSweet()
         {
             Tyrannotea tyra = new Tyrannotea();
-            Assert.False(tyra.sweet);
+            Assert.False(tyra.Sweet);
         }
         [Fact]
         public void ShouldUseCorrectPriceAfterSettingSmall()
@@ -129,7 +128,7 @@ namespace MenuTest.Drinks
         {
             Tyrannotea tyra = new Tyrannotea();
             tyra.Size = Size.Small;
-            if (tyra.sweet)
+            if (tyra.Sweet)
             {
                 Assert.Equal<uint>(16, tyra.Calories);
             }
@@ -139,7 +138,7 @@ namespace MenuTest.Drinks
         {
             Tyrannotea tyra = new Tyrannotea();
             tyra.Size = Size.Medium;
-            if (tyra.sweet)
+            if (tyra.Sweet)
             {
                 Assert.Equal<uint>(32, tyra.Calories);
             }
@@ -149,7 +148,7 @@ namespace MenuTest.Drinks
         {
             Tyrannotea tyra = new Tyrannotea();
             tyra.Size = Size.Large;
-            if (tyra.sweet)
+            if (tyra.Sweet)
             {
                 Assert.Equal<uint>(64, tyra.Calories);
             }

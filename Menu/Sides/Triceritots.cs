@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
-using DinoDiner.Menu.Drinks;
-namespace DinoDiner.Menu.Sides
+using DinoDiner.Menu;
+namespace DinoDiner.Menu
 {
     public class Triceritots : Side
     {
@@ -13,7 +13,10 @@ namespace DinoDiner.Menu.Sides
               this.Ingredients.Add("Vegetable Oil");
               this.Size = Size.Small;
         }
-
+        public override string ToString()
+        {
+            return size + " Triceritots";
+        }
         public override Size Size
         {
             set

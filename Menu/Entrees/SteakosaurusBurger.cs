@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace DinoDiner.Menu.Entrees
+namespace DinoDiner.Menu
 {
     public class SteakosaurusBurger : Entree
     {
@@ -24,7 +24,10 @@ namespace DinoDiner.Menu.Entrees
                 return ingredients;
             }
         }
-
+        public override string ToString()
+        {
+            return "Steakosaurus Burger";
+        }
         public SteakosaurusBurger()
         {
             this.Price = 5.15;

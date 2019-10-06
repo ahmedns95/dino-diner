@@ -2,17 +2,17 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace DinoDiner.Menu.Drinks
+namespace DinoDiner.Menu
 {
     /// <summary>
     /// Class Tyrannotea thats inherits for the drinks base class
     /// </summary>
-    public class Tyrannotea : Drink
+    public class Tyrannotea : Drink , IMenuItem
     {
         /// <summary>
         /// Gets or sets the sweet property 
         /// </summary>
-        public bool sweet = false;
+        public bool Sweet = false;
         /// <summary>
         /// Gets or sets the lemon property 
         /// </summary>
@@ -26,8 +26,13 @@ namespace DinoDiner.Menu.Drinks
             this.ingredients.Add("Water");
             this.ingredients.Add("Tea");
             if(lemon)ingredients.Add("Lemon");
-            if(sweet)ingredients.Add("Cane Sugar");
+            if(Sweet)ingredients.Add("Cane Sugar");
             this.Size = Size.Small;
+        }
+        public override string ToString()
+        {
+            if(Sweet) return size + " Sweet Tyrannotea";
+            else return size + " Tyrannotea";
         }
         /// <summary>
         /// method to add lemon
@@ -51,7 +56,7 @@ namespace DinoDiner.Menu.Drinks
                     case Size.Small:
                         this.price = 0.99;
                         this.calories = 8;
-                        if (sweet)
+                        if (Sweet)
                         {
                             this.calories = 16;
                         }
@@ -59,7 +64,7 @@ namespace DinoDiner.Menu.Drinks
                     case Size.Medium:
                         this.price = 1.49;
                         this.calories = 16;
-                        if (sweet)
+                        if (Sweet)
                         {
                             this.calories = 32;
                         }
@@ -67,7 +72,7 @@ namespace DinoDiner.Menu.Drinks
                     case Size.Large:
                         this.price = 1.99;
                         this.calories = 32;
-                        if (sweet)
+                        if (Sweet)
                         {
                             this.calories = 64;
                         }

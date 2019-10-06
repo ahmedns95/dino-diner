@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace DinoDiner.Menu.Entrees
+namespace DinoDiner.Menu
 {
     public class VelociWrap : Entree
     {
@@ -22,7 +22,10 @@ namespace DinoDiner.Menu.Entrees
                 return ingredients;
             }
         }
-
+        public override string ToString()
+        {
+            return "Veloci-Wrap";
+        }
         public VelociWrap()
         {
             this.Price = 6.86;

@@ -6,12 +6,12 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace DinoDiner.Menu.Drinks
+namespace DinoDiner.Menu
 {
     /// <summary>
     /// Class JurrasicJava thats inherits for the drinks base class 
     /// </summary>
-    public class JurrasicJava : Drink
+    public class JurrasicJava : Drink ,IMenuItem
     {
         /// <summary>
         /// properties RoomForCream 
@@ -20,7 +20,7 @@ namespace DinoDiner.Menu.Drinks
         /// <summary>
         /// properties Decaf 
         /// </summary>
-        public bool decaf = false;
+        public bool Decaf = false;
         /// <summary>
         /// propertie for LeaveRoomForCream
         /// </summary>

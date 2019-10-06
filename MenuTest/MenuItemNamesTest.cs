@@ -123,7 +123,7 @@ namespace MenuTest
         [InlineData(Size.Large, true)]
         public void JurrasicJavaToStringShouldGiveNameForSizeAndDecaf(Size size, bool decaf)
         {
-            JurassicJava java = new JurassicJava();
+            JurrasicJava java = new JurrasicJava();
             java.Size = size;
             java.Decaf = decaf;
             if (decaf) Assert.Equal($"{size} Decaf Jurassic Java", java.ToString());

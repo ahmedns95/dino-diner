@@ -1,20 +1,17 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
-using DinoDiner.Menu.Entrees;
-using DinoDiner.Menu.Sides;
-using DinoDiner.Menu.Drinks;
-
 
 namespace DinoDiner.Menu
 {
-    public class CretaceousCombo
+    public class CretaceousCombo : IMenuItem
     {
+        private Size size;
         public Entree Entree { get; set; }
 
-        public Side Side { get; set; }
+        public Side Side { get; set; } = new Fryceritops();
 
-        public Drink Drink { get; set; }
+        public Drink Drink { get; set; } = new Sodasaurus();
 
         public double Price
         {
@@ -30,12 +27,13 @@ namespace DinoDiner.Menu
                 return Entree.Calories + Side.Calories + Drink.Calories ;
             }
         }
-        private Size size = Size.Small;
 
         public Size Size
         {
+            get { return size; }
             set
             {
+                size = value;
                 Drink.Size = value;
                 Side.Size = value;
             }
@@ -54,7 +52,8 @@ namespace DinoDiner.Menu
 
         public CretaceousCombo(Entree entree)
         {
-            Entree = entree;
+            this.Entree = entree;
         }
+
     }
 }

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace DinoDiner.Menu.Entrees
+namespace DinoDiner.Menu
 {
     public class TRexKingBurger : Entree
     {
@@ -35,7 +35,10 @@ namespace DinoDiner.Menu.Entrees
                 return ingredients;
             }
         }
-
+        public override string ToString()
+        {
+            return "T-Rex King Burger";
+        }
         public TRexKingBurger()
         {
             this.Price = 8.45;
