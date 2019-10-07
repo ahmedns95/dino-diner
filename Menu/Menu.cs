@@ -85,10 +85,13 @@ namespace DinoDiner.Menu
             {
                 List<IMenuItem> avaiCombos = new List<IMenuItem>
                 {
-                    new Fryceritops(),
-                    new MeteorMacAndCheese(),
-                    new MezzorellaSticks(),
-                    new Triceritots()
+                    new Brontowurst(),
+                    new DinoNuggets(),
+                    new PrehistoricPBJ(),
+                    new SteakosaurusBurger(),
+                    new TRexKingBurger(),
+                    new VelociWrap(),
+                    new PrehistoricPBJ()
                 };
                 return avaiCombos;
             }
@@ -96,13 +99,32 @@ namespace DinoDiner.Menu
 
         public override string ToString()
         {
-
-            return "Brontowurst Combo Dino-Nuggets Combo";
+            StringBuilder st = new StringBuilder();
+            foreach(IMenuItem s in AvailableMenuItems)
+            {
+                st.Append(s.ToString());
+                st.Append("\n");
+            }/*
+            foreach (IMenuItem s in AvailableDrinks)
+            {
+                st.Append(s.ToString());
+                st.Append("\n");
+            }
+            foreach (IMenuItem s in AvailableSides)
+            {
+                st.Append(s.ToString());
+                st.Append("\n");
+            }
+            foreach (IMenuItem s in AvailableCombos)
+            {
+                st.Append(s.ToString());
+                st.Append("\n");
+            }*/
+            return st.ToString();
              //   "\" +
               //  "Prehistoric PB&J Combo\" +
               //  "Pterodactyl Wings Combo\" +
               //  "Steakosaurus Burger Combo\";
-                
         }
 
     }
