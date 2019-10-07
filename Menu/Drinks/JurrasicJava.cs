@@ -35,6 +35,17 @@ namespace DinoDiner.Menu
         {
             this.Ice = true;
         }
+        public override string ToString()
+        {
+            if (Decaf)
+            {
+                return size + " Decaf Jurassic Java";
+            }
+            else
+            {
+                return size + " Jurassic Java";
+            }
+        }
         /// <summary>
         /// Constructor for JurrasicJava
         /// Adds the ingredients
