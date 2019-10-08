@@ -124,21 +124,6 @@ namespace DinoDiner.Menu
                 st.Append(s.ToString());
                 st.Append("\n");
             }
-            foreach (IMenuItem s in AvailableDrinks)
-            {
-                st.Append(s.ToString());
-                st.Append("\n");
-            }
-            foreach (IMenuItem s in AvailableSides)
-            {
-                st.Append(s.ToString());
-                st.Append("\n");
-            }
-            foreach (IMenuItem s in AvailableCombos)
-            {
-                st.Append(s.ToString());
-                st.Append("\n");
-            }
             return st.ToString();
         }
 

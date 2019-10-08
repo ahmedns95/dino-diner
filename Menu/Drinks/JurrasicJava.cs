@@ -11,7 +11,7 @@ namespace DinoDiner.Menu
     /// <summary>
     /// Class JurrasicJava thats inherits for the drinks base class 
     /// </summary>
-    public class JurrasicJava : Drink ,IMenuItem
+    public class JurrasicJava : Drink 
     {
         /// <summary>
         /// properties RoomForCream 
@@ -52,10 +52,19 @@ namespace DinoDiner.Menu
         /// </summary>
         public JurrasicJava()
         {
-            this.Ingredients.Add("Water");
-            this.Ingredients.Add("Coffee");
+            
             this.Ice = false;
             this.Size = Size.Small;
+        }
+        public override List<string> Ingredients
+        {
+            get
+            {
+                List<string> ingredients = new List<string>();
+                ingredients.Add("Water");
+                ingredients.Add("Coffee");
+                return ingredients;
+            }
         }
         /// <summary>
         /// method of type Size to set the price and the calories according to the size

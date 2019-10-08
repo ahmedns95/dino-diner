@@ -7,11 +7,20 @@ namespace DinoDiner.Menu
 {
     public class MeteorMacAndCheese : Side
     {
+        public override List<string> Ingredients
+        {
+            get
+            {
+                List<string> ingredients = new List<string>();
+                ingredients.Add("Macaroni Noodles");
+                ingredients.Add("Cheese Product");
+                ingredients.Add("Pork Sausage");
+                return ingredients;
+            }
+        }
         public MeteorMacAndCheese() 
         {
-            this.Ingredients.Add("Macaroni Noodles");
-            this.Ingredients.Add("Cheese Product");
-            this.Ingredients.Add("Pork Sausage");
+            
             this.Size = Size.Small;
 
         }

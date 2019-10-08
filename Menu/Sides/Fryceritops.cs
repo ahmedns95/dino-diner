@@ -9,11 +9,19 @@ namespace DinoDiner.Menu
     public class Fryceritops : Side
     {
 
-        public Fryceritops() { 
-            this.Ingredients.Add("Potato");
-            this.Ingredients.Add("Salt");
-            this.Ingredients.Add("Vegatable Oil");
-            //this.Ingredients.Add("Vegatable Oil");
+        public override List<string> Ingredients
+        {
+            get
+            {
+                List<string> ingredients = new List<string>();
+                ingredients.Add("Potato");
+                ingredients.Add("Salt");
+                ingredients.Add("Vegatable Oil");
+                //this.Ingredients.Add("Vegatable Oil");
+                return ingredients;
+            }
+        }
+        public Fryceritops() {
             this.Size = Size.Small;
 
         }

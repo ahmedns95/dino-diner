@@ -23,11 +23,20 @@ namespace DinoDiner.Menu
         /// </summary>
         public Tyrannotea()
         {
-            this.ingredients.Add("Water");
-            this.ingredients.Add("Tea");
-            if(lemon)ingredients.Add("Lemon");
-            if(Sweet)ingredients.Add("Cane Sugar");
+            
             this.Size = Size.Small;
+        }
+        public override List<string> Ingredients
+        {
+            get
+            {
+                List<string> ingredients = new List<string>();
+                ingredients.Add("Water");
+                ingredients.Add("Tea");
+                if (lemon) ingredients.Add("Lemon");
+                if (Sweet) ingredients.Add("Cane Sugar");
+                return ingredients;
+            }
         }
         public override string ToString()
         {

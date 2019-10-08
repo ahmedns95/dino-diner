@@ -8,11 +8,20 @@ namespace DinoDiner.Menu
 {
     public class MezzorellaSticks : Side
     {
+        public override List<string> Ingredients
+        {
+            get
+            {
+                List<string> ingredients = new List<string>();
+                ingredients.Add("Breading");
+                ingredients.Add("Cheese Product");
+                ingredients.Add("Vegetable Oil");
+                return ingredients;
+            }
+        }
         public MezzorellaSticks() 
         {
-            this.Ingredients.Add("Breading");
-            this.Ingredients.Add("Cheese Product");
-            this.Ingredients.Add("Vegetable Oil");
+            
             this.Size = Size.Small;
 
         }

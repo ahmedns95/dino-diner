@@ -16,11 +16,21 @@ namespace DinoDiner.Menu
         /// </summary>
         public Water()
         {
-            this.ingredients.Add("Water");
-            if (lemon) ingredients.Add("Lemon");
+            
             this.Size = Size.Small;
 
         }
+        public override List<string> Ingredients
+        {
+            get
+            {
+                List<string> ingredients = new List<string>();
+                ingredients.Add("Water");
+                if (lemon) ingredients.Add("Lemon");
+                return ingredients;
+            }
+        }
+
         public override string ToString()
         {
             return size + " Water";

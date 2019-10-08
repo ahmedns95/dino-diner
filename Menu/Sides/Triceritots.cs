@@ -6,11 +6,20 @@ namespace DinoDiner.Menu
 {
     public class Triceritots : Side
     {
+        public override List<string> Ingredients
+        {
+            get
+            {
+                List<string> ingredients = new List<string>();
+                ingredients.Add("Potato");
+                ingredients.Add("Salt");
+                ingredients.Add("Vegetable Oil");
+                return ingredients;
+            }
+        }
         public Triceritots()
         {
-              this.Ingredients.Add("Potato");
-              this.Ingredients.Add("Salt");
-              this.Ingredients.Add("Vegetable Oil");
+              
               this.Size = Size.Small;
         }
         public override string ToString()
