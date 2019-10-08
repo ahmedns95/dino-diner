@@ -1,4 +1,7 @@
-﻿using System;
+﻿/* Menu.cs
+ * Author : Ahmed Alnassar
+ */
+using System;
 using System.Collections.Generic;
 using System.Text;
 
@@ -6,7 +9,9 @@ namespace DinoDiner.Menu
 {
     public class Menu 
     {
-
+        /// <summary>
+        /// a property with a getter for AvailableMenuItems
+        /// </summary>
         public List<IMenuItem> AvailableMenuItems {
             get
             {
@@ -31,6 +36,9 @@ namespace DinoDiner.Menu
                 return avaiMenuItems;
             }
         }
+        /// <summary>
+        /// a property with a getter for AvailableEntrees
+        /// </summary>
         public List<IMenuItem> AvailableEntrees
         {
             get
@@ -48,7 +56,9 @@ namespace DinoDiner.Menu
                 return avaiEntree;
             }
         }
-
+        /// <summary>
+        /// a property with a getter for AvailableSides
+        /// </summary>
         public List<IMenuItem> AvailableSides
         {
             get
@@ -63,7 +73,9 @@ namespace DinoDiner.Menu
                 return avaiSides;
             }
         }
-
+        /// <summary>
+        /// a property with a getter for AvailableDrinks
+        /// </summary>
         public List<IMenuItem> AvailableDrinks
         {
             get
@@ -78,7 +90,9 @@ namespace DinoDiner.Menu
                 return avaiDrinks;
             }
         }
-
+        /// <summary>
+        /// a property with a getter for AvailableCombos
+        /// </summary>
         public List<IMenuItem> AvailableCombos
         {
             get
@@ -96,15 +110,20 @@ namespace DinoDiner.Menu
                 return avaiCombos;
             }
         }
-
+        public Drink Sodasaurus { get; set; } = new Sodasaurus();
+        /// <summary>
+        /// method ToString() to overide all the menu items and retunr the string
+        /// </summary>
+        /// <returns></returns>
         public override string ToString()
         {
+            
             StringBuilder st = new StringBuilder();
             foreach(IMenuItem s in AvailableMenuItems)
             {
                 st.Append(s.ToString());
                 st.Append("\n");
-            }/*
+            }
             foreach (IMenuItem s in AvailableDrinks)
             {
                 st.Append(s.ToString());
@@ -119,12 +138,8 @@ namespace DinoDiner.Menu
             {
                 st.Append(s.ToString());
                 st.Append("\n");
-            }*/
+            }
             return st.ToString();
-             //   "\" +
-              //  "Prehistoric PB&J Combo\" +
-              //  "Pterodactyl Wings Combo\" +
-              //  "Steakosaurus Burger Combo\";
         }
 
     }
