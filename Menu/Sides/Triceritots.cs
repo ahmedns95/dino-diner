@@ -1,4 +1,8 @@
-﻿using System;
+﻿/* Triceritots.cs
+ * Author: Ahmed Alnassar
+ * 
+ */
+using System;
 using System.Collections.Generic;
 using System.Text;
 using DinoDiner.Menu;
@@ -6,6 +10,9 @@ namespace DinoDiner.Menu
 {
     public class Triceritots : Side
     {
+        /// <summary>
+        /// method to get the ingredients
+        /// </summary>
         public override List<string> Ingredients
         {
             get
@@ -17,15 +24,25 @@ namespace DinoDiner.Menu
                 return ingredients;
             }
         }
+        /// <summary>
+        /// constructor to set size to small
+        /// </summary>
         public Triceritots()
         {
               
               this.Size = Size.Small;
         }
+        /// <summary>
+        /// override toString to return the string
+        /// </summary>
+        /// <returns></returns>
         public override string ToString()
         {
             return size + " Triceritots";
         }
+        /// <summary>
+        /// method to gets the size and set the price and calories 
+        /// </summary>
         public override Size Size
         {
             set
