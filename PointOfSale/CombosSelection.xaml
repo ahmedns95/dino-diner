@@ -15,8 +15,14 @@
                 <Setter Property="MinHeight" Value="140"></Setter>
             </Style>
         </WrapPanel.Resources>
+        
         <Button Click="SelectSize" Grid.Row="0" Grid.Column="0">Brontowrst Combo</Button>
-        <Button Click="SelectSize" Grid.Row="0" Grid.Column="0">Dino-Nuggets Combo</Button>
+        <Button Click="SelectSize" Grid.Row="0" Grid.Column="0">
+            <StackPanel>
+                <Image Width="100" Source="Assets/DinoDiner-01.png"/>
+                <TextBlock>Dino-Nuggets Combo</TextBlock>
+            </StackPanel>
+        </Button>
         <Button Click="SelectSize" Grid.Row="0" Grid.Column="0">Steakosaurus Combo</Button>
         <Button Click="SelectSize" Grid.Row="0" Grid.Column="0">T-Rex King Burger Combo</Button>
         <Button Click="SelectSize" Grid.Row="0" Grid.Column="0">Prehistoric PB&amp;J Combo</Button>
