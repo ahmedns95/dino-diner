@@ -28,7 +28,7 @@
                 <TextBlock>Tryrannotea</TextBlock>
             </StackPanel>
         </Button>
-        <Button  Grid.Row="0" Grid.Column="0">
+        <Button Grid.Row="0" Grid.Column="0">
             <StackPanel>
                 <Image Width="100" Source="Assets/DinoDiner-13.png"/>
                 <TextBlock>Jurassic Java</TextBlock>

@@ -24,10 +24,20 @@ namespace PointOfSale
         {
             InitializeComponent();
         }
+        /// <summary>
+        /// event handeler for the select 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="args"></param>
         void SelectSide(object sender, RoutedEventArgs args)
         {
             NavigationService.Navigate(new SideSelection());
         }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="args"></param>
         void SelectDrink(object sender, RoutedEventArgs args)
         {
             NavigationService.Navigate(new DrinkSelection());

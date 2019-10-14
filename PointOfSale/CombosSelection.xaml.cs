@@ -24,6 +24,11 @@ namespace PointOfSale
         {
             InitializeComponent();
         }
+        /// <summary>
+        /// event handeler for the Customize combo
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="args"></param>
         void SelectSize(object sender, RoutedEventArgs args)
         {
            NavigationService.Navigate(new CustomizeCombo());
