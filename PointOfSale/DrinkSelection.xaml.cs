@@ -24,5 +24,15 @@ namespace PointOfSale
         {
             InitializeComponent();
         }
+
+       /// <summary>
+       /// Event handeler for Selcet falvor 
+       /// </summary>
+       /// <param name="sender"></param>
+       /// <param name="args"></param>
+        void SelectFlavor(object sender, RoutedEventArgs args)
+        {
+            NavigationService.Navigate(new FlavorSelection());
+        }
     }
 }

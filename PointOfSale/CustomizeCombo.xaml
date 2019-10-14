@@ -15,7 +15,6 @@
                 <Setter Property="MinHeight" Value="140"></Setter>
             </Style>
         </WrapPanel.Resources>
-
         <Button Click="SelectSide" Grid.Row="0" Grid.Column="0">Side</Button>
         <Button Click="SelectDrink" Grid.Row="0" Grid.Column="0">Drink</Button>
         <Button >Size</Button>

@@ -16,21 +16,13 @@ using System.Windows.Shapes;
 namespace PointOfSale
 {
     /// <summary>
-    /// Interaction logic for CustomizeCombo.xaml
+    /// Interaction logic for EntreeSelection.xaml
     /// </summary>
-    public partial class CustomizeCombo : Page
+    public partial class EntreeSelection : Page
     {
-        public CustomizeCombo()
+        public EntreeSelection()
         {
             InitializeComponent();
-        }
-        void SelectSide(object sender, RoutedEventArgs args)
-        {
-            NavigationService.Navigate(new SideSelection());
-        }
-        void SelectDrink(object sender, RoutedEventArgs args)
-        {
-            NavigationService.Navigate(new DrinkSelection());
         }
     }
 }
