@@ -1,11 +1,25 @@
 ﻿using System.Collections.Generic;
+using System.ComponentModel;
 
 namespace DinoDiner.Menu
 {
-    public class PrehistoricPBJ : Entree ,IMenuItem
+    public class PrehistoricPBJ : Entree ,IMenuItem ,INotifyPropertyChanged
     {
         private bool peanutButter = true;
         private bool jelly = true;
+        /// <summary>
+        /// Event Handeler for PropertyChanged events
+        /// </summary>
+        public event PropertyChangedEventHandler PropertyChanged;
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="propertyName"></param>
+        protected void NotifyPropertyChanged(string propertyName)
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+        }
+
 
         public override List<string> Ingredients
         {
@@ -30,11 +44,39 @@ namespace DinoDiner.Menu
         public void HoldPeanutButter()
         {
             this.peanutButter = false;
+            NotifyPropertyChanged("Ingredients");
+            NotifyPropertyChanged("Special");
         }
 
         public void HoldJelly()
         {
             this.jelly = false;
+            NotifyPropertyChanged("Ingredients");
+            NotifyPropertyChanged("Special");
+        }
+        /// <summary>
+        /// Gets a descripting of the order item
+        /// </summary>
+        public string Description
+        {
+            get { return this.ToString(); }
+        }
+
+        public string[] Special
+        {
+            get
+            {
+                List<string> special = new List<string>();
+                if (!peanutButter)
+                {
+                    special.Add("Hold Peanut Butter");
+                }
+                if (!jelly)
+                {
+                    special.Add("Hold Jelly");
+                }
+                return special.ToArray();
+            }
         }
     }
 }
