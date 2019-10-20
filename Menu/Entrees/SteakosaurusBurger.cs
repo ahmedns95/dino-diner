@@ -102,7 +102,7 @@ namespace DinoDiner.Menu
                 }
                 if (!ketchup)
                 {
-                    special.Add("Hold Onions");
+                    special.Add("Hold Ketchup");
                 }
                 return special.ToArray();
             }

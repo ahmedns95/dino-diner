@@ -11,7 +11,7 @@ namespace DinoDiner.Menu
     /// <summary>
     /// Class JurrasicJava thats inherits for the drinks base class 
     /// </summary>
-    public class JurrasicJava : Drink 
+    public class JurrasicJava : Drink ,IOrderItem
     {
         /// <summary>
         /// properties RoomForCream 
@@ -91,6 +91,26 @@ namespace DinoDiner.Menu
                     default:
                         break;
                 }
+            }
+        }
+
+        /// <summary>
+        /// Gets a descripting of the order item
+        /// </summary>
+        public string Description
+        {
+            get { return this.ToString(); }
+        }
+        /// <summary>
+        /// gets the special of the order item
+        /// </summary>
+        public string[] Special
+        {
+            get
+            {
+                List<string> special = new List<string>();
+                
+                return special.ToArray();
             }
         }
     }
