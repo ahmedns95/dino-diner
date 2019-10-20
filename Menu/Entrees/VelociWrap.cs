@@ -12,18 +12,18 @@ namespace DinoDiner.Menu
         private bool lettuce = true;
         private bool dressing = true;
         private bool cheese = true;
-        /// <summary>
-        /// Event Handeler for PropertyChanged events
-        /// </summary>
-        public event PropertyChangedEventHandler PropertyChanged;
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="propertyName"></param>
-        protected void NotifyPropertyChanged(string propertyName)
-        {
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
-        }
+        ///// <summary>
+        ///// Event Handeler for PropertyChanged events
+        ///// </summary>
+        //public event PropertyChangedEventHandler PropertyChanged;
+        ///// <summary>
+        ///// 
+        ///// </summary>
+        ///// <param name="propertyName"></param>
+        //protected void NotifyPropertyChanged(string propertyName)
+        //{
+        //    PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+        //}
 
 
         public override List<string> Ingredients
@@ -70,14 +70,14 @@ namespace DinoDiner.Menu
         /// <summary>
         /// Gets a descripting of the order item
         /// </summary>
-        public string Description
+        public override string Description
         {
             get { return this.ToString(); }
         }
         /// <summary>
         /// gets the special of the order item
         /// </summary>
-        public string[] Special
+        public override string[] Special
         {
             get
             {

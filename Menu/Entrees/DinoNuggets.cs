@@ -4,7 +4,7 @@ using System.Text;
 
 namespace DinoDiner.Menu
 {
-    public class DinoNuggets : Entree
+    public class DinoNuggets : Entree ,IOrderItem
     {
 
         private uint nuggetCount = 6;
@@ -40,14 +40,14 @@ namespace DinoDiner.Menu
         /// <summary>
         /// Gets a descripting of the order item
         /// </summary>
-        public string Description
+        public override string Description
         {
             get { return this.ToString(); }
         }
         /// <summary>
         /// gets the special of the order item
         /// </summary>
-        public string[] Special
+        public override string[] Special
         {
             get
             {

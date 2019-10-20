@@ -29,8 +29,5 @@ namespace MenuTest.Entrees
             Assert.Contains<string>("Wing Sauce", ingredients);
             Assert.Equal<int>(2, ingredients.Count);
         }
-
-        
-
     }
 }

@@ -6,19 +6,19 @@ using System.ComponentModel;
 
 namespace DinoDiner.Menu
 {
-    public abstract class Entree :IMenuItem ,IOrderItem/*INotifyPropertyChanged*/
+    public abstract class Entree : IMenuItem ,IOrderItem/*INotifyPropertyChanged*/
     {
-        //public event PropertyChangedEventHandler PropertyChanged;
+        public event PropertyChangedEventHandler PropertyChanged;
 
 
-        ///// <summary>
-        ///// 
-        ///// </summary>
-        ///// <param name="propertyName"></param>
-        //protected void NotifyPropertyChanged(string propertyName)
-        //{
-        //    PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
-        //}
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="propertyName"></param>
+        protected void NotifyPropertyChanged(string propertyName)
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+        }
         /// <summary>
         /// Gets and sets the price
         /// </summary>
@@ -34,8 +34,8 @@ namespace DinoDiner.Menu
         /// </summary>
         public virtual List<string> Ingredients { get;  }
 
-        public string Description => throw new NotImplementedException();
+        public virtual string Description { get; }
 
-        public string[] Special => throw new NotImplementedException();
+        public virtual string[] Special { get; }
     }
 }

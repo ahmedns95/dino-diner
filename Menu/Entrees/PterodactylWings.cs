@@ -19,6 +19,7 @@ namespace DinoDiner.Menu
         {
             return "Pterodactyl Wings";
         }
+
         public PterodactylWings()
         {
             this.Price = 7.21;
@@ -28,14 +29,14 @@ namespace DinoDiner.Menu
         /// <summary>
         /// Gets a descripting of the order item
         /// </summary>
-        public string Description
+        public override string Description
         {
             get { return this.ToString(); }
         }
         /// <summary>
         /// gets the special of the order item
         /// </summary>
-        public string[] Special
+        public override string[] Special
         {
             get
             {
