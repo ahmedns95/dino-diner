@@ -6,7 +6,7 @@ using DinoDiner.Menu;
 namespace DinoDiner.Menu
 {
 
-    public abstract class Side : IMenuItem
+    public abstract class Side : IMenuItem ,IOrderItem
     {
         protected double price;
         protected uint calories;
@@ -51,6 +51,7 @@ namespace DinoDiner.Menu
             }
         }
 
-        
+        public  string Description { get; }
+        public  string[] Special { get; }
     }
 }

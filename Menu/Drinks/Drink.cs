@@ -11,7 +11,7 @@ namespace DinoDiner.Menu
     /// <summary>
     /// Drink Base Class
     /// </summary>
-    public abstract class Drink : IMenuItem
+    public abstract class Drink : IMenuItem,IOrderItem
     {
         /// <summary>
         /// field for price 
@@ -71,5 +71,8 @@ namespace DinoDiner.Menu
                 size = value;
             }
         }
+
+        public abstract string Description { get; }
+        public abstract string[] Special { get; }
     }
 }

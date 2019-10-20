@@ -3,7 +3,7 @@ using System.ComponentModel;
 
 namespace DinoDiner.Menu
 {
-    public class PrehistoricPBJ : Entree ,IMenuItem ,INotifyPropertyChanged
+    public class PrehistoricPBJ : Entree ,IMenuItem ,INotifyPropertyChanged, IOrderItem
     {
         private bool peanutButter = true;
         private bool jelly = true;
@@ -61,7 +61,9 @@ namespace DinoDiner.Menu
         {
             get { return this.ToString(); }
         }
-
+        /// <summary>
+        /// gets the special of the order item
+        /// </summary>
         public string[] Special
         {
             get

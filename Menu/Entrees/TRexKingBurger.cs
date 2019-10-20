@@ -1,10 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using System.ComponentModel;
 
 namespace DinoDiner.Menu
 {
-    public class TRexKingBurger : Entree
+    public class TRexKingBurger : Entree ,INotifyPropertyChanged
     {
         private bool bun = true;
         private bool lettuce = true;
@@ -15,7 +16,19 @@ namespace DinoDiner.Menu
         private bool mustard = true;
         private bool mayo = true;
 
-        
+        /// <summary>
+        /// Event Handeler for PropertyChanged events
+        /// </summary>
+        public event PropertyChangedEventHandler PropertyChanged;
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="propertyName"></param>
+        protected void NotifyPropertyChanged(string propertyName)
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+        }
+
         public override List<string> Ingredients
         {
             get
@@ -48,11 +61,15 @@ namespace DinoDiner.Menu
         public void HoldBun()
         {
             this.bun = false;
+            NotifyPropertyChanged("Ingredients");
+            NotifyPropertyChanged("Special");
         }
 
         public void HoldLettuce()
         {
             this.lettuce = false;
+            NotifyPropertyChanged("Ingredients");
+            NotifyPropertyChanged("Special");
         }
 
         public void HoldOnion()
@@ -78,6 +95,56 @@ namespace DinoDiner.Menu
         public void HoldTomato()
         {
             this.tomato = false;
+        }
+        /// <summary>
+        /// Gets a descripting of the order item
+        /// </summary>
+        public string Description
+        {
+            get { return this.ToString(); }
+        }
+        /// <summary>
+        /// gets the special of the order item
+        /// </summary>
+        public string[] Special
+        {
+            get
+            {
+                List<string> special = new List<string>();
+                if (!bun)
+                {
+                    special.Add("Hold Whole Wheat Bun");
+                }
+                if (!lettuce)
+                {
+                    special.Add("Hold Lettuce");
+                }
+                if (!tomato)
+                {
+                    special.Add("Hold Tomato");
+                }
+                if (!onion)
+                {
+                    special.Add("Hold Onion");
+                }
+                if (!pickle)
+                {
+                    special.Add("Hold Pickle");
+                }
+                if (!ketchup)
+                {
+                    special.Add("Hold Ketchup");
+                }
+                if (!mustard)
+                {
+                    special.Add("Hold Mustard");
+                }
+                if (!mayo)
+                {
+                    special.Add("Hold Dressing");
+                }
+                return special.ToArray();
+            }
         }
     }
 }

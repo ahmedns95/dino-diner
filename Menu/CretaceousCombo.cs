@@ -6,16 +6,18 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 using System.ComponentModel;
+
 namespace DinoDiner.Menu
 {
     /// <summary>
     /// A class representing a combo meal
     /// </summary>
-    public class CretaceousCombo : IMenuItem , INotifyPropertyChanged
+    public class CretaceousCombo : IMenuItem , INotifyPropertyChanged, IOrderItem
     {
         // Backing Variables
         private Size size;
         private Entree entree;
+        public event PropertyChangedEventHandler PropertyChanged;
         /// <summary>
         /// Gets and sets the entree
         /// </summary>
@@ -35,7 +37,7 @@ namespace DinoDiner.Menu
 
         private Drink drink = new Sodasaurus();
 
-        public event PropertyChangedEventHandler PropertyChanged;
+        
         /// <summary>
         /// 
         /// </summary>
@@ -134,7 +136,9 @@ namespace DinoDiner.Menu
         {
             get { return this.ToString(); }
         }
-
+        /// <summary>
+        /// Gets a Special of the order item
+        /// </summary>
         public string[] Special
         {
             get

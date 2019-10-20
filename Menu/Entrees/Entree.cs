@@ -1,11 +1,24 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using System.ComponentModel;
+
 
 namespace DinoDiner.Menu
 {
-    public abstract class Entree :IMenuItem
+    public abstract class Entree :IMenuItem ,IOrderItem/*INotifyPropertyChanged*/
     {
+        //public event PropertyChangedEventHandler PropertyChanged;
+
+
+        ///// <summary>
+        ///// 
+        ///// </summary>
+        ///// <param name="propertyName"></param>
+        //protected void NotifyPropertyChanged(string propertyName)
+        //{
+        //    PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+        //}
         /// <summary>
         /// Gets and sets the price
         /// </summary>
@@ -20,5 +33,9 @@ namespace DinoDiner.Menu
         /// Gets the ingredients list
         /// </summary>
         public virtual List<string> Ingredients { get;  }
+
+        public string Description => throw new NotImplementedException();
+
+        public string[] Special => throw new NotImplementedException();
     }
 }

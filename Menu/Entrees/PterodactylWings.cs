@@ -4,7 +4,7 @@ using System.Text;
 
 namespace DinoDiner.Menu
 {
-    public class PterodactylWings : Entree,IMenuItem
+    public class PterodactylWings : Entree , IMenuItem
     {
 
         public override List<string> Ingredients
@@ -23,6 +23,25 @@ namespace DinoDiner.Menu
         {
             this.Price = 7.21;
             this.Calories =318;
+        }
+
+        /// <summary>
+        /// Gets a descripting of the order item
+        /// </summary>
+        public string Description
+        {
+            get { return this.ToString(); }
+        }
+        /// <summary>
+        /// gets the special of the order item
+        /// </summary>
+        public string[] Special
+        {
+            get
+            {
+                List<string> special = new List<string>();
+                return special.ToArray();
+            }
         }
     }
 }

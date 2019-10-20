@@ -37,7 +37,27 @@ namespace DinoDiner.Menu
             this.Calories += 59;
         }
 
-
-
+        /// <summary>
+        /// Gets a descripting of the order item
+        /// </summary>
+        public string Description
+        {
+            get { return this.ToString(); }
+        }
+        /// <summary>
+        /// gets the special of the order item
+        /// </summary>
+        public string[] Special
+        {
+            get
+            {
+                List<string> special = new List<string>();
+                if (nuggetCount>6)
+                {
+                    special.Add("# Extra Nuggets");
+                }
+                return special.ToArray();
+            }
+        }
     }
 }
