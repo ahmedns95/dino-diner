@@ -127,7 +127,6 @@ namespace MenuTest.Entrees
                     Assert.Equal("Hold Onions", item);
                 });
         }
-
         [Fact]
         public void HoldingBunShouldNotNotifySpecialChange()
         {
