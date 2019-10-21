@@ -71,8 +71,13 @@ namespace DinoDiner.Menu
                 size = value;
             }
         }
-
+        /// <summary>
+        /// 
+        /// </summary>
         public virtual string Description { get; }
+        /// <summary>
+        /// 
+        /// </summary>
         public virtual string[] Special { get; }
     }
 }

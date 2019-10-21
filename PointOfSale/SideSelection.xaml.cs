@@ -12,7 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-
+using DinoDiner.Menu;
 namespace PointOfSale
 {
     /// <summary>
@@ -23,6 +23,29 @@ namespace PointOfSale
         public SideSelection()
         {
             InitializeComponent();
+        }
+
+        public void AddFryceritops(object sender, RoutedEventArgs args)
+        {
+            Order order = (Order)DataContext;
+            order.Item.Add(new Fryceritops());
+            btnAddFryceritops.IsEnabled = false;
+
+        }
+        public void AddMeteorMacAndCheese(object sender, RoutedEventArgs args)
+        {
+            Order order = (Order)DataContext;
+            order.Item.Add(new MeteorMacAndCheese());
+        }
+        public void AddMezzorellaSticks(object sender, RoutedEventArgs args)
+        {
+            Order order = (Order)DataContext;
+            order.Item.Add(new MezzorellaSticks());
+        }
+        public void AddTriceritots(object sender, RoutedEventArgs args)
+        {
+            Order order = (Order)DataContext;
+            order.Item.Add(new Triceritots());
         }
     }
 }

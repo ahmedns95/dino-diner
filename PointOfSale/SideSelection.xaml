@@ -16,25 +16,25 @@
             </Style>
         </WrapPanel.Resources>
 
-        <Button Grid.Row="0" Grid.Column="0">
+        <Button Name="btnAddFryceritops" Click="AddFryceritops" Grid.Row="0" Grid.Column="0">
             <StackPanel>
                 <Image Width="100" Source="Assets/DinoDiner-08.png"/>
                 <TextBlock>Fryceritops</TextBlock>
             </StackPanel>
         </Button>
-        <Button Grid.Row="0" Grid.Column="0">
+        <Button Name="btnAddTriceritots" Click="AddTriceritots" Grid.Row="0" Grid.Column="0">
             <StackPanel>
                 <Image Width="100" Source="Assets/DinoDiner-02.png"/>
                 <TextBlock>Triceritots</TextBlock>
             </StackPanel>
         </Button>
-        <Button  Grid.Row="0" Grid.Column="0">
+        <Button Name="BtnAddMeteorMacCheese" Click="AddMeteorMacCheese" Grid.Row="0" Grid.Column="0">
             <StackPanel>
                 <Image Width="100" Source="Assets/DinoDiner-09.png"/>
                 <TextBlock>Meteor Mac Cheese </TextBlock>
             </StackPanel>
         </Button>
-        <Button Grid.Row="0" Grid.Column="0">
+        <Button Name="BtnAddMozzerellaSticks" Click="AddMezzorellaSticks" Grid.Row="0" Grid.Column="0">
             <StackPanel>
                 <Image Width="100" Source="Assets/DinoDiner-10.png"/>
                 <TextBlock>Mozzerella Sticks</TextBlock>

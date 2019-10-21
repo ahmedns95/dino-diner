@@ -10,11 +10,13 @@ namespace DinoDiner.Menu
         /// <summary>
         /// property for the item
         /// </summary>
-        public ObservableCollection<IOrderItem> Item { get; set; }
+        public ObservableCollection<IOrderItem> Item { get; set; } = new ObservableCollection<IOrderItem>(); 
         /// <summary>
         /// property for the subtotal cost
         /// </summary>
-        public double SubtotalCost { get; }
+        public double SubtotalCost {
+            get;
+        }
         /// <summary>
         /// property for sales tax rate
         /// </summary>
