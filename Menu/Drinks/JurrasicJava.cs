@@ -9,16 +9,16 @@ using System.Text;
 namespace DinoDiner.Menu
 {
     /// <summary>
-    /// Class JurrasicJava thats inherits for the drinks base class 
+    /// Class JurrasicJava thats inherits for the drinks base class
     /// </summary>
-    public class JurrasicJava : Drink ,IOrderItem
+    public class JurrasicJava : Drink, IOrderItem
     {
         /// <summary>
-        /// properties RoomForCream 
+        /// properties RoomForCream
         /// </summary>
         public bool roomForCream = false;
         /// <summary>
-        /// properties Decaf 
+        /// properties Decaf
         /// </summary>
         public bool Decaf = false;
         /// <summary>
@@ -52,7 +52,7 @@ namespace DinoDiner.Menu
         /// </summary>
         public JurrasicJava()
         {
-            
+
             this.Ice = false;
             this.Size = Size.Small;
         }
@@ -69,7 +69,8 @@ namespace DinoDiner.Menu
         /// <summary>
         /// method of type Size to set the price and the calories according to the size
         /// </summary>
-        public override Size Size{
+        public override Size Size
+        {
             get { return size; }
             set
             {
@@ -97,19 +98,18 @@ namespace DinoDiner.Menu
         /// <summary>
         /// Gets a descripting of the order item
         /// </summary>
-        public string Description
+        public override string Description
         {
-            get { return this.ToString(); }
+            get { return size.ToString(); }
         }
         /// <summary>
         /// gets the special of the order item
         /// </summary>
-        public string[] Special
+        public override string[] Special
         {
             get
             {
                 List<string> special = new List<string>();
-                
                 return special.ToArray();
             }
         }

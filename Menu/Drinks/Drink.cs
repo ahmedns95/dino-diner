@@ -1,20 +1,32 @@
 ﻿/*
  * Drink.cs
  * Author: Ahmed Alnassar
- */ 
+ */
 using System;
 using System.Collections.Generic;
 using System.Text;
+using System.ComponentModel;
+
 
 namespace DinoDiner.Menu
 {
     /// <summary>
     /// Drink Base Class
     /// </summary>
-    public abstract class Drink : IMenuItem,IOrderItem
+    public abstract class Drink : IMenuItem, IOrderItem, INotifyPropertyChanged
     {
+
+        public event PropertyChangedEventHandler PropertyChanged;
         /// <summary>
-        /// field for price 
+        ///
+        /// </summary>
+        /// <param name="propertyName"></param>
+        protected void NotifyPropertyChanged(string propertyName)
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+        }
+        /// <summary>
+        /// field for price
         /// </summary>
         protected double price;
         /// <summary>
@@ -44,7 +56,7 @@ namespace DinoDiner.Menu
         /// <summary>
         /// property for ice
         /// </summary>
-        public bool Ice { get { return ice; }set { ice = value; } }
+        public bool Ice { get { return ice; } set { ice = value; } }
         /// <summary>
         /// property for ingredients
         /// </summary>
@@ -71,13 +83,8 @@ namespace DinoDiner.Menu
                 size = value;
             }
         }
-        /// <summary>
-        /// 
-        /// </summary>
+
         public virtual string Description { get; }
-        /// <summary>
-        /// 
-        /// </summary>
         public virtual string[] Special { get; }
     }
 }

@@ -4,7 +4,7 @@ using System.Text;
 
 namespace DinoDiner.Menu
 {
-    public class Water : Drink , IMenuItem
+    public class Water : Drink
     {
         /// <summary>
         /// Gets or sets the lemon property
@@ -16,7 +16,7 @@ namespace DinoDiner.Menu
         /// </summary>
         public Water()
         {
-            
+
             this.Size = Size.Small;
 
         }
@@ -30,14 +30,17 @@ namespace DinoDiner.Menu
                 return ingredients;
             }
         }
-
+        /// <summary>
+        /// to string method
+        /// </summary>
+        /// <returns></returns>
         public override string ToString()
         {
             return size + " Water";
-            
+
         }
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override Size Size
         {
@@ -50,25 +53,60 @@ namespace DinoDiner.Menu
                     case Size.Small:
                         this.price = 0.10;
                         this.calories = 0;
+                        NotifyPropertyChanged("Special");
+                        NotifyPropertyChanged("Description");
                         break;
                     case Size.Medium:
                         this.price = 0.10;
                         this.calories = 0;
+                        NotifyPropertyChanged("Special");
+                        NotifyPropertyChanged("Description");
                         break;
                     case Size.Large:
-                        this.price =0.10;
+                        this.price = 0.10;
                         this.calories = 0;
+                        NotifyPropertyChanged("Special");
+                        NotifyPropertyChanged("Description");
                         break;
                     default:
                         break;
                 }
             }
         }
-
+        /// <summary>
+        /// method to set the lemon to true if lemon added
+        /// </summary>
         public void AddLemon()
         {
             this.lemon = true;
+            NotifyPropertyChanged("Special");
+            NotifyPropertyChanged("Description");
+
         }
-       
+
+
+        /// <summary>
+        /// Gets a descripting of the order item
+        /// </summary>
+        public override string Description
+        {
+            get { return size.ToString(); }
+        }
+        /// <summary>
+        /// gets the special of the order item
+        /// </summary>
+        public override string[] Special
+        {
+            get
+            {
+                List<string> special = new List<string>();
+                if (lemon)
+                {
+                    special.Add("Add Lemon");
+                }
+                return special.ToArray();
+            }
+        }
+
     }
 }

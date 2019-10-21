@@ -24,10 +24,20 @@ namespace DinoDiner.Menu
         /// <summary>
         /// property for sale tax Cost
         /// </summary>
-        public double SalesTaxCost { get; }
+        public double SalesTaxCost {
+            get
+            {
+                return SalesTaxCost * SubtotalCost;
+            }
+        }
         /// <summary>
         /// property for the total cost
         /// </summary>
-        public double TotalCost { get; }
+        public double TotalCost {
+            get
+            {
+                return SubtotalCost + SalesTaxCost;
+            }
+        }
     }
 }
