@@ -339,7 +339,6 @@ namespace MenuTest.Entrees
         public void HoldingTomatoShouldNotNotifySpecialChange()
         {
             TRexKingBurger trex = new TRexKingBurger();
-
             Assert.PropertyChanged(trex, "Special", () =>
             {
                 trex.HoldTomato();

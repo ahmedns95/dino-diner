@@ -28,7 +28,7 @@
                 <TextBlock>Triceritots</TextBlock>
             </StackPanel>
         </Button>
-        <Button Name="BtnAddMeteorMacCheese" Click="AddMeteorMacCheese" Grid.Row="0" Grid.Column="0">
+        <Button Name="BtnAddMeteorMacCheese" Click="AddMeteorMacAndCheese" Grid.Row="0" Grid.Column="0">
             <StackPanel>
                 <Image Width="100" Source="Assets/DinoDiner-09.png"/>
                 <TextBlock>Meteor Mac Cheese </TextBlock>

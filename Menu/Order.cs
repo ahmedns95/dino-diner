@@ -15,7 +15,15 @@ namespace DinoDiner.Menu
         /// property for the subtotal cost
         /// </summary>
         public double SubtotalCost {
-            get;
+            get
+            {
+                double subTotal =0;
+                foreach(IOrderItem item in Item)
+                {
+                    subTotal += item.Price;
+                }
+                return subTotal;
+            }
         }
         /// <summary>
         /// property for sales tax rate

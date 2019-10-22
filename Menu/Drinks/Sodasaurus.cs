@@ -35,6 +35,7 @@ namespace DinoDiner.Menu
         /// Adds the ingredients
         /// </summary>
         public Sodasaurus() {
+            this.Ice = true;
             this.Size = Size.Small;
         }
         public override List<string> Ingredients
@@ -51,7 +52,7 @@ namespace DinoDiner.Menu
         /// <summary>
         /// method of type Size to set the price and the calories according to the size
         /// </summary>
-        public override  Size Size
+        public override Size Size
         {
             get { return size; }
             set
@@ -76,5 +77,26 @@ namespace DinoDiner.Menu
                 }
             }
         }
+        /// <summary>
+        /// Gets a descripting of the order item
+        /// </summary>
+        public override string Description
+        {
+            get { return size.ToString(); }
+        }
+        /// <summary>
+        /// gets the special of the order item
+        /// </summary>
+        public override string[] Special
+        {
+            get
+            {
+                List<string> special = new List<string>();
+                if (!ice) special.Add("Hold Ice");
+
+                return special.ToArray();
+            }
+        }
     }
 }
+

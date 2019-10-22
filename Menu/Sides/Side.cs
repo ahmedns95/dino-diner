@@ -51,7 +51,7 @@ namespace DinoDiner.Menu
             }
         }
 
-        public  string Description { get; }
-        public  string[] Special { get; }
+        public virtual string Description { get; }
+        public  virtual string[] Special { get; }
     }
 }

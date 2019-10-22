@@ -35,6 +35,9 @@ namespace DinoDiner.Menu
             nuggetCount++;
             this.Price += 0.25;
             this.Calories += 59;
+            NotifyPropertyChanged("Special");
+            NotifyPropertyChanged("Descrption");
+
         }
 
         /// <summary>
@@ -52,10 +55,7 @@ namespace DinoDiner.Menu
             get
             {
                 List<string> special = new List<string>();
-                if (nuggetCount>6)
-                {
-                    special.Add("# Extra Nuggets");
-                }
+                if(nuggetCount>6)special.Add(nuggetCount - 6 +" Extra Nuggets");
                 return special.ToArray();
             }
         }

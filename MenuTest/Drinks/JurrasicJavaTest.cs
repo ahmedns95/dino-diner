@@ -91,6 +91,43 @@ namespace MenuTest.Drinks
             Assert.False(jurrasic.roomForCream);
         }
 
+        ////////////////////////////////////////
+        //[Fact]
+        //public void DescriptionShouldBeCorrect()
+        //{
+        //    Brontowurst bw = new Brontowurst();
+        //    Assert.Equal("Jurassic Java", bw.Description);
+        //}
+
+        //[Fact]
+        //public void SpecialShouldBeEmptyByDefault()
+        //{
+        //    Brontowurst bw = new Brontowurst();
+        //    Assert.Empty(bw.Special);
+        //}
+
+        //[Fact]
+        //public void HoldBunShouldAddToSpecial()
+        //{
+        //    Brontowurst bw = new Brontowurst();
+        //    bw.HoldBun();
+        //    Assert.Collection<string>(bw.Special,
+        //        item =>
+        //        {
+        //            Assert.Equal("Hold Whole Wheat Bread", item);
+        //        });
+        //}
+        //[Fact]
+        //public void HoldingBunShouldNotNotifySpecialChange()
+        //{
+        //    Brontowurst bw = new Brontowurst();
+
+        //    Assert.PropertyChanged(bw, "Special", () =>
+        //    {
+        //        bw.HoldBun();
+        //    });
+        //}
+
     }
 
 }

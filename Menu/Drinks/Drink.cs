@@ -68,6 +68,9 @@ namespace DinoDiner.Menu
         public void HoldIce()
         {
             this.ice = false;
+            NotifyPropertyChanged("Special");
+            NotifyPropertyChanged("Description");
+
         }
         /// <summary>
         /// property to Gets and sets the size

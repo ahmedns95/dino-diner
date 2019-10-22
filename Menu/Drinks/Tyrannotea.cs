@@ -35,6 +35,7 @@ namespace DinoDiner.Menu
                 ingredients.Add("Tea");
                 if (lemon) ingredients.Add("Lemon");
                 if (Sweet) ingredients.Add("Cane Sugar");
+                
                 return ingredients;
             }
         }
@@ -49,6 +50,7 @@ namespace DinoDiner.Menu
         public void AddLemon()
         {
             this.lemon = true;
+            NotifyPropertyChanged("special");
         }
         /// <summary>
         /// method of type Size to set the price and the calories according to the size
@@ -91,8 +93,38 @@ namespace DinoDiner.Menu
                 }
             }
         }
+        /// <summary>
+        /// Gets a descripting of the order item
+        /// </summary>
+        public override string Description
+        {
+            get {
+                List<string> description = new List<string>();
+                if (Sweet)
+                {
+                    description.Add("Sweet");
+                }
+                return size.ToString();
+            }
+        }
+        /// <summary>
+        /// gets the special of the order item
+        /// </summary>
+        public override string[] Special
+        {
+            get
+            {
+                List<string> special = new List<string>();
+                if (lemon)
+                {
+                    special.Add("Add Lemon");
+                }
+                if (!ice) special.Add("Hold Ice");
+                return special.ToArray();
+            }
+        }
 
-        
+
 
     }
 }

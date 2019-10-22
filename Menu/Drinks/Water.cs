@@ -104,6 +104,8 @@ namespace DinoDiner.Menu
                 {
                     special.Add("Add Lemon");
                 }
+                if (!ice) special.Add("Hold Ice");
+
                 return special.ToArray();
             }
         }

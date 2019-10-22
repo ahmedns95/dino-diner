@@ -70,14 +70,14 @@ namespace DinoDiner.Menu
         /// <summary>
         /// Gets a descripting of the order item
         /// </summary>
-        public string Description
+        public override string Description
         {
             get { return size.ToString(); }
         }
         /// <summary>
         /// gets the special of the order item
         /// </summary>
-        public string[] Special
+        public override string[] Special
         {
             get
             {

@@ -26,7 +26,7 @@ namespace DinoDiner.Menu
         }
         public override string ToString()
         {
-            return size+" Friceritops";
+            return size+ " Fryceritops";
         }
         public override Size Size
         {
@@ -56,19 +56,18 @@ namespace DinoDiner.Menu
         /// <summary>
         /// Gets a descripting of the order item
         /// </summary>
-        public string Description
+        public override string Description
         {
             get { return size.ToString(); }
         }
         /// <summary>
         /// gets the special of the order item
         /// </summary>
-        public string[] Special
+        public override string[] Special
         {
             get
             {
                 List<string> special = new List<string>();
-                special.Add("");
                 return special.ToArray();
             }
         }
