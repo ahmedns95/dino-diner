@@ -19,7 +19,11 @@
         <ListBox>
             <StackPanel>
                 <TextBlock Text="{Binding Path=Description}"/>
-                <ListBox ItemsSource="{Binding Path=Ingredients}"/>
+                <ListBox ItemsSource="{Binding Path=Ingredients}"
+                         SelectionChanged="OnSelectionChanges"
+                         DataContextChanged="OnDataContextChanges"
+                         />
+                
             </StackPanel>
         </ListBox>
         <Border Grid.Row="2">
