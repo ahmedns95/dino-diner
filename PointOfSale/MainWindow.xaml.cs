@@ -14,6 +14,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using DinoDiner.Menu;
 
+
 namespace PointOfSale
 {
     /// <summary>
@@ -21,35 +22,29 @@ namespace PointOfSale
     /// </summary>
     public partial class MainWindow : Window
     {
+        public NavigationService NavigationService { get; set; }
+
         public MainWindow()
         {
             InitializeComponent();
             Order order = (Order)DataContext;
-            order.Item.Add(new Fryceritops());
-            Tyrannotea tea = new Tyrannotea();
-            tea.Sweet = true;
-            tea.Size = DinoDiner.Menu.Size.Medium;
-            order.Item.Add(new Tyrannotea());
-            //Order order = new Order();
-            //OrderList.DataContext = order;
-            //OrderInterface.DataContext = order;
+            DataContext = order;
+            OrderItems.NavigationService = OrderUI.NavigationService;
         }
-        public void OnLoadCompleted(object sender, NavigationEventArgs args)
+        private void PassDataContentToPage()
         {
-            SetFrameDataContetext();
+            if (OrderUI.Content is FrameworkElement page)
+            {
+                page.DataContext = OrderUI.DataContext;
+            }
         }
-
-        public void OnDataContextChanged(object sender , DependencyPropertyChangedEventArgs args)
+        private void OnLoadCompleted(object sender, EventArgs args)
         {
-            SetFrameDataContetext();
-
+            PassDataContentToPage();
         }
-
-        public void SetFrameDataContetext()
+        private void OnDataContextChanged(object sender, DependencyPropertyChangedEventArgs args)
         {
-            FrameworkElement content = OrderInterface.Content as FrameworkElement;
-            if (content == null) return;
-            content.DataContext = OrderInterface.DataContext;
+            PassDataContentToPage();
         }
     }
 }

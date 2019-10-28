@@ -16,32 +16,32 @@
             </Style>
         </WrapPanel.Resources>
 
-        <Button Name="btnAddFryceritops" Click="AddFryceritops" Grid.Row="0" Grid.Column="0">
+        <Button Name="btnAddFryceritops" Click="SelectFryceritops" Grid.Row="0" Grid.Column="0">
             <StackPanel>
                 <Image Width="100" Source="Assets/DinoDiner-08.png"/>
                 <TextBlock>Fryceritops</TextBlock>
             </StackPanel>
         </Button>
-        <Button Name="btnAddTriceritots" Click="AddTriceritots" Grid.Row="0" Grid.Column="0">
+        <Button Name="btnAddTriceritots" Click="SelectTriceritots" Grid.Row="0" Grid.Column="0">
             <StackPanel>
                 <Image Width="100" Source="Assets/DinoDiner-02.png"/>
                 <TextBlock>Triceritots</TextBlock>
             </StackPanel>
         </Button>
-        <Button Name="BtnAddMeteorMacCheese" Click="AddMeteorMacAndCheese" Grid.Row="0" Grid.Column="0">
+        <Button Name="BtnAddMeteorMacCheese" Click="SelectMeteorMacAndCheese" Grid.Row="0" Grid.Column="0">
             <StackPanel>
                 <Image Width="100" Source="Assets/DinoDiner-09.png"/>
                 <TextBlock>Meteor Mac Cheese </TextBlock>
             </StackPanel>
         </Button>
-        <Button Name="BtnAddMozzerellaSticks" Click="AddMezzorellaSticks" Grid.Row="0" Grid.Column="0">
+        <Button Name="BtnAddMozzerellaSticks" Click="SelectMezzorellaSticks" Grid.Row="0" Grid.Column="0">
             <StackPanel>
                 <Image Width="100" Source="Assets/DinoDiner-10.png"/>
                 <TextBlock>Mozzerella Sticks</TextBlock>
             </StackPanel>
         </Button>
-        <RadioButton Name="Small" Tag ="Small" Click="OnChangeSize" Grid.Row="1" />
-        <RadioButton  Name="Medium" Tag ="Medium" Click="OnChangeSize" Grid.Row="2"/>
-        <RadioButton  Name="Large" Tag ="Large" Click="OnChangeSize" Grid.Row="3"/>
+        <RadioButton Name="Small" Tag ="Small" Click="OnChangeSize" Grid.Row="1" >Small</RadioButton>
+        <RadioButton  Name="Medium" Tag ="Medium" Click="OnChangeSize" Grid.Row="2">Medium</RadioButton>
+        <RadioButton  Name="Large" Tag ="Large" Click="OnChangeSize" Grid.Row="3">Large</RadioButton>
     </WrapPanel>
 </Page>

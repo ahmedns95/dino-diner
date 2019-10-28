@@ -10,31 +10,31 @@
 
     <WrapPanel>
         <WrapPanel.Resources>
-            <Style TargetType="Button">
+            <Style TargetType="Button" >
                 <Setter Property="MinWidth" Value="120"></Setter>
                 <Setter Property="MinHeight" Value="140"></Setter>
             </Style>
         </WrapPanel.Resources>
 
-        <Button Grid.Row="0" Grid.Column="0">
+        <Button Grid.Row="0" Grid.Column="0" Click="SelectSodassaurus">
             <StackPanel>
                 <Image Width="100" Source="Assets/DinoDiner-14.png"/>
                 <TextBlock>Sodasaurus</TextBlock>
             </StackPanel>
         </Button>
-        <Button Grid.Row="0" Grid.Column="0">
+        <Button Grid.Row="0" Grid.Column="0" Click="SelectTryrannotea">
             <StackPanel>
                 <Image Width="100" Source="Assets/DinoDiner-12.png"/>
                 <TextBlock>Tryrannotea</TextBlock>
             </StackPanel>
         </Button>
-        <Button Grid.Row="0" Grid.Column="0">
+        <Button Grid.Row="0" Grid.Column="0" Click="SelectJurassicJava">
             <StackPanel>
                 <Image Width="100" Source="Assets/DinoDiner-13.png"/>
                 <TextBlock>Jurassic Java</TextBlock>
             </StackPanel>
         </Button>
-        <Button Grid.Row="0" Grid.Column="0">
+        <Button Grid.Row="0" Grid.Column="0" Click="SelectWater" >
             <StackPanel>
                 <Image Width="100" Source="Assets/DinoDiner-15.png"/>
                 <TextBlock>Water</TextBlock>
@@ -45,7 +45,7 @@
             <TextBlock>Flavor</TextBlock>
         </Button>
         <Button>
-            <TextBlock>Add Lemon</TextBlock>
+            <TextBlock>Add Lemon </TextBlock>
         </Button>
         <Button>
             <TextBlock>Decaf</TextBlock>
@@ -56,8 +56,8 @@
         <Button>
             <TextBlock>Hold Ice</TextBlock>
         </Button>
-        <RadioButton Grid.Row="0" Grid.Column="0">Small</RadioButton>
-        <RadioButton Grid.Row="0" Grid.Column="0">Medium</RadioButton>
-        <RadioButton Grid.Row="0" Grid.Column="0">Large</RadioButton>
+        <RadioButton Grid.Row="0" Grid.Column="0" Click="ChangeSize">Small</RadioButton>
+        <RadioButton Grid.Row="0" Grid.Column="0" Click="ChangeSize">Medium</RadioButton>
+        <RadioButton Grid.Row="0" Grid.Column="0" Click="ChangeSize">Large</RadioButton>
     </WrapPanel>
 </Page>

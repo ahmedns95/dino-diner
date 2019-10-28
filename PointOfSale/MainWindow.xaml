@@ -7,17 +7,14 @@
         xmlns:menu="clr-namespace:DinoDiner.Menu;assembly=Menu"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
-    <Window.DataContext>
-        <menu:Order/>
-    </Window.DataContext>
+    
     <DockPanel>
-        <local:OrderControl 
-            x:Name="OrderList" 
-            DockPanel.Dock="Right"
-            Width="200"/> 
-        <Frame Name="OrderInterface" 
-               LoadCompleted="OnLoadCompleted"
-               DataContextChanged="OnDataContextChanged"
-               Source="MenuCategorySelection.xaml"></Frame>
+        <local:OrderList x:Name="OrderItems" 
+                         DockPanel.Dock="Right" Width="200" Background="LightSteelBlue"/>
+        <Frame Name="OrderUI" 
+               LoadCompleted="OnLoadCompleted" 
+               DataContextChanged="OnDataContextChanged" 
+               Source="MenuCategorySelection.xaml"/>
+
     </DockPanel>
 </Window>

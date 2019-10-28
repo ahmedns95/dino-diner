@@ -2,11 +2,12 @@
 using System.Collections.Generic;
 using System.Text;
 using DinoDiner.Menu;
+using System.ComponentModel;
 
 
 namespace DinoDiner.Menu
 {
-    public class Fryceritops : Side
+    public class Fryceritops : Side, IMenuItem, IOrderItem, INotifyPropertyChanged
     {
 
         public override List<string> Ingredients
@@ -50,20 +51,23 @@ namespace DinoDiner.Menu
                     default:
                         break;
                 }
+                NotifyPropertyChanged("Descrption");
+
+
             }
 
         }
         /// <summary>
         /// Gets a descripting of the order item
         /// </summary>
-        public override string Description
+        public virtual string Description
         {
-            get { return size.ToString(); }
+            get { return this.ToString(); }
         }
         /// <summary>
         /// gets the special of the order item
         /// </summary>
-        public override string[] Special
+        public  string[] Special
         {
             get
             {

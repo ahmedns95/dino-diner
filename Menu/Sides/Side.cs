@@ -2,12 +2,23 @@
 using System.Collections.Generic;
 using System.Text;
 using DinoDiner.Menu;
-
+using System.ComponentModel;
 namespace DinoDiner.Menu
 {
 
-    public abstract class Side : IMenuItem ,IOrderItem
+    public abstract class Side : IMenuItem ,IOrderItem, INotifyPropertyChanged
     {
+        public event PropertyChangedEventHandler PropertyChanged;
+
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="propertyName"></param>
+        protected void NotifyPropertyChanged(string propertyName)
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+        }
         protected double price;
         protected uint calories;
         protected List<string> ingredients=new List<string>();

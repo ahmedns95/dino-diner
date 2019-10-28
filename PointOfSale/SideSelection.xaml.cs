@@ -34,7 +34,7 @@ namespace PointOfSale
             InitializeComponent();
             this.side = side;
         }
-        public void AddFryceritops(object sender, RoutedEventArgs args)
+        private void SelectFryceritops(object sender, RoutedEventArgs args)
         {
             if (DataContext is Order order)
             {
@@ -43,7 +43,7 @@ namespace PointOfSale
             }
 
         }
-        public void AddMeteorMacAndCheese(object sender, RoutedEventArgs args)
+        public void SelectMeteorMacAndCheese(object sender, RoutedEventArgs args)
         {
             if (DataContext is Order order)
             {
@@ -51,7 +51,7 @@ namespace PointOfSale
                 order.Add(side);
             }
         }
-        public void AddMezzorellaSticks(object sender, RoutedEventArgs args)
+        public void SelectMezzorellaSticks(object sender, RoutedEventArgs args)
         {
             if (DataContext is Order order)
             {
@@ -59,7 +59,7 @@ namespace PointOfSale
                 order.Add(side);
             }
         }
-        public void AddTriceritots(object sender, RoutedEventArgs args)
+        public void SelectTriceritots(object sender, RoutedEventArgs args)
         {
             if (DataContext is Order order)
             {

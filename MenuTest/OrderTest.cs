@@ -7,17 +7,19 @@ using DinoDiner.Menu;
 
 namespace MenuTest
 {
-    public class OrderTest :Order
+    public class OrderTest : Order
     {
-        [Theory]
-        [InlineData(5)]
-        public void PriceShouldBeASum(double price)
-        {
-            CretaceousCombo cc = new CretaceousCombo(new MockEntree(price));
-            cc.Side = new MockSide(cc.Price);
-            cc.Drink = new MockDrink(cc.Price);
-            Assert.Equal(5, cc.Price);
+        //[Theory]
+        //[InlineData(5,5)]
+        //[InlineData(3,8)]
+        //[InlineData(2 ,5,155)]
+        //public void PriceShouldBeASum(double price1, double price2)
+        //{
+        //    Order order = new Order();
+        //    order.Items.Add( new MockSide(price1));
+        //    order.Items.Add( new MockDrink(price2));
+        //    Assert.Equal(price1+price2,);
 
-        }
+        //}
     }
 }

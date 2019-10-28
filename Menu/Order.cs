@@ -68,14 +68,6 @@ namespace DinoDiner.Menu
                 return SubtotalCost + SalesTaxCost;
             }
         }
-        //public Order()
-        //{
-        //    Item = new ObservableCollection<IOrderItem>();
-
-        //    Item.Add(new SteakosaurusBurger());
-        //    Item.Add(new Fryceritops()); 
-
-        //}
         private void OnCollectionChanged(object sender, EventArgs args)
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Items"));

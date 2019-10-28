@@ -6,7 +6,7 @@ using System.ComponentModel;
 
 namespace DinoDiner.Menu
 {
-    public abstract class Entree : IMenuItem ,IOrderItem/*INotifyPropertyChanged*/
+    public abstract class Entree : IMenuItem ,IOrderItem,INotifyPropertyChanged
     {
         public event PropertyChangedEventHandler PropertyChanged;
 
