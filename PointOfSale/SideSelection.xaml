@@ -40,8 +40,8 @@
                 <TextBlock>Mozzerella Sticks</TextBlock>
             </StackPanel>
         </Button>
-        <RadioButton Content="small" Width="49" Height="139"/>
-        <RadioButton Grid.Row="0" Grid.Column="0">Medium</RadioButton>
-        <RadioButton Grid.Row="0" Grid.Column="0">Large</RadioButton>
+        <RadioButton Name="Small" Tag ="Small" Click="OnChangeSize" Grid.Row="1" />
+        <RadioButton  Name="Medium" Tag ="Medium" Click="OnChangeSize" Grid.Row="2"/>
+        <RadioButton  Name="Large" Tag ="Large" Click="OnChangeSize" Grid.Row="3"/>
     </WrapPanel>
 </Page>

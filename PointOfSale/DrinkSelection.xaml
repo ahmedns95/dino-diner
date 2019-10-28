@@ -42,10 +42,16 @@
         </Button>
 
         <Button Click="SelectFlavor" Grid.Row="0" Grid.Column="0">
-            <TextBlock>Sweet/Decaf/Flavor</TextBlock>
+            <TextBlock>Flavor</TextBlock>
         </Button>
         <Button>
             <TextBlock>Add Lemon</TextBlock>
+        </Button>
+        <Button>
+            <TextBlock>Decaf</TextBlock>
+        </Button>
+        <Button>
+            <TextBlock>Sweet</TextBlock>
         </Button>
         <Button>
             <TextBlock>Hold Ice</TextBlock>
