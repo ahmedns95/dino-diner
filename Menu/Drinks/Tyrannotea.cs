@@ -104,7 +104,7 @@ namespace DinoDiner.Menu
                 {
                     description.Add("Sweet");
                 }
-                return size.ToString();
+                return this.ToString();
             }
         }
         /// <summary>

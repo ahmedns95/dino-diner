@@ -65,6 +65,7 @@ namespace DinoDiner.Menu
                     default:
                         break;
                 }
+                NotifyPropertyChanged("Description");
             }
         }
         /// <summary>
@@ -72,7 +73,7 @@ namespace DinoDiner.Menu
         /// </summary>
         public override string Description
         {
-            get { return size.ToString(); }
+            get { return this.ToString(); }
         }
         /// <summary>
         /// gets the special of the order item
@@ -82,7 +83,6 @@ namespace DinoDiner.Menu
             get
             {
                 List<string> special = new List<string>();
-                special.Add("");
                 return special.ToArray();
             }
         }

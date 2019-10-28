@@ -16,7 +16,7 @@
             </Style>
         </WrapPanel.Resources>
 
-        <Button>
+        <Button Click="SelectBrontowrst">
             <StackPanel>
                 <Image Width="100" Source="Assets/DinoDiner-01.png"/>
                 <TextBlock>Brontowrst</TextBlock>
@@ -40,7 +40,7 @@
                 <TextBlock>T-Rex King Burger</TextBlock>
             </StackPanel>
         </Button>
-        <Button >
+        <Button Click="SelectPrehistoric" >
             <StackPanel>
                 <Image Width="100" Source="Assets/DinoDiner-11.png"/>
                 <TextBlock>Prehistoric PB&amp;J </TextBlock>

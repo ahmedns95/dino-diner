@@ -11,6 +11,8 @@
             <RowDefinition Height="20"/>
             <RowDefinition Height="*"/>
             <RowDefinition Height="20"/>
+            <RowDefinition Height="20"/>
+            <RowDefinition Height="20"/>
             <RowDefinition Height="30"/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
@@ -31,8 +33,18 @@
                      >
             <ListBox.ItemTemplate>
                 <DataTemplate>
-                    <StackPanel>
-                        <TextBlock Text="{Binding Path=Description}"/>
+                    <StackPanel Width="190">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition/>
+                                <ColumnDefinition Width="15"/>
+                            </Grid.ColumnDefinitions>
+                            <TextBlock Text="{Binding Path=Description}"/>
+                            <Button Click="OnRemoveItem"
+                                    Background="Red"
+                                    Foreground="White"
+                                    Grid.Column="1">x</Button>
+                        </Grid>
                         <ListBox ItemsSource="{Binding Path=Special}" BorderBrush="White"/>
                     </StackPanel>
                 </DataTemplate>
@@ -43,12 +55,28 @@
                        TextAlignment="Right"
                        Grid.Row="2"
                        />
-        <TextBlock Text="{Binding Path=SubtotalCost}"
+        <TextBlock Text="{Binding Path=SubtotalCost, StringFormat=n2}"
                    FontWeight="Bold"
                    Grid.Row="2"
                    Grid.Column="1"
                    />
-        <Button Grid.Row="3">Cancel</Button>
-        <Button Grid.Column="3" Grid.Row="3">Pay</Button>
+        <TextBlock Text="Sales Tax $"
+                       FontWeight="Bold"
+                       TextAlignment="Right"
+                       Grid.Row="3"
+                       />
+        
+        <TextBlock Text="Total $"
+                       FontWeight="Bold"
+                       TextAlignment="Right"
+                       Grid.Row="4"
+                       />
+        <TextBlock Text="{Binding Path=TotalCost, StringFormat=n2}"
+                   FontWeight="Bold"
+                   Grid.Row="4"
+                   Grid.Column="1"
+                   />
+        <Button Grid.Row="5">Cancel</Button>
+        <Button Grid.Column="3" Grid.Row="5">Pay</Button>
     </Grid>
 </UserControl>

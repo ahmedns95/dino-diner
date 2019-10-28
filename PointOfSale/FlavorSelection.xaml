@@ -16,32 +16,32 @@
             </Style>
         </WrapPanel.Resources>
 
-        <Button>
+        <Button Name="Cherry"  Click="SelectCherry">
             <StackPanel>
                 <TextBlock>Cherry</TextBlock>
             </StackPanel>
         </Button>
-        <Button >
+        <Button Name="Chocolate" Click="SelectChocolate" >
             <StackPanel>
                 <TextBlock>Chocolate</TextBlock>
             </StackPanel>
         </Button>
-        <Button >
+        <Button Name="Cola" Click="SelectCola" >
             <StackPanel>
                 <TextBlock>Cola</TextBlock>
             </StackPanel>
         </Button>
-        <Button >
+        <Button Name="Lime" Click="SlectRootBeer" >
             <StackPanel>
                 <TextBlock>Lime</TextBlock>
             </StackPanel>
         </Button>
-        <Button >
+        <Button Name="Orange" Click="SelectOrange" >
             <StackPanel>
                 <TextBlock>Orange</TextBlock>
             </StackPanel>
         </Button>
-        <Button >
+        <Button Name="RootBeer" Click="SlectRootBeer">
             <StackPanel>
                 <TextBlock>Root Beer</TextBlock>
             </StackPanel>

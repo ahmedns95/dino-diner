@@ -27,7 +27,8 @@ namespace PointOfSale
         public MainWindow()
         {
             InitializeComponent();
-            Order order = (Order)DataContext;
+            Order order = new Order();
+            //order = (Order)DataContext;
             DataContext = order;
             OrderItems.NavigationService = OrderUI.NavigationService;
         }
@@ -45,6 +46,11 @@ namespace PointOfSale
         private void OnDataContextChanged(object sender, DependencyPropertyChangedEventArgs args)
         {
             PassDataContentToPage();
+        }
+        private void SlectReturn(object sender, RoutedEventArgs args)
+        {
+            NavigationService.Navigate(new MenuCatogriPage());//???
+
         }
     }
 }

@@ -52,10 +52,7 @@ namespace DinoDiner.Menu
                         break;
                 }
                 NotifyPropertyChanged("Descrption");
-
-
             }
-
         }
         /// <summary>
         /// Gets a descripting of the order item

@@ -31,7 +31,6 @@ namespace PointOfSale
         {
             InitializeComponent();
             this.drink = drink;
-
         }
         private void ChangeSize(object sender, RoutedEventArgs args)
         {
@@ -46,6 +45,10 @@ namespace PointOfSale
             if(DataContext is Order order)
             {
                 drink = new Sodasaurus();
+                //if ((bool)Small.IsChecked)
+                //{
+                //    drink.Size = DinoDiner.Menu.Size.Small;
+                //}
                 order.Add(drink);
             }
         }
@@ -78,9 +81,12 @@ namespace PointOfSale
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="args"></param>
-        void SelectFlavor(object sender, RoutedEventArgs args)
+        private void SelectFlavor(object sender, RoutedEventArgs args)
         {
-            NavigationService.Navigate(new FlavorSelection());
+            if(drink is Sodasaurus)
+            {
+              //NavigationService.Navigate(new FlavorSelection((Sodasaurus)drink));
+            }
         }
     }
 }

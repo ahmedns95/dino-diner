@@ -107,7 +107,7 @@ namespace DinoDiner.Menu
                 {
                     description.Add("Decaf");
                 }
-                return size.ToString();
+                return this.ToString();
             }
         }
         /// <summary>

@@ -27,7 +27,7 @@ namespace PointOfSale
         {
             InitializeComponent();
         }
-        private void RemoveItem(object sender, RoutedEventArgs args)
+        private void OnRemoveItem(object sender, RoutedEventArgs args)
         {
             if (DataContext is Order order)
             {

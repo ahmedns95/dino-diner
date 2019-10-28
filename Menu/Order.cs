@@ -44,21 +44,24 @@ namespace DinoDiner.Menu
                 return Math.Max(subTotal,0);
             }
         }
-        double salesTaxRate = 0;
+        double salesTaxRate = .1;
 
         /// <summary>
         /// property for sales tax rate
         /// </summary>
-        public double SalesTaxRate { get; set; }
+        public double SalesTaxRate { get; set; } = .1;
+        //double salesTaxRate = 1;
+
         /// <summary>
         /// property for sale tax Cost
         /// </summary>
         public double SalesTaxCost {
             get
             {
-                return SalesTaxCost * SubtotalCost;
+                return SalesTaxRate * SubtotalCost;
             }
         }
+
         /// <summary>
         /// property for the total cost
         /// </summary>
@@ -92,7 +95,12 @@ namespace DinoDiner.Menu
         /// <returns></returns>
         public bool Remove(IOrderItem item)
         {
-            return items.Remove(item);
+            bool remove = items.Remove(item);
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Items"));
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("SubtotalCost"));
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("SalesTaxCost"));
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("TotalCost"));
+            return remove;
         }
     }
 }

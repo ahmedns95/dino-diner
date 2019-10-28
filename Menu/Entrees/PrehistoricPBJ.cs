@@ -7,19 +7,6 @@ namespace DinoDiner.Menu
     {
         private bool peanutButter = true;
         private bool jelly = true;
-        ///// <summary>
-        ///// Event Handeler for PropertyChanged events
-        ///// </summary>
-        //public event PropertyChangedEventHandler PropertyChanged;
-        ///// <summary>
-        ///// 
-        ///// </summary>
-        ///// <param name="propertyName"></param>
-        //protected void NotifyPropertyChanged(string propertyName)
-        //{
-        //    PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
-        //}
-
 
         public override List<string> Ingredients
         {

@@ -11,6 +11,7 @@
     <DockPanel>
         <local:OrderList x:Name="OrderItems" 
                          DockPanel.Dock="Right" Width="200" Background="LightSteelBlue"/>
+        <Button Click="SlectReturn" DockPanel.Dock="Bottom">Return to Catogri Selection</Button>
         <Frame Name="OrderUI" 
                LoadCompleted="OnLoadCompleted" 
                DataContextChanged="OnDataContextChanged" 
