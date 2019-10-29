@@ -34,7 +34,7 @@ namespace PointOfSale
         /// 
         /// </summary>
         /// <param name="drink"></param>
-        public DrinkSelection(Drink drink )
+        public DrinkSelection(Drink drink)
         {
             InitializeComponent();
             this.drink = drink;
@@ -51,6 +51,7 @@ namespace PointOfSale
             {
                 drink.Size = (DDSize)Enum.Parse(typeof(DDSize), element.Tag.ToString());
             }
+
         }
         /// <summary>
         /// 
@@ -178,7 +179,7 @@ namespace PointOfSale
         {
             if (DataContext is Order order)
             {
-                if (CollectionViewSource.GetDefaultView(order.Items).CurrentItem is Drink drink)
+                if (drink != null)
                 {
                     if (drink is Water water)
                     {
@@ -195,7 +196,7 @@ namespace PointOfSale
         {
             if (DataContext is Order order)
             {
-                if (CollectionViewSource.GetDefaultView(order.Items).CurrentItem is Drink drink)
+                if (drink != null)
                 {
                     if (drink is JurrasicJava java)
                     {
@@ -208,7 +209,7 @@ namespace PointOfSale
         {
             if (DataContext is Order order)
             {
-                if (CollectionViewSource.GetDefaultView(order.Items).CurrentItem is Drink drink)
+                if (drink != null)
                 {
                     if (drink is Tyrannotea tea)
                     {
@@ -222,7 +223,7 @@ namespace PointOfSale
 
             if (DataContext is Order order)
             {
-                if (CollectionViewSource.GetDefaultView(order.Items).CurrentItem is Drink drink)
+                if (drink != null)
                 {
                     if (drink is Water water)
                     {

@@ -30,6 +30,7 @@
         <ListBox Grid.Row="1" Name="OrderItems"
                      Grid.ColumnSpan="2"
                      ItemsSource="{Binding Path=Items}"
+                     SelectionChanged="OnSelectionChanged"
                      >
             <ListBox.ItemTemplate>
                 <DataTemplate>

@@ -98,6 +98,8 @@ namespace DinoDiner.Menu
                     default:
                         break;
                 }
+                NotifyPropertyChanged("Description");
+                NotifyPropertyChanged("Special");
             }
         }
 
