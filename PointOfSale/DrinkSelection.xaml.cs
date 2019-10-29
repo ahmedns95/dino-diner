@@ -22,17 +22,28 @@ namespace PointOfSale
     /// </summary>
     public partial class DrinkSelection : Page
     {
-
+        /// <summary>
+        /// 
+        /// </summary>
         private Drink drink;
         public DrinkSelection()
         {
             InitializeComponent();
         }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="drink"></param>
         public DrinkSelection(Drink drink )
         {
             InitializeComponent();
             this.drink = drink;
         }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="args"></param>
         private void ChangeSize(object sender, RoutedEventArgs args)
         {
             if(drink == null) { return; }
@@ -41,6 +52,11 @@ namespace PointOfSale
                 drink.Size = (DDSize)Enum.Parse(typeof(DDSize), element.Tag.ToString());
             }
         }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="args"></param>
         private void SelectSodassaurus(object sender, RoutedEventArgs args)
         {
             if(DataContext is Order order)
@@ -90,7 +106,7 @@ namespace PointOfSale
                 Lemon.IsEnabled = true;
                 Sweet.IsEnabled = true;
                 Flavor.IsEnabled = false;
-                Ice.IsEnabled = true;
+                Ice.IsEnabled = false; 
 
             }
         }
@@ -111,12 +127,13 @@ namespace PointOfSale
                 {
                     drink.Size = DinoDiner.Menu.Size.Large;
                 }
-                order.Add(drink);
                 Decaf.IsEnabled = true;
                 Lemon.IsEnabled = false;
                 Sweet.IsEnabled = false;
                 Flavor.IsEnabled = false;
-                Ice.IsEnabled = true;
+                Ice.IsEnabled = false;
+                order.Add(drink);
+
             }
         }
         private void SelectWater(object sender, RoutedEventArgs args)
@@ -136,12 +153,13 @@ namespace PointOfSale
                 {
                     drink.Size = DinoDiner.Menu.Size.Large;
                 }
-                order.Add(drink);
                 Decaf.IsEnabled = false;
-                Lemon.IsEnabled = false;
+                Lemon.IsEnabled = true;
                 Sweet.IsEnabled = false;
                 Flavor.IsEnabled = false;
                 Ice.IsEnabled = true;
+                order.Add(drink);
+
             }
         }
         /// <summary>
@@ -158,38 +176,65 @@ namespace PointOfSale
         }
         private void SelectLemon(object sender, RoutedEventArgs args)
         {
-            Water water = new Water();
-            if (drink is Water)
+            if (DataContext is Order order)
             {
-                water.AddLemon();
+                if (CollectionViewSource.GetDefaultView(order.Items).CurrentItem is Drink drink)
+                {
+                    if (drink is Water water)
+                    {
+                        water.AddLemon();
+                    }
+                    if (drink is Tyrannotea tea)
+                    {
+                        tea.AddLemon();
+                    }
+                }
             }
-            
-            //if (drink is Sodasaurus)
-            //{
-            //    NavigationService.Navigate(new FlavorSelection((Sodasaurus)drink));
-            //}
         }
         private void SelectDecaf(object sender, RoutedEventArgs args)
         {
-            //if (drink is Sodasaurus)
-            //{
-            //    NavigationService.Navigate(new FlavorSelection((Sodasaurus)drink));
-            //}
+            if (DataContext is Order order)
+            {
+                if (CollectionViewSource.GetDefaultView(order.Items).CurrentItem is Drink drink)
+                {
+                    if (drink is JurrasicJava java)
+                    {
+                        java.AddDecaf();
+                    }
+                }
+            }
         }
         private void SelectSweet(object sender, RoutedEventArgs args)
         {
-            //if (drink is Sodasaurus)
-            //{
-            //    NavigationService.Navigate(new FlavorSelection((Sodasaurus)drink));
-            //}
+            if (DataContext is Order order)
+            {
+                if (CollectionViewSource.GetDefaultView(order.Items).CurrentItem is Drink drink)
+                {
+                    if (drink is Tyrannotea tea)
+                    {
+                        tea.AddSweet();
+                    }
+                }
+            }
         }
         private void SelectHoldIce(object sender, RoutedEventArgs args)
         {
-            
-            //if (drink is Water)
-            //{
-            //    NavigationService.Navigate(new Water(SelectHoldIce));
-            //}
+
+            if (DataContext is Order order)
+            {
+                if (CollectionViewSource.GetDefaultView(order.Items).CurrentItem is Drink drink)
+                {
+                    if (drink is Water water)
+                    {
+                        water.HoldIce();
+                    }
+                    
+                    if (drink is Sodasaurus soda)
+                    {
+                        soda.HoldIce();
+                    }
+                }
+            }
         }
     }
 }

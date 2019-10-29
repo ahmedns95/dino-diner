@@ -20,7 +20,7 @@ namespace DinoDiner.Menu
         /// <summary>
         /// properties Decaf
         /// </summary>
-        public bool Decaf = false;
+        public bool decaf = false;
         /// <summary>
         /// propertie for LeaveRoomForCream
         /// </summary>
@@ -37,7 +37,7 @@ namespace DinoDiner.Menu
         //}
         public override string ToString()
         {
-            if (Decaf)
+            if (decaf)
             {
                 return size + " Decaf Jurassic Java";
             }
@@ -45,6 +45,12 @@ namespace DinoDiner.Menu
             {
                 return size + " Jurassic Java";
             }
+        }
+        public void AddDecaf()
+        {
+            this.decaf = true;
+            NotifyPropertyChanged("Special");
+            NotifyPropertyChanged("Description");
         }
         /// <summary>
         /// Constructor for JurrasicJava
@@ -103,7 +109,7 @@ namespace DinoDiner.Menu
             get
             {
                 List<string> description = new List<string>();
-                if (Decaf)
+                if (decaf)
                 {
                     description.Add("Decaf");
                 }
@@ -118,7 +124,6 @@ namespace DinoDiner.Menu
             get
             {
                 List<string> special = new List<string>();
-                //if (ice) special.Add(size+"Add Ice");/////////
 
                 return special.ToArray();
             }

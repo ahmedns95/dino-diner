@@ -17,7 +17,6 @@ namespace DinoDiner.Menu
         /// Gets or sets the lemon property 
         /// </summary>
         public bool lemon = false;
-        public bool ice = false;
         /// <summary>
         /// Constructor Tyrannotea thats add the ingredients 
         /// and check if lemon or sweet is added
@@ -39,26 +38,29 @@ namespace DinoDiner.Menu
             }
         }
         /// <summary>
-        /// method to heold the ice
-        /// </summary>
-        public void HoldIce()
-        {
-            this.ice = false;
-            NotifyPropertyChanged("Special");
-            NotifyPropertyChanged("Description");
-
-        }
-        public override string ToString()
-        {
-            return size + " Tyrannotea";
-        }
-        /// <summary>
-        /// method to add lemon
+        /// method to set the lemon to true if lemon added
         /// </summary>
         public void AddLemon()
         {
             this.lemon = true;
-            NotifyPropertyChanged("special");
+            NotifyPropertyChanged("Special");
+            NotifyPropertyChanged("Description");
+            NotifyPropertyChanged("Ingredients");
+        }
+        public void AddSweet()
+        {
+            this.sweet = true;
+            NotifyPropertyChanged("Special");
+            NotifyPropertyChanged("Description");
+            NotifyPropertyChanged("Ingredients");
+        }
+        public override string ToString()
+        {
+            if (sweet)
+            {
+                return size + " Sweet Tyrannotea";
+            }else
+            return size + " Tyrannotea";
         }
         /// <summary>
         /// method of type Size to set the price and the calories according to the size
@@ -130,7 +132,7 @@ namespace DinoDiner.Menu
                 {
                     special.Add("Add Lemon");
                 }
-                //if (!ice) special.Add("Hold Ice");/////////////
+                //if (!ice) special.Add("Hold Ice");
                 return special.ToArray();
             }
         }

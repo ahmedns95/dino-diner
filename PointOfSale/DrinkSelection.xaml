@@ -40,7 +40,6 @@
                 <TextBlock>Water</TextBlock>
             </StackPanel>
         </Button>
-
         <Button Name="Flavor" Tag="Flavor" Click="SelectFlavor" Grid.Row="0" Grid.Column="0">
             <TextBlock>Flavor</TextBlock>
         </Button>
