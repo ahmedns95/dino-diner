@@ -30,7 +30,7 @@ namespace PointOfSale
 
         private void SlectHoldPeanutButter(object sender , RoutedEventArgs args)
         {
-            this.pbj.HoldJelly();
+            this.pbj.HoldPeanutButter();
         }
         private void SlectHoldJelly(object sender, RoutedEventArgs args)
         {

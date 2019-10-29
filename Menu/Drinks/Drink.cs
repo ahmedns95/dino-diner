@@ -40,7 +40,7 @@ namespace DinoDiner.Menu
         /// <summary>
         /// field for ice
         /// </summary>
-        protected bool ice = true;
+        //protected bool ice = true;///////////////////////
         /// <summary>
         /// field for size
         /// </summary>
@@ -56,22 +56,22 @@ namespace DinoDiner.Menu
         /// <summary>
         /// property for ice
         /// </summary>
-        public bool Ice { get { return ice; } set { ice = value; } }
+        //public bool Ice { get { return ice; } set { ice = value; } }////////////
         /// <summary>
         /// property for ingredients
         /// </summary>
         public virtual List<string> Ingredients { get { return ingredients; } }
 
-        /// <summary>
-        /// method to heold the ice
-        /// </summary>
-        public void HoldIce()
-        {
-            this.ice = false;
-            NotifyPropertyChanged("Special");
-            NotifyPropertyChanged("Description");
+        ///// <summary>
+        ///// method to heold the ice
+        ///// </summary>
+        //public void HoldIce()
+        //{
+        //    this.ice = false;
+        //    NotifyPropertyChanged("Special");
+        //    NotifyPropertyChanged("Description");/////////////////////////
 
-        }
+        //}
         /// <summary>
         /// property to Gets and sets the size
         /// </summary>

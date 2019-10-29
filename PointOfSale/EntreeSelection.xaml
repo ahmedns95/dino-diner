@@ -22,19 +22,19 @@
                 <TextBlock>Brontowrst</TextBlock>
             </StackPanel>
         </Button>
-        <Button >
+        <Button Click="SeletTVelociWrap">
             <StackPanel>
                 <Image Width="100" Source="Assets/DinoDiner-02.png"/>
                 <TextBlock>Dino-Nuggets</TextBlock>
             </StackPanel>
         </Button>
-        <Button >
+        <Button Click="SelectSteakosaurus" >
             <StackPanel>
                 <Image Width="100" Source="Assets/DinoDiner-05.png"/>
                 <TextBlock>Steakosaurus</TextBlock>
             </StackPanel>
         </Button>
-        <Button>
+        <Button Click="SeletTRxTRexKingBurger" >
             <StackPanel>
                 <Image Width="100" Source="Assets/DinoDiner-06.png"/>
                 <TextBlock>T-Rex King Burger</TextBlock>
@@ -46,13 +46,13 @@
                 <TextBlock>Prehistoric PB&amp;J </TextBlock>
             </StackPanel>
         </Button>
-        <Button >
-            <StackPanel>
+        <Button Click="SeletTPterodactyWings">
+            <StackPanel >
                 <Image Width="100" Source="Assets/DinoDiner-04.png"/>
                 <TextBlock>Pterodacty Wings</TextBlock>
             </StackPanel>
         </Button>
-        <Button >
+        <Button Click="SeletTVelociWrap">
             <StackPanel>
                 <Image Width="100" Source="Assets/DinoDiner-07.png"/>
                 <TextBlock>Veloci-Wrap </TextBlock>

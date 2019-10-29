@@ -12,18 +12,18 @@ namespace DinoDiner.Menu
         /// <summary>
         /// Gets or sets the sweet property 
         /// </summary>
-        public bool Sweet = false;
+        public bool sweet = false;//.////
         /// <summary>
         /// Gets or sets the lemon property 
         /// </summary>
         public bool lemon = false;
+        public bool ice = false;
         /// <summary>
         /// Constructor Tyrannotea thats add the ingredients 
         /// and check if lemon or sweet is added
         /// </summary>
         public Tyrannotea()
         {
-            
             this.Size = Size.Small;
         }
         public override List<string> Ingredients
@@ -34,15 +34,23 @@ namespace DinoDiner.Menu
                 ingredients.Add("Water");
                 ingredients.Add("Tea");
                 if (lemon) ingredients.Add("Lemon");
-                if (Sweet) ingredients.Add("Cane Sugar");
-                
+                if (sweet) ingredients.Add("Cane Sugar");
                 return ingredients;
             }
         }
+        /// <summary>
+        /// method to heold the ice
+        /// </summary>
+        public void HoldIce()
+        {
+            this.ice = false;
+            NotifyPropertyChanged("Special");
+            NotifyPropertyChanged("Description");
+
+        }
         public override string ToString()
         {
-            if(Sweet) return size + " Sweet Tyrannotea";
-            else return size + " Tyrannotea";
+            return size + " Tyrannotea";
         }
         /// <summary>
         /// method to add lemon
@@ -67,7 +75,7 @@ namespace DinoDiner.Menu
                     case Size.Small:
                         this.price = 0.99;
                         this.calories = 8;
-                        if (Sweet)
+                        if (sweet)
                         {
                             this.calories = 16;
                         }
@@ -75,7 +83,7 @@ namespace DinoDiner.Menu
                     case Size.Medium:
                         this.price = 1.49;
                         this.calories = 16;
-                        if (Sweet)
+                        if (sweet)
                         {
                             this.calories = 32;
                         }
@@ -83,14 +91,17 @@ namespace DinoDiner.Menu
                     case Size.Large:
                         this.price = 1.99;
                         this.calories = 32;
-                        if (Sweet)
+                        if (sweet)
                         {
                             this.calories = 64;
                         }
                         break;
+                        
                     default:
                         break;
                 }
+                NotifyPropertyChanged("Special");
+                NotifyPropertyChanged("Description");
             }
         }
         /// <summary>
@@ -100,7 +111,7 @@ namespace DinoDiner.Menu
         {
             get {
                 List<string> description = new List<string>();
-                if (Sweet)
+                if (sweet)
                 {
                     description.Add("Sweet");
                 }
@@ -119,7 +130,7 @@ namespace DinoDiner.Menu
                 {
                     special.Add("Add Lemon");
                 }
-                if (!ice) special.Add("Hold Ice");
+                //if (!ice) special.Add("Hold Ice");/////////////
                 return special.ToArray();
             }
         }

@@ -47,19 +47,54 @@ namespace PointOfSale
                 Brontowurst browm = new Brontowurst();
                 order.Add(browm);
                 //NavigationService.Navigate(new CustomizePrehistoricPBJ(browm));
+            }
+        }
+        private void SelectDinoNuggets(object sender, RoutedEventArgs args)
+        {
+            if (DataContext is Order order)
+            {
+                DinoNuggets nug = new DinoNuggets();
+                order.Add(nug);
+                //NavigationService.Navigate(new CustomizePrehistoricPBJ(pbj));
 
             }
         }
-        //private void SelectPrehistoric(object sender, RoutedEventArgs args)
-        //{
-        //    if (DataContext is Order order)
-        //    {
-        //        PrehistoricPBJ pbj = new PrehistoricPBJ();
-        //        order.Add(pbj);
-        //        NavigationService.Navigate(new CustomizePrehistoricPBJ(pbj));
-
-        //    }
-        //}
+        private void SelectSteakosaurus(object sender, RoutedEventArgs args)
+        {
+            if (DataContext is Order order)
+            {
+                SteakosaurusBurger stekBurger = new SteakosaurusBurger();
+                order.Add(stekBurger);
+                //NavigationService.Navigate(new CustomizePrehistoricPBJ(pbj));
+            }
+        }
+        private void SeletTRxTRexKingBurger(object sender, RoutedEventArgs args)
+        {
+            if (DataContext is Order order)
+            {
+                TRexKingBurger kingBurger = new TRexKingBurger();
+                order.Add(kingBurger);
+                //NavigationService.Navigate(new CustomizePrehistoricPBJ(pbj));
+            }
+        }
+        private void SeletTVelociWrap(object sender, RoutedEventArgs args)
+        {
+            if (DataContext is Order order)
+            {
+                VelociWrap wrap = new VelociWrap();
+                order.Add(wrap);
+                //NavigationService.Navigate(new CustomizePrehistoricPBJ(pbj));
+            }
+        }
+        private void SeletTPterodactyWings(object sender, RoutedEventArgs args)
+        {
+            if (DataContext is Order order)
+            {
+                PterodactylWings wings = new PterodactylWings();
+                order.Add(wings);
+                //NavigationService.Navigate(new CustomizePrehistoricPBJ(pbj));
+            }
+        }
 
     }
 }

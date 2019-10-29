@@ -16,7 +16,7 @@
             </Style>
         </WrapPanel.Resources>
 
-        <Button Grid.Row="0" Grid.Column="0" Click="SelectSodassaurus">
+        <Button Name="Soda" Grid.Row="0" Grid.Column="0" Click="SelectSodassaurus">
             <StackPanel>
                 <Image Width="100" Source="Assets/DinoDiner-14.png"/>
                 <TextBlock>Sodasaurus</TextBlock>
@@ -41,23 +41,23 @@
             </StackPanel>
         </Button>
 
-        <Button Click="SelectFlavor" Grid.Row="0" Grid.Column="0">
+        <Button Name="Flavor" Tag="Flavor" Click="SelectFlavor" Grid.Row="0" Grid.Column="0">
             <TextBlock>Flavor</TextBlock>
         </Button>
-        <Button>
-            <TextBlock>Add Lemon </TextBlock>
+        <Button Name="Lemon" Tag="Lemon" Click="SelectLemon">
+            <TextBlock> Lemon </TextBlock>
         </Button>
-        <Button>
-            <TextBlock>Decaf</TextBlock>
+        <Button Name="Decaf" Tag="Decaf" Click="SelectDecaf">
+            <TextBlock> Decaf</TextBlock>
         </Button>
-        <Button>
-            <TextBlock>Sweet</TextBlock>
+        <Button Name="Sweet" Tag="Sweet" Click="SelectSweet">
+            <TextBlock> Sweet </TextBlock>
         </Button>
-        <Button>
-            <TextBlock>Hold Ice</TextBlock>
+        <Button Name="Ice" Tag="Ice" Click="SelectHoldIce">
+            <TextBlock> Hold Ice </TextBlock>
         </Button>
-        <RadioButton Grid.Row="0" Grid.Column="0" Click="ChangeSize">Small</RadioButton>
-        <RadioButton Grid.Row="0" Grid.Column="0" Click="ChangeSize">Medium</RadioButton>
-        <RadioButton Grid.Row="0" Grid.Column="0" Click="ChangeSize">Large</RadioButton>
+        <RadioButton Name="Small" Tag ="Small" Click="ChangeSize" Grid.Row="0" Grid.Column="0" >Small</RadioButton>
+        <RadioButton Name="Medium" Tag ="Medium" Click="ChangeSize" Grid.Row="0" Grid.Column="0" >Medium</RadioButton>
+        <RadioButton Name="Large" Tag ="Large" Click="ChangeSize" Grid.Row="0" Grid.Column="0" >Large</RadioButton>
     </WrapPanel>
 </Page>

@@ -1,24 +1,24 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using System.ComponentModel;
 
 namespace DinoDiner.Menu
 {
-    public class Water : Drink
+    public class Water : Drink , INotifyPropertyChanged
     {
         /// <summary>
         /// Gets or sets the lemon property
         /// </summary>
         public bool lemon = false;
+        public bool ice = true;
         /// <summary>
         /// Constructor for the water
         /// adds the ingredients and check if the lemon is added
         /// </summary>
         public Water()
         {
-
             this.Size = Size.Small;
-
         }
         public override List<string> Ingredients
         {
@@ -26,9 +26,24 @@ namespace DinoDiner.Menu
             {
                 List<string> ingredients = new List<string>();
                 ingredients.Add("Water");
-                if (lemon) ingredients.Add("Lemon");
+                if (!lemon) ingredients.Add("Lemon");
+                NotifyPropertyChanged("Special");
+                NotifyPropertyChanged("Description");
                 return ingredients;
             }
+
+        }
+
+        /// <summary>
+        /// method to heold the ice
+        /// </summary>
+        public void HoldIce()
+        {
+            this.ice = false;
+            NotifyPropertyChanged("Ingredients");
+            NotifyPropertyChanged("Special");
+            NotifyPropertyChanged("Description");
+
         }
         /// <summary>
         /// to string method
@@ -53,24 +68,20 @@ namespace DinoDiner.Menu
                     case Size.Small:
                         this.price = 0.10;
                         this.calories = 0;
-                        NotifyPropertyChanged("Special");
-                        NotifyPropertyChanged("Description");
                         break;
                     case Size.Medium:
                         this.price = 0.10;
                         this.calories = 0;
-                        NotifyPropertyChanged("Special");
-                        NotifyPropertyChanged("Description");
                         break;
                     case Size.Large:
                         this.price = 0.10;
                         this.calories = 0;
-                        NotifyPropertyChanged("Special");
-                        NotifyPropertyChanged("Description");
                         break;
                     default:
                         break;
                 }
+                NotifyPropertyChanged("Special");
+                NotifyPropertyChanged("Description");
             }
         }
         /// <summary>
@@ -81,7 +92,7 @@ namespace DinoDiner.Menu
             this.lemon = true;
             NotifyPropertyChanged("Special");
             NotifyPropertyChanged("Description");
-
+            NotifyPropertyChanged("Ingredients");
         }
 
 
@@ -105,7 +116,6 @@ namespace DinoDiner.Menu
                     special.Add("Add Lemon");
                 }
                 if (!ice) special.Add("Hold Ice");
-
                 return special.ToArray();
             }
         }

@@ -20,7 +20,7 @@
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
         <Button Click="SlectHoldPeanutButter">Hold Peanut Butter</Button>
-        <Button Click="SlectDone" Grid.Row="1">Hold Jelly</Button>
+        <Button Click="SlectHoldJelly" Grid.Row="1">Hold Jelly</Button>
         <Button Click="SlectDone" Grid.Row="3">done</Button> 
     </Grid>
 </Page>

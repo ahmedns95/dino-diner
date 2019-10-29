@@ -44,12 +44,12 @@ namespace DinoDiner.Menu
                 return Math.Max(subTotal,0);
             }
         }
-        double salesTaxRate = .1;
+        //double salesTaxRate = .1;
 
         /// <summary>
         /// property for sales tax rate
         /// </summary>
-        public double SalesTaxRate { get; set; } = .1;
+        public double SalesTaxRate { get; set; } = .065;
         //double salesTaxRate = 1;
 
         /// <summary>

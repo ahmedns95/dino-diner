@@ -28,13 +28,13 @@ namespace DinoDiner.Menu
         {
             this.roomForCream = true;
         }
-        /// <summary>
-        /// method to AddIce
-        /// </summary>
-        public void AddICe()
-        {
-            this.Ice = true;
-        }
+        ///// <summary>
+        ///// method to AddIce
+        ///// </summary>
+        //public void AddICe()
+        //{
+        //    this.Ice = true;//////////////
+        //}
         public override string ToString()
         {
             if (Decaf)
@@ -53,7 +53,7 @@ namespace DinoDiner.Menu
         public JurrasicJava()
         {
 
-            this.Ice = false;
+            //this.Ice = false;/////////////
             this.Size = Size.Small;
         }
         public override List<string> Ingredients
@@ -118,7 +118,7 @@ namespace DinoDiner.Menu
             get
             {
                 List<string> special = new List<string>();
-                if (ice) special.Add(size+"Add Ice");
+                //if (ice) special.Add(size+"Add Ice");/////////
 
                 return special.ToArray();
             }

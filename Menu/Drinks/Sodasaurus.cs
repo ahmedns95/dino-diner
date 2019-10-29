@@ -18,6 +18,7 @@ namespace DinoDiner.Menu
         /// Gets or sets the flavor property
         /// </summary>
         private SodasaurusFlavor flavor;
+        private bool ice = true;
         /// <summary>
         /// property of Flavor of type SodasaurusFlavor
         /// </summary>
@@ -25,6 +26,17 @@ namespace DinoDiner.Menu
         {
             get { return flavor; }
             set { flavor = value; }
+            
+        }
+        /// <summary>
+        /// method to heold the ice
+        /// </summary>
+        public void HoldIce()
+        {
+            this.ice = false;
+            NotifyPropertyChanged("Special");
+            NotifyPropertyChanged("Description");
+
         }
         public override string ToString()
         {
@@ -35,7 +47,7 @@ namespace DinoDiner.Menu
         /// Adds the ingredients
         /// </summary>
         public Sodasaurus() {
-            this.Ice = true;
+            //this.Ice = true;///////////
             this.Size = Size.Small;
         }
         public override List<string> Ingredients
@@ -47,6 +59,7 @@ namespace DinoDiner.Menu
                 ingredients.Add("Natural Flavors");
                 ingredients.Add("Cane Sugar");
                 return ingredients;
+
             }
         }
         /// <summary>
@@ -75,6 +88,9 @@ namespace DinoDiner.Menu
                     default:
                         break;
                 }
+                NotifyPropertyChanged("Description");
+                NotifyPropertyChanged("Special");
+
             }
         }
         /// <summary>

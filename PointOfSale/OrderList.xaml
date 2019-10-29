@@ -65,7 +65,11 @@
                        TextAlignment="Right"
                        Grid.Row="3"
                        />
-        
+        <TextBlock Text="{Binding Path=SalesTaxCost, StringFormat=n2}"
+                   FontWeight="Bold"
+                   Grid.Row="3"
+                   Grid.Column="1"
+                   />
         <TextBlock Text="Total $"
                        FontWeight="Bold"
                        TextAlignment="Right"

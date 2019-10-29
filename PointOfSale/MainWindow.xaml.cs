@@ -49,7 +49,7 @@ namespace PointOfSale
         }
         private void SlectReturn(object sender, RoutedEventArgs args)
         {
-            NavigationService.Navigate(new MenuCatogriPage());//???
+           // OrderItems.Navigate(new OrderItems());//???
 
         }
     }

@@ -21,35 +21,43 @@ namespace PointOfSale
     /// </summary>
     public partial class FlavorSelection : Page
     {
-        public FlavorSelection()
+        private Sodasaurus soda;
+
+        public FlavorSelection(Sodasaurus soda)
         {
             InitializeComponent();
+            this.soda = soda;
         }
-        //private Sodasaurus soda;
 
-        private void SelectCherry(object sender, RoutedEventArgs e)
+        private void SelectCherry(object sender, RoutedEventArgs args)
         {
-            //soda.Flavor;
+            this.soda.Flavor = SodasaurusFlavor.Cherry;
         }
+
         private void SelectChocolate(object sender, RoutedEventArgs e)
         {
+            soda.Flavor = SodasaurusFlavor.Chocolate;
 
         }
         private void SelectCola(object sender, RoutedEventArgs e)
         {
+            soda.Flavor = SodasaurusFlavor.Cola;
 
         }
 
         private void SelectLime(object sender, RoutedEventArgs e)
         {
+            soda.Flavor = SodasaurusFlavor.Lime;
 
         }
         private void SelectOrange(object sender, RoutedEventArgs e)
         {
+            soda.Flavor = SodasaurusFlavor.Orange;
 
         }
         private void SlectRootBeer(object sender, RoutedEventArgs e)
         {
+            soda.Flavor = SodasaurusFlavor.RootBeer;
 
         }
     }
