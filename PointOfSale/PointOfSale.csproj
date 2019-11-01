@@ -161,7 +161,6 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-<<<<<<< HEAD
     <Resource Include="Assets\DinoDiner-01.png" />
     <Resource Include="Assets\DinoDiner-02.png" />
     <Resource Include="Assets\DinoDiner-03.png" />
@@ -179,8 +178,6 @@
     <Resource Include="Assets\DinoDiner-15.png" />
   </ItemGroup>
   <ItemGroup>
-=======
->>>>>>> f5ab4187b46413023088671f0c3df19701a1aace
     <ProjectReference Include="..\Menu\Menu.csproj">
       <Project>{2f5f801d-c838-4c96-a2be-a40c4dffb719}</Project>
       <Name>Menu</Name>

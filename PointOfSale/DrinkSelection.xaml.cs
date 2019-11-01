@@ -115,7 +115,7 @@ namespace PointOfSale
         {
             if (DataContext is Order order)
             {
-                drink = new JurrasicJava();
+                drink = new JurassicJava();
                 if ((bool)Small.IsChecked)
                 {
                     drink.Size = DinoDiner.Menu.Size.Small;
@@ -198,7 +198,7 @@ namespace PointOfSale
             {
                 if (drink != null)
                 {
-                    if (drink is JurrasicJava java)
+                    if (drink is JurassicJava java)
                     {
                         java.AddDecaf();
                     }

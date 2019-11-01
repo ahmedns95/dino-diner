@@ -18,14 +18,17 @@ namespace DinoDiner.Menu
         /// Gets or sets the flavor property
         /// </summary>
         private SodasaurusFlavor flavor;
-        private bool ice = true;
+        public bool Ice = true;
         /// <summary>
         /// property of Flavor of type SodasaurusFlavor
         /// </summary>
         public SodasaurusFlavor Flavor
         {
             get { return flavor; }
-            set { flavor = value; }
+            set { flavor = value;
+                NotifyPropertyChanged("Description");
+
+            }
             
         }
         /// <summary>
@@ -33,7 +36,7 @@ namespace DinoDiner.Menu
         /// </summary>
         public void HoldIce()
         {
-            this.ice = false;
+            this.Ice = false;
             NotifyPropertyChanged("Special");
             NotifyPropertyChanged("Description");
 
@@ -90,6 +93,7 @@ namespace DinoDiner.Menu
                 }
                 NotifyPropertyChanged("Description");
                 NotifyPropertyChanged("Special");
+                NotifyPropertyChanged("Price");
 
             }
         }
@@ -108,7 +112,7 @@ namespace DinoDiner.Menu
             get
             {
                 List<string> special = new List<string>();
-                if (!ice) special.Add("Hold Ice");
+                if (!Ice) special.Add("Hold Ice");
                 return special.ToArray();
             }
         }

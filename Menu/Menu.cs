@@ -24,7 +24,7 @@ namespace DinoDiner.Menu
                     new TRexKingBurger(),
                     new VelociWrap(),
                     new PrehistoricPBJ(),
-                    new JurrasicJava(),
+                    new JurassicJava(),
                     new Sodasaurus(),
                     new Tyrannotea(),
                     new Water(),

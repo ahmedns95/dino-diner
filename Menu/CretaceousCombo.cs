@@ -53,6 +53,7 @@ namespace DinoDiner.Menu
         public Drink Drink { get { return drink; }
             set {
                 drink = value;
+                NotifyPropertyChanged("Size");
                 NotifyPropertyChanged("Ingredients");
                 NotifyPropertyChanged("Special");
                 NotifyPropertyChanged("Price");
@@ -95,6 +96,7 @@ namespace DinoDiner.Menu
                 NotifyPropertyChanged("Special");
                 NotifyPropertyChanged("Price");
                 NotifyPropertyChanged("Calories");
+                NotifyPropertyChanged("Description");
             }
         }
         /// <summary>

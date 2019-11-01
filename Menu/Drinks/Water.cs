@@ -11,7 +11,7 @@ namespace DinoDiner.Menu
         /// Gets or sets the lemon property
         /// </summary>
         public bool lemon = false;
-        public bool ice = true;
+        public bool Ice = true;
         /// <summary>
         /// Constructor for the water
         /// adds the ingredients and check if the lemon is added
@@ -26,7 +26,7 @@ namespace DinoDiner.Menu
             {
                 List<string> ingredients = new List<string>();
                 ingredients.Add("Water");
-                if (!lemon) ingredients.Add("Lemon");
+                if (lemon) ingredients.Add("Lemon");
                 NotifyPropertyChanged("Special");
                 NotifyPropertyChanged("Description");
                 return ingredients;
@@ -39,7 +39,7 @@ namespace DinoDiner.Menu
         /// </summary>
         public void HoldIce()
         {
-            this.ice = false;
+            this.Ice = false;
             NotifyPropertyChanged("Ingredients");
             NotifyPropertyChanged("Special");
             NotifyPropertyChanged("Description");
@@ -82,6 +82,7 @@ namespace DinoDiner.Menu
                 }
                 NotifyPropertyChanged("Special");
                 NotifyPropertyChanged("Description");
+                NotifyPropertyChanged("Price");
             }
         }
         /// <summary>
@@ -111,11 +112,11 @@ namespace DinoDiner.Menu
             get
             {
                 List<string> special = new List<string>();
-                if (lemon)
+                if (!lemon)
                 {
                     special.Add("Add Lemon");
                 }
-                if (!ice) special.Add("Hold Ice");
+                if (!Ice) special.Add("Hold Ice");
                 return special.ToArray();
             }
         }

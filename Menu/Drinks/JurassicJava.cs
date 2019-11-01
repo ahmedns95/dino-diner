@@ -11,7 +11,7 @@ namespace DinoDiner.Menu
     /// <summary>
     /// Class JurrasicJava thats inherits for the drinks base class
     /// </summary>
-    public class JurrasicJava : Drink, IOrderItem
+    public class JurassicJava : Drink, IOrderItem
     {
         /// <summary>
         /// properties RoomForCream
@@ -21,12 +21,27 @@ namespace DinoDiner.Menu
         /// properties Decaf
         /// </summary>
         public bool decaf = false;
+        public bool Ice = false;
+        /// <summary>
+        /// method to heold the ice
+        /// </summary>
+        public void AddIce()
+        {
+            this.Ice = false;
+            NotifyPropertyChanged("Ingredients");
+            NotifyPropertyChanged("Special");
+            NotifyPropertyChanged("Description");
+
+        }
         /// <summary>
         /// propertie for LeaveRoomForCream
         /// </summary>
         public void LeaveRoomForCream()
         {
             this.roomForCream = true;
+            NotifyPropertyChanged("Ingredients");
+            NotifyPropertyChanged("Special");
+            NotifyPropertyChanged("Description");
         }
         ///// <summary>
         ///// method to AddIce
@@ -56,10 +71,8 @@ namespace DinoDiner.Menu
         /// Constructor for JurrasicJava
         /// Adds the ingredients
         /// </summary>
-        public JurrasicJava()
+        public JurassicJava()
         {
-
-            //this.Ice = false;/////////////
             this.Size = Size.Small;
         }
         public override List<string> Ingredients
@@ -100,6 +113,7 @@ namespace DinoDiner.Menu
                 }
                 NotifyPropertyChanged("Description");
                 NotifyPropertyChanged("Special");
+                NotifyPropertyChanged("Price");
             }
         }
 
@@ -126,7 +140,7 @@ namespace DinoDiner.Menu
             get
             {
                 List<string> special = new List<string>();
-
+                if (Ice) special.Add("Add Ice");
                 return special.ToArray();
             }
         }

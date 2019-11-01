@@ -51,20 +51,22 @@ namespace DinoDiner.Menu
                     default:
                         break;
                 }
-                NotifyPropertyChanged("Descrption");
+                NotifyPropertyChanged("Description");
+                NotifyPropertyChanged("Special");
+                NotifyPropertyChanged("Price");
             }
         }
         /// <summary>
         /// Gets a descripting of the order item
         /// </summary>
-        public virtual string Description
+        public override string Description
         {
             get { return this.ToString(); }
         }
         /// <summary>
         /// gets the special of the order item
         /// </summary>
-        public  string[] Special
+        public override string[] Special
         {
             get
             {

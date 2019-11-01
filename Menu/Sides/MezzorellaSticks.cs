@@ -68,7 +68,8 @@ namespace DinoDiner.Menu
                         break;
                 }
                 NotifyPropertyChanged("Description");
-
+                NotifyPropertyChanged("Special");
+                NotifyPropertyChanged("Price");
             }
 
         }
