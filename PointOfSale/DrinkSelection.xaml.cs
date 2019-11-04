@@ -75,14 +75,12 @@ namespace PointOfSale
                 {
                     drink.Size = DinoDiner.Menu.Size.Large;
                 }
+                order.Add(drink);
                 Decaf.IsEnabled = false;
                 Lemon.IsEnabled = false;
                 Sweet.IsEnabled = false;
                 Flavor.IsEnabled = true;
                 Ice.IsEnabled = true;
-
-
-                order.Add(drink);
             }
         }
         private void SelectTryrannotea(object sender, RoutedEventArgs args)
@@ -185,7 +183,7 @@ namespace PointOfSale
                     {
                         water.AddLemon();
                     }
-                    if (drink is Tyrannotea tea)
+                    else if (drink is Tyrannotea tea)
                     {
                         tea.AddLemon();
                     }
@@ -229,8 +227,7 @@ namespace PointOfSale
                     {
                         water.HoldIce();
                     }
-                    
-                    if (drink is Sodasaurus soda)
+                    else if (drink is Sodasaurus soda)
                     {
                         soda.HoldIce();
                     }

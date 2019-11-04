@@ -16,21 +16,12 @@ namespace DinoDiner.Menu
         /// <summary>
         /// Gets or sets the lemon property 
         /// </summary>
-        public bool lemon = false;
+        public bool lemon = true;
         /// <summary>
         /// Ice
         /// </summary>
         public bool Ice = true;
-        /// <summary>
-        /// method to heold the ice
-        /// </summary>
-        public void HoldIce()
-        {
-            this.Ice = false;
-            NotifyPropertyChanged("Special");
-            NotifyPropertyChanged("Description");
-
-        }
+        
         /// <summary>
         /// Constructor Tyrannotea thats add the ingredients 
         /// and check if lemon or sweet is added
@@ -46,20 +37,10 @@ namespace DinoDiner.Menu
                 List<string> ingredients = new List<string>();
                 ingredients.Add("Water");
                 ingredients.Add("Tea");
-                if (lemon) ingredients.Add("Lemon");
+                if (!lemon) ingredients.Add("Lemon");
                 if (Sweet) ingredients.Add("Cane Sugar");
                 return ingredients;
             }
-        }
-        /// <summary>
-        /// method to set the lemon to true if lemon added
-        /// </summary>
-        public void AddLemon()
-        {
-            this.lemon = true;
-            NotifyPropertyChanged("Special");
-            NotifyPropertyChanged("Description");
-            NotifyPropertyChanged("Ingredients");
         }
         public void AddSweet()
         {
@@ -67,6 +48,26 @@ namespace DinoDiner.Menu
             NotifyPropertyChanged("Description");
             NotifyPropertyChanged("Special");
             NotifyPropertyChanged("Price");
+        }
+        /// <summary>
+        /// method to heold the ice
+        /// </summary>
+        public void HoldIce()
+        {
+            this.Ice = false;
+            NotifyPropertyChanged("Special");
+            NotifyPropertyChanged("Description");
+
+        }
+        /// <summary>
+        /// method to set the lemon to true if lemon added
+        /// </summary>
+        public void AddLemon()
+        {
+            this.lemon = false;
+            NotifyPropertyChanged("Special");
+            NotifyPropertyChanged("Description");
+            NotifyPropertyChanged("Ingredients");
         }
         public override string ToString()
         {
@@ -131,11 +132,8 @@ namespace DinoDiner.Menu
         {
             get {
                 List<string> description = new List<string>();
-                if (Sweet)
-                {
-                    description.Add("Sweet");
-                }
-                return this.ToString();
+                if (Sweet) description.Add("Sweet");
+                return  this.ToString();
             }
         }
         /// <summary>
@@ -146,6 +144,7 @@ namespace DinoDiner.Menu
             get
             {
                 List<string> special = new List<string>();
+                if (!lemon) special.Add("Add Lemon");
                 if (!Ice) special.Add("Hold Ice");
                 return special.ToArray();
             }
