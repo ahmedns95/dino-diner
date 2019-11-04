@@ -5,7 +5,7 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:PointOfSale"
       mc:Ignorable="d" 
-      d:DesignHeight="450" d:DesignWidth="800"
+      d:DesignHeight="450" d:DesignWidth="600"
       Title="EntreeSelection">
 
     <WrapPanel>
@@ -22,13 +22,13 @@
                 <TextBlock>Brontowrst</TextBlock>
             </StackPanel>
         </Button>
-        <Button Click="SeletTVelociWrap">
+        <Button Click="SelectDinoNuggets">
             <StackPanel>
                 <Image Width="100" Source="Assets/DinoDiner-02.png"/>
                 <TextBlock>Dino-Nuggets</TextBlock>
             </StackPanel>
         </Button>
-        <Button Click="SelectSteakosaurus" >
+        <Button Click="SelectSteakosaurusBurger" >
             <StackPanel>
                 <Image Width="100" Source="Assets/DinoDiner-05.png"/>
                 <TextBlock>Steakosaurus</TextBlock>
@@ -46,7 +46,7 @@
                 <TextBlock>Prehistoric PB&amp;J </TextBlock>
             </StackPanel>
         </Button>
-        <Button Click="SeletTPterodactyWings">
+        <Button Click="SeletPterodactyWings">
             <StackPanel >
                 <Image Width="100" Source="Assets/DinoDiner-04.png"/>
                 <TextBlock>Pterodacty Wings</TextBlock>

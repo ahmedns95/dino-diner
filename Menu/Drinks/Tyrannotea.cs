@@ -65,16 +65,20 @@ namespace DinoDiner.Menu
         {
             this.Sweet = true;
             NotifyPropertyChanged("Description");
-            //NotifyPropertyChanged("Special");
-            //NotifyPropertyChanged("Price");
+            NotifyPropertyChanged("Special");
+            NotifyPropertyChanged("Price");
         }
         public override string ToString()
         {
-            if (!Sweet)
+            if (Sweet)
             {
                 return size + " Sweet Tyrannotea";
-            }else
-            return size + " Tyrannotea";
+            }
+            else
+            {
+                return size + " Tyrannotea";
+            }
+                
         }
         /// <summary>
         /// method of type Size to set the price and the calories according to the size
@@ -112,7 +116,6 @@ namespace DinoDiner.Menu
                             this.calories = 64;
                         }
                         break;
-                        
                     default:
                         break;
                 }
@@ -132,9 +135,7 @@ namespace DinoDiner.Menu
                 {
                     description.Add("Sweet");
                 }
-                
                 return this.ToString();
-
             }
         }
         /// <summary>
@@ -145,7 +146,6 @@ namespace DinoDiner.Menu
             get
             {
                 List<string> special = new List<string>();
-                
                 if (!Ice) special.Add("Hold Ice");
                 return special.ToArray();
             }

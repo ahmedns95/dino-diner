@@ -49,7 +49,8 @@ namespace PointOfSale
         }
         private void SlectReturn(object sender, RoutedEventArgs args)
         {
-           // OrderItems.Navigate(new OrderItems());//???
+            //OrderItems.Navigate(new OrderItems());//???
+            //NavigationService.Navigate(new CustomizeCombo());
 
         }
     }

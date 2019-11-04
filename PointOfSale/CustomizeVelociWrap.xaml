@@ -1,12 +1,12 @@
-﻿<Page x:Class="PointOfSale.CustomizePrehistoricPBJ"
+﻿<Page x:Class="PointOfSale.CustomizeVelociWrap"
       xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:PointOfSale"
       mc:Ignorable="d" 
-      d:DesignHeight="450" d:DesignWidth="600"
-      Title="CustomizePrehistoricPBJ">
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="CustomizeVelociWrap">
 
     <Grid>
         <Grid.RowDefinitions>
@@ -19,8 +19,9 @@
             <ColumnDefinition/>
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
-        <Button Click="SlectHoldPeanutButter">Hold Peanut Butter</Button>
-        <Button Click="SlectHoldJelly" Grid.Row="1">Hold Jelly</Button>
-        <Button Click="SlectDone" Grid.Row="2" Grid.Column="2">done</Button> 
+        <Button Click="SlectHoldLettuce" >Hold Lettuce</Button>
+        <Button Click="SlectHoldDressing" Grid.Row="1">Hold Dressing</Button>
+        <Button Click="SlectHoldCheese" Grid.Row="2">Hold Cheese</Button>
+        <Button Click="SelectDone" Grid.Row="2" Grid.Column="2">done</Button>
     </Grid>
 </Page>

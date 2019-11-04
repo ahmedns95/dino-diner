@@ -46,7 +46,7 @@ namespace PointOfSale
             {
                 Brontowurst browm = new Brontowurst();
                 order.Add(browm);
-                //NavigationService.Navigate(new CustomizePrehistoricPBJ(browm));
+                NavigationService.Navigate(new CustomizeBrontowurst(browm));
             }
         }
         private void SelectDinoNuggets(object sender, RoutedEventArgs args)
@@ -55,17 +55,17 @@ namespace PointOfSale
             {
                 DinoNuggets nug = new DinoNuggets();
                 order.Add(nug);
-                //NavigationService.Navigate(new CustomizePrehistoricPBJ(pbj));
+                NavigationService.Navigate(new CustomizeDinoNuggests(nug));
 
             }
         }
-        private void SelectSteakosaurus(object sender, RoutedEventArgs args)
+        private void SelectSteakosaurusBurger(object sender, RoutedEventArgs args)
         {
             if (DataContext is Order order)
             {
                 SteakosaurusBurger stekBurger = new SteakosaurusBurger();
                 order.Add(stekBurger);
-                //NavigationService.Navigate(new CustomizePrehistoricPBJ(pbj));
+                NavigationService.Navigate(new CustomizeSteakosaurusBurger(stekBurger));
             }
         }
         private void SeletTRxTRexKingBurger(object sender, RoutedEventArgs args)
@@ -74,7 +74,7 @@ namespace PointOfSale
             {
                 TRexKingBurger kingBurger = new TRexKingBurger();
                 order.Add(kingBurger);
-                //NavigationService.Navigate(new CustomizePrehistoricPBJ(pbj));
+                NavigationService.Navigate(new CustomizeTRexKingBurger(kingBurger));
             }
         }
         private void SeletTVelociWrap(object sender, RoutedEventArgs args)
@@ -83,10 +83,10 @@ namespace PointOfSale
             {
                 VelociWrap wrap = new VelociWrap();
                 order.Add(wrap);
-                //NavigationService.Navigate(new CustomizePrehistoricPBJ(pbj));
+                NavigationService.Navigate(new CustomizeVelociWrap(wrap));
             }
         }
-        private void SeletTPterodactyWings(object sender, RoutedEventArgs args)
+        private void SeletPterodactyWings(object sender, RoutedEventArgs args)
         {
             if (DataContext is Order order)
             {

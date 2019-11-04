@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using DinoDiner.Menu;
 
 namespace PointOfSale
 {
@@ -32,6 +33,15 @@ namespace PointOfSale
         void SelectSize(object sender, RoutedEventArgs args)
         {
            NavigationService.Navigate(new CustomizeCombo());
+        }
+        private void SelectBrontowrst(object sender, RoutedEventArgs args)
+        {
+            if (DataContext is Order order)
+            {
+                Brontowurst browm = new Brontowurst();
+                order.Add(browm);
+                NavigationService.Navigate(new CustomizeBrontowurst(browm));
+            }
         }
     }
 }
