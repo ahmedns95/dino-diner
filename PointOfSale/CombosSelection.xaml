@@ -22,7 +22,7 @@
                 <TextBlock>Brontowrst Combo</TextBlock>
             </StackPanel>
         </Button>
-        <Button Click="SelectSize" Grid.Row="0" Grid.Column="0">
+        <Button Click="SelectDinoNuggets" Grid.Row="0" Grid.Column="0">
             <StackPanel>
                 <Image Width="100" Source="Assets/DinoDiner-02.png"/>
                 <TextBlock>Dino-Nuggets Combo</TextBlock>

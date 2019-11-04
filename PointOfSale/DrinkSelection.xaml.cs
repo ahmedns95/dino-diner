@@ -158,7 +158,6 @@ namespace PointOfSale
                 Flavor.IsEnabled = false;
                 Ice.IsEnabled = true;
                 order.Add(drink);
-
             }
         }
         /// <summary>

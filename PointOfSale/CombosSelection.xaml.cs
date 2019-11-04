@@ -43,5 +43,14 @@ namespace PointOfSale
                 NavigationService.Navigate(new CustomizeBrontowurst(browm));
             }
         }
+        private void SelectDinoNuggets(object sender, RoutedEventArgs args)
+        {
+            if (DataContext is Order order)
+            {
+                DinoNuggets nug = new DinoNuggets();
+                order.Add(nug);
+                NavigationService.Navigate(new CustomizeDinoNuggests(nug));
+            }
+        }
     }
 }

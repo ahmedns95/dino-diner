@@ -469,7 +469,7 @@ namespace MenuTest
             Tyrannotea tea = new Tyrannotea();
             Assert.PropertyChanged(tea, "Description", () =>
             {
-                tea.Sweet = true;
+                tea.AddSweet();
             });
         }
 

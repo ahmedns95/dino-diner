@@ -27,7 +27,6 @@ namespace DinoDiner.Menu
             get { return flavor; }
             set { flavor = value;
                 NotifyPropertyChanged("Description");
-
             }
             
         }

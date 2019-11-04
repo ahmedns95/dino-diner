@@ -10,7 +10,7 @@ namespace DinoDiner.Menu
         /// <summary>
         /// Gets or sets the lemon property
         /// </summary>
-        public bool lemon = true;
+        public bool lemon = false;
         public bool Ice = true;
         /// <summary>
         /// Constructor for the water
@@ -26,7 +26,7 @@ namespace DinoDiner.Menu
             {
                 List<string> ingredients = new List<string>();
                 ingredients.Add("Water");
-                if (!lemon) ingredients.Add("Lemon");
+                if (lemon) ingredients.Add("Lemon");
                 NotifyPropertyChanged("Special");
                 NotifyPropertyChanged("Description");
                 return ingredients;
@@ -90,7 +90,7 @@ namespace DinoDiner.Menu
         /// </summary>
         public void AddLemon()
         {
-            this.lemon = false;
+            this.lemon = true;
             NotifyPropertyChanged("Special");
             NotifyPropertyChanged("Description");
             NotifyPropertyChanged("Ingredients");

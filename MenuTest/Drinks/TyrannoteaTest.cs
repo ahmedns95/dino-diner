@@ -18,7 +18,7 @@ namespace MenuTest.Drinks
         {
             Tyrannotea tyra = new Tyrannotea();
             tyra.AddLemon();
-            Assert.True(tyra.lemon);
+            Assert.False(tyra.lemon);
         }
         [Fact]
         public void ShouldAddSweetToTyrannotea()
@@ -55,7 +55,7 @@ namespace MenuTest.Drinks
         public void ShouldHaveDefaultLemon()
         {
             Tyrannotea tyra = new Tyrannotea();
-            Assert.False(tyra.lemon);
+            Assert.True(tyra.lemon);
         }
         [Fact]
         public void ShouldHaveDefaultSweet()
