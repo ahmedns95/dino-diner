@@ -38,7 +38,7 @@ namespace PointOfSale
         }
         private void SlectDone(object sender, RoutedEventArgs args)
         {
-            NavigationService.GoBack();
+            NavigationService.Navigate(new CustomizeCombo());
 
         }
     }

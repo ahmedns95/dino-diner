@@ -51,7 +51,6 @@ namespace PointOfSale
             {
                 drink.Size = (DDSize)Enum.Parse(typeof(DDSize), element.Tag.ToString());
             }
-
         }
         /// <summary>
         /// 

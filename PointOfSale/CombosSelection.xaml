@@ -28,34 +28,34 @@
                 <TextBlock>Dino-Nuggets Combo</TextBlock>
             </StackPanel>
         </Button>
-        <Button Click="SelectSize" Grid.Row="0" Grid.Column="0">
+        <Button Click="SelectSteakosaurus" Grid.Row="0" Grid.Column="0">
             <StackPanel>
                 <Image Width="100" Source="Assets/DinoDiner-05.png"/>
                 <TextBlock>Steakosaurus Combo</TextBlock>
             </StackPanel>
         </Button>
-        <Button Click="SelectSize" Grid.Row="0" Grid.Column="0">
+        <Button Click="SelectTRexKingBurger" Grid.Row="0" Grid.Column="0">
              <StackPanel>
                 <Image Width="100" Source="Assets/DinoDiner-06.png"/>
                 <TextBlock>T-Rex King Burger Combo</TextBlock>
              </StackPanel>
-        </Button> 
-        <Button Click="SelectSize" Grid.Row="0" Grid.Column="0">
+        </Button>
+        <Button Click="SelectPrehistoric" Grid.Row="0" Grid.Column="0">
             <StackPanel>
                 <Image Width="100" Source="Assets/DinoDiner-11.png"/>
                 <TextBlock>Prehistoric PB&amp;J Combo</TextBlock>
             </StackPanel>
         </Button>
-        <Button Click="SelectSize" Grid.Row="0" Grid.Column="0">
+        <Button Click="SelectPterodactyWings" Grid.Row="0" Grid.Column="0">
             <StackPanel>
                 <Image Width="100" Source="Assets/DinoDiner-04.png"/>
                 <TextBlock>Pterodacty Wings Combo</TextBlock>
             </StackPanel> 
         </Button>
-        <Button Click="SelectSize" Grid.Row="0" Grid.Column="0">
+        <Button Click="SelectVelociWrap" Grid.Row="0" Grid.Column="0">
             <StackPanel>
                 <Image Width="100" Source="Assets/DinoDiner-07.png"/>
-                <TextBlock>Veloci Combo</TextBlock>
+                <TextBlock>Veloci Wrap Combo</TextBlock>
             </StackPanel>
         </Button>
     </WrapPanel>

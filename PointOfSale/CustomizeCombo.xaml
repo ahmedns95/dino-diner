@@ -20,9 +20,9 @@
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
         <Button Click="SelectSide" Grid.Row="0" Grid.Column="0">Side</Button>
-        <Button Click="SelectSize" Grid.Row="1" Grid.Column="0">Drink</Button>
-        <RadioButton Click="SelectSize" Grid.Row="0" Grid.Column="1" GroupName="Size" Content="Small"/>
-        <RadioButton Click="SelectSize" Grid.Row="1" Grid.Column="1" GroupName="Size" Content="Medium"/>
-        <RadioButton Click="SelectSize" Grid.Row="2" Grid.Column="1" GroupName="Size" Content="Large"/>
+        <Button Click="SelectDrink" Grid.Row="1" Grid.Column="0">Drink</Button>
+        <RadioButton Click="ChangeSize" Grid.Row="0" Grid.Column="1" GroupName="Size" Content="Small"/>
+        <RadioButton Click="ChangeSize" Grid.Row="1" Grid.Column="1" GroupName="Size" Content="Medium"/>
+        <RadioButton Click="ChangeSize" Grid.Row="2" Grid.Column="1" GroupName="Size" Content="Large"/>
     </Grid>
 </Page>
