@@ -23,12 +23,12 @@ namespace PointOfSale
     /// </summary>
     public partial class CustomizeCombo : Page
     {
-        public CustomizeCombo()
+        public CustomizeCombo(CretaceousCombo combo)
         {
             InitializeComponent();
+            this.combo = combo;
         }
-        private CretaceousCombo c;
-        private Entree entree;
+        private CretaceousCombo combo;
         /// <summary>
         /// 
         /// </summary>
@@ -36,10 +36,9 @@ namespace PointOfSale
         /// <param name="args"></param>
         private void ChangeSize(object sender, RoutedEventArgs args)
         {
-            if (entree == null) { return; }
             if (sender is FrameworkElement element)
             {
-                c.Size = (DDSize)Enum.Parse(typeof(DDSize), element.Tag.ToString());
+                combo.Size = (DDSize)Enum.Parse(typeof(DDSize), element.Tag.ToString());
             }
         }
         /// <summary>
@@ -49,7 +48,8 @@ namespace PointOfSale
         /// <param name="args"></param>
         public void SelectDrink(object sender, RoutedEventArgs args)
         {
-            NavigationService.Navigate(new DrinkSelection());
+            
+            NavigationService.Navigate(new DrinkSelection(combo));
         }
         /// <summary>
         /// 
@@ -58,7 +58,7 @@ namespace PointOfSale
         /// <param name="args"></param>
         public void SelectSide(object sender, RoutedEventArgs args)
         {
-            NavigationService.Navigate(new SideSelection());
+            NavigationService.Navigate(new SideSelection(combo));
         }
 
 

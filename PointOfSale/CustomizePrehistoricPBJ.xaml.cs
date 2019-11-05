@@ -22,12 +22,18 @@ namespace PointOfSale
     public partial class CustomizePrehistoricPBJ : Page
     {
         private PrehistoricPBJ pbj;
+        private CretaceousCombo combo;
+
         public CustomizePrehistoricPBJ(PrehistoricPBJ pbj)
         {
             InitializeComponent();
             this.pbj = pbj;// you need this. here 
         }
-
+        public CustomizePrehistoricPBJ(CretaceousCombo combo)
+        {
+            InitializeComponent();
+            this.pbj = (PrehistoricPBJ)combo.Entree;
+        }
         private void SlectHoldPeanutButter(object sender , RoutedEventArgs args)
         {
             this.pbj.HoldPeanutButter();
@@ -38,8 +44,15 @@ namespace PointOfSale
         }
         private void SlectDone(object sender, RoutedEventArgs args)
         {
-            NavigationService.Navigate(new CustomizeCombo());
+            if (combo != null)
+            {
+                NavigationService.Navigate(new CustomizeCombo(combo));
+            }
+            else
+            {
+                NavigationService.Navigate(new MenuCatogriPage());
 
+            }
         }
     }
 }

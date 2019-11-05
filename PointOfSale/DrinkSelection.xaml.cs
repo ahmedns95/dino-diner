@@ -26,9 +26,17 @@ namespace PointOfSale
         /// 
         /// </summary>
         private Drink drink;
+        private CretaceousCombo combo;
         public DrinkSelection()
         {
             InitializeComponent();
+            
+        }
+        public DrinkSelection(CretaceousCombo combo)
+        {
+            InitializeComponent();
+            this.drink = combo.Drink;
+            this.combo = combo;
         }
         /// <summary>
         /// 

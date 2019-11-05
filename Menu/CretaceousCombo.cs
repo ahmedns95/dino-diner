@@ -33,8 +33,20 @@ namespace DinoDiner.Menu
         /// <summary>
         /// Gets and sets the side
         /// </summary>
-        public Side Side { get; set; } = new Fryceritops();
-
+        public Side Side {  get { return side; }
+            set { side = value;
+                NotifyPropertyChanged("Size");
+                NotifyPropertyChanged("Ingredients");
+                NotifyPropertyChanged("Special");
+                NotifyPropertyChanged("Price");
+                NotifyPropertyChanged("Calories");
+                side.PropertyChanged += (object sender, PropertyChangedEventArgs args) =>
+                {
+                    NotifyPropertyChanged(args.PropertyName);
+                };
+            }
+        }
+        private Side side = new Fryceritops();
         private Drink drink = new Sodasaurus();
 
         
@@ -58,6 +70,10 @@ namespace DinoDiner.Menu
                 NotifyPropertyChanged("Special");
                 NotifyPropertyChanged("Price");
                 NotifyPropertyChanged("Calories");
+                drink.PropertyChanged += (object sender, PropertyChangedEventArgs args) =>
+                {
+                    NotifyPropertyChanged(args.PropertyName);
+                };
 
             }
         }
@@ -97,6 +113,7 @@ namespace DinoDiner.Menu
                 NotifyPropertyChanged("Price");
                 NotifyPropertyChanged("Calories");
                 NotifyPropertyChanged("Description");
+
             }
         }
         /// <summary>

@@ -32,7 +32,7 @@ namespace PointOfSale
         /// <param name="args"></param>
         void SelectSize(object sender, RoutedEventArgs args)
         {
-           NavigationService.Navigate(new CustomizeCombo());
+           //NavigationService.Navigate(new CustomizeCombo());
         }
         /// <summary>
         /// 
@@ -46,7 +46,7 @@ namespace PointOfSale
             if (DataContext is Order order)
             {
                 order.Add(c);
-                NavigationService.Navigate(new CustomizeBrontowurst(browm));
+                NavigationService.Navigate(new CustomizeBrontowurst(c));
             }
         }
         /// <summary>
@@ -61,7 +61,7 @@ namespace PointOfSale
             if (DataContext is Order order)
             {
                 order.Add(c);
-                NavigationService.Navigate(new CustomizeDinoNuggests(nug));
+                NavigationService.Navigate(new CustomizeDinoNuggests(c));
             }
         }
         /// <summary>
@@ -76,7 +76,7 @@ namespace PointOfSale
             if (DataContext is Order order)
             {
                 order.Add(c);
-                NavigationService.Navigate(new CustomizeSteakosaurusBurger(sBurger));
+                NavigationService.Navigate(new CustomizeSteakosaurusBurger(c));
             }
         }
         /// <summary>
@@ -92,7 +92,7 @@ namespace PointOfSale
             if (DataContext is Order order)
             {
                 order.Add(c);
-                NavigationService.Navigate(new CustomizeTRexKingBurger(kBurger));
+                NavigationService.Navigate(new CustomizeTRexKingBurger(c));
             }
         }
         /// <summary>
@@ -104,11 +104,10 @@ namespace PointOfSale
         {
             PrehistoricPBJ pre = new PrehistoricPBJ();
             CretaceousCombo c = new CretaceousCombo(pre);
-
             if (DataContext is Order order)
             {
                 order.Add(c);
-                NavigationService.Navigate(new CustomizePrehistoricPBJ(pre));
+                NavigationService.Navigate(new CustomizePrehistoricPBJ(c));
             }
         }
         /// <summary>
@@ -135,12 +134,10 @@ namespace PointOfSale
         {
             VelociWrap wrap = new VelociWrap();
             CretaceousCombo c = new CretaceousCombo(wrap);
-
-
             if (DataContext is Order order)
             {
                 order.Add(c);
-                NavigationService.Navigate(new CustomizeVelociWrap(wrap));
+                NavigationService.Navigate(new CustomizeVelociWrap(c));
             }
         }
     }

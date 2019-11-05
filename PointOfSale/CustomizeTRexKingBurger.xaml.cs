@@ -21,12 +21,18 @@ namespace PointOfSale
     public partial class CustomizeTRexKingBurger : Page
     {
         private TRexKingBurger kingBurger;
+        private CretaceousCombo combo;
         public CustomizeTRexKingBurger(TRexKingBurger kingBurger)
         {
             InitializeComponent();
             this.kingBurger = kingBurger;
         }
-
+        public CustomizeTRexKingBurger(CretaceousCombo combo)
+        {
+            InitializeComponent();
+            this.kingBurger = (TRexKingBurger)combo.Entree;
+            this.combo = combo;
+        }
         private void SlectHoldBun(object sender, RoutedEventArgs args)
         {
             kingBurger.HoldBun();
@@ -61,7 +67,15 @@ namespace PointOfSale
         }
         private void SelectDone(object sender, RoutedEventArgs args)
         {
-            NavigationService.Navigate(new CustomizeCombo());
+            if (combo != null)
+            {
+                NavigationService.Navigate(new CustomizeCombo(combo));
+            }
+            else
+            {
+                NavigationService.Navigate(new MenuCatogriPage());
+
+            }
         }
     }
 }

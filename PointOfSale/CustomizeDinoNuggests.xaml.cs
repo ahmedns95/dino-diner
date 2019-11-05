@@ -21,10 +21,18 @@ namespace PointOfSale
     public partial class CustomizeDinoNuggests : Page
     {
         private DinoNuggets nug;
+        private CretaceousCombo combo;
+
         public CustomizeDinoNuggests(DinoNuggets nug)
         {
             InitializeComponent();
             this.nug = nug;
+        }
+        public CustomizeDinoNuggests(CretaceousCombo combo)
+        {
+            InitializeComponent();
+            this.nug = (DinoNuggets)combo.Entree;
+            this.combo = combo;
         }
         private void SlectAddNuggets(object sender, RoutedEventArgs args)
         {
@@ -32,7 +40,15 @@ namespace PointOfSale
         }
         private void SelectDone(object sender, RoutedEventArgs args)
         {
-            NavigationService.Navigate(new CustomizeCombo());
+            if (combo != null)
+            {
+                NavigationService.Navigate(new CustomizeCombo(combo));
+            }
+            else
+            {
+                NavigationService.Navigate(new MenuCatogriPage());
+
+            }
         }
     }
 }

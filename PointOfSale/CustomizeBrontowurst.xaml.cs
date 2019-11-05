@@ -21,11 +21,19 @@ namespace PointOfSale
     /// </summary>
     public partial class CustomizeBrontowurst : Page
     {
-        private Brontowurst bron;
+        public Brontowurst bron;
+        public  CretaceousCombo combo;
         public CustomizeBrontowurst(Brontowurst bron)
         {
             InitializeComponent();
             this.bron = bron;
+        }
+
+        public CustomizeBrontowurst(CretaceousCombo combo)
+        {
+            InitializeComponent();
+            this.bron = (Brontowurst)combo.Entree;
+            this.combo = combo;
         }
 
         private void SelctHoldBun(object sender, RoutedEventArgs e)
@@ -42,7 +50,14 @@ namespace PointOfSale
         }
         private void SelectDone(object sender, RoutedEventArgs args)
         {
-            NavigationService.Navigate(new CustomizeCombo());
+            if(combo != null)
+            {
+                NavigationService.Navigate(new CustomizeCombo(combo));
+            }
+            else 
+            {
+                NavigationService.Navigate(new MenuCatogriPage());
+            }
 
         }
     }

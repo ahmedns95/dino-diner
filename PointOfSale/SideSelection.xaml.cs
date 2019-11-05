@@ -28,11 +28,17 @@ namespace PointOfSale
 
         }
         private Side side;
-
+        private CretaceousCombo combo;
         public SideSelection(Side side)
         {
             InitializeComponent();
             this.side = side;
+        }
+        public SideSelection(CretaceousCombo combo)
+        {
+            InitializeComponent();
+            this.side = (Side)combo.Side;
+            this.combo = combo;
         }
         private void SelectFryceritops(object sender, RoutedEventArgs args)
         {
@@ -51,7 +57,14 @@ namespace PointOfSale
                 {
                     side.Size = DinoDiner.Menu.Size.Large;
                 }
-                order.Add(side);
+                if(combo!=null){
+                    combo.Side = side;
+                }
+                else
+                {
+                    order.Add(side);
+                }
+                
             }
 
         }

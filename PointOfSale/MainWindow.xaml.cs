@@ -31,6 +31,7 @@ namespace PointOfSale
             //order = (Order)DataContext;
             DataContext = order;
             OrderItems.NavigationService = OrderUI.NavigationService;
+            this.NavigationService = OrderUI.NavigationService;
         }
         private void PassDataContentToPage()
         {
@@ -49,8 +50,9 @@ namespace PointOfSale
         }
         private void SlectReturn(object sender, RoutedEventArgs args)
         {
-            //OrderItems.Navigate(new OrderItems());//???
-            //NavigationService.Navigate(new CustomizeCombo());
+            //NavigationService.Navigate(new Order());//???
+            NavigationService?.Navigate(new MenuCatogriPage());
+
 
         }
     }

@@ -22,10 +22,16 @@ namespace PointOfSale
     public partial class CustomizeVelociWrap : Page
     {
         private VelociWrap wrap;
+        private CretaceousCombo combo;
         public CustomizeVelociWrap(VelociWrap wrap)
         {
             InitializeComponent();
             this.wrap = wrap;
+        }
+        public CustomizeVelociWrap(CretaceousCombo combo)
+        {
+            InitializeComponent();
+            this.wrap = (VelociWrap)combo.Entree;
         }
         private void SlectHoldDressing(object sender, RoutedEventArgs args)
         {
@@ -41,7 +47,15 @@ namespace PointOfSale
         }
         private void SelectDone(object sender, RoutedEventArgs args)
         {
-            NavigationService.GoBack();
+            if (combo != null)
+            {
+                NavigationService.Navigate(new CustomizeCombo(combo));
+            }
+            else
+            {
+                NavigationService.Navigate(new MenuCatogriPage());
+
+            }
         }
     }
 }
