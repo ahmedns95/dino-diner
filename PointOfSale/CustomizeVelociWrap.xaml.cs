@@ -32,6 +32,7 @@ namespace PointOfSale
         {
             InitializeComponent();
             this.wrap = (VelociWrap)combo.Entree;
+            this.combo = combo;
         }
         private void SlectHoldDressing(object sender, RoutedEventArgs args)
         {

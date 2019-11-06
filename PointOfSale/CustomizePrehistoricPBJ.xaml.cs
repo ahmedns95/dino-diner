@@ -29,19 +29,40 @@ namespace PointOfSale
             InitializeComponent();
             this.pbj = pbj;// you need this. here 
         }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="combo"></param>
         public CustomizePrehistoricPBJ(CretaceousCombo combo)
         {
             InitializeComponent();
             this.pbj = (PrehistoricPBJ)combo.Entree;
+            this.combo = combo;
+
         }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="args"></param>
         private void SlectHoldPeanutButter(object sender , RoutedEventArgs args)
         {
             this.pbj.HoldPeanutButter();
         }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="args"></param>
         private void SlectHoldJelly(object sender, RoutedEventArgs args)
         {
             pbj.HoldJelly();
         }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="args"></param>
         private void SlectDone(object sender, RoutedEventArgs args)
         {
             if (combo != null)

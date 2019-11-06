@@ -29,11 +29,18 @@ namespace PointOfSale
         }
         private Side side;
         private CretaceousCombo combo;
+        /// <summary>
+        /// Cinstructor
+        /// </summary>
+        /// <param name="side"></param>
         public SideSelection(Side side)
         {
             InitializeComponent();
             this.side = side;
         }
+        /// <summary>
+        /// Cinstructor
+        /// </summary>
         public SideSelection(CretaceousCombo combo)
         {
             InitializeComponent();
@@ -85,7 +92,14 @@ namespace PointOfSale
                 {
                     side.Size = DinoDiner.Menu.Size.Large;
                 }
-                order.Add(side);
+                if (combo != null)
+                {
+                    combo.Side = side;
+                }
+                else
+                {
+                    order.Add(side);
+                }
             }
         }
         public void SelectMezzorellaSticks(object sender, RoutedEventArgs args)
@@ -105,7 +119,14 @@ namespace PointOfSale
                 {
                     side.Size = DinoDiner.Menu.Size.Large;
                 }
-                order.Add(side);
+                if (combo != null)
+                {
+                    combo.Side = side;
+                }
+                else
+                {
+                    order.Add(side);
+                }
             }
         }
         public void SelectTriceritots(object sender, RoutedEventArgs args)
@@ -125,7 +146,14 @@ namespace PointOfSale
                 {
                     side.Size = DinoDiner.Menu.Size.Large;
                 }
-                order.Add(side);
+                if (combo != null)
+                {
+                    combo.Side = side;
+                }
+                else
+                {
+                    order.Add(side);
+                }
             }
         }
         private void OnChangeSize(object sender, RoutedEventArgs args)

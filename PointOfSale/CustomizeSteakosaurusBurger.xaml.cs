@@ -27,28 +27,55 @@ namespace PointOfSale
         {
             InitializeComponent();
             this.steakBurger = steakBurger;
+
         }
         public CustomizeSteakosaurusBurger(CretaceousCombo combo)
         {
             InitializeComponent();
             this.steakBurger = (SteakosaurusBurger)combo.Entree;
+            this.combo = combo;
         }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="args"></param>
         private void SlectHoldBun(object sender, RoutedEventArgs args)
         {
             steakBurger.HoldBun();
         }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="args"></param>
         private void SlectHoldPickle(object sender, RoutedEventArgs args)
         {
             steakBurger.HoldPickle();
         }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="args"></param>
         private void SlectHoldKetchup(object sender, RoutedEventArgs args)
         {
             steakBurger.HoldKetchup();
         }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="args"></param>
         private void SlectHoldMustard(object sender, RoutedEventArgs args)
         {
             steakBurger.HoldMustard();
         }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="args"></param>
         private void SelectDone(object sender, RoutedEventArgs args)
         {
             if (combo != null)

@@ -36,6 +36,7 @@ namespace PointOfSale
         /// <param name="args"></param>
         private void ChangeSize(object sender, RoutedEventArgs args)
         {
+            if (combo != null) { return; }
             if (sender is FrameworkElement element)
             {
                 combo.Size = (DDSize)Enum.Parse(typeof(DDSize), element.Tag.ToString());
@@ -61,6 +62,14 @@ namespace PointOfSale
             NavigationService.Navigate(new SideSelection(combo));
         }
 
+        public void SelectSize(object sender, RoutedEventArgs args)
+        {
+            //if (combo == null) { return; }
+            //if (sender is FrameworkElement element)
+            //{
+            //    combo.Size = (DDSize)Enum.Parse(typeof(DDSize), element.Tag.ToString());
+            //}
+        }
 
     }
 }

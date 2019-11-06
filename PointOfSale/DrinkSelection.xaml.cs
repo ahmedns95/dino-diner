@@ -82,7 +82,14 @@ namespace PointOfSale
                 {
                     drink.Size = DinoDiner.Menu.Size.Large;
                 }
-                order.Add(drink);
+                if (combo != null)
+                {
+                    combo.Drink = drink;
+                }
+                else
+                {
+                    order.Add(drink);
+                }
                 Decaf.IsEnabled = false;
                 Lemon.IsEnabled = false;
                 Sweet.IsEnabled = false;
@@ -107,7 +114,14 @@ namespace PointOfSale
                 {
                     drink.Size = DinoDiner.Menu.Size.Large;
                 }
-                order.Add(drink);
+                if (combo != null)
+                {
+                    combo.Drink = drink;
+                }
+                else
+                {
+                    order.Add(drink);
+                }
                 Decaf.IsEnabled = false;
                 Lemon.IsEnabled = true;
                 Sweet.IsEnabled = true;
@@ -133,12 +147,20 @@ namespace PointOfSale
                 {
                     drink.Size = DinoDiner.Menu.Size.Large;
                 }
+                if (combo != null)
+                {
+                    combo.Drink = drink;
+                }
+                else
+                {
+                    order.Add(drink);
+                }
                 Decaf.IsEnabled = true;
                 Lemon.IsEnabled = false;
                 Sweet.IsEnabled = false;
                 Flavor.IsEnabled = false;
                 Ice.IsEnabled = false;
-                order.Add(drink);
+                
 
             }
         }
@@ -159,12 +181,20 @@ namespace PointOfSale
                 {
                     drink.Size = DinoDiner.Menu.Size.Large;
                 }
+                if (combo != null)
+                {
+                    combo.Drink = drink;
+                }
+                else
+                {
+                    order.Add(drink);
+                }
                 Decaf.IsEnabled = false;
                 Lemon.IsEnabled = true;
                 Sweet.IsEnabled = false;
                 Flavor.IsEnabled = false;
                 Ice.IsEnabled = true;
-                order.Add(drink);
+                
             }
         }
         /// <summary>
@@ -179,6 +209,11 @@ namespace PointOfSale
               NavigationService.Navigate(new FlavorSelection((Sodasaurus)drink));
             }
         }
+        /// <summary>
+        /// event to handel lemon
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="args"></param>
         private void SelectLemon(object sender, RoutedEventArgs args)
         {
             if (DataContext is Order order)
@@ -196,6 +231,11 @@ namespace PointOfSale
                 }
             }
         }
+        /// <summary>
+        /// event to handel SelectDecaf
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="args"></param>
         private void SelectDecaf(object sender, RoutedEventArgs args)
         {
             if (DataContext is Order order)
@@ -209,6 +249,11 @@ namespace PointOfSale
                 }
             }
         }
+        /// <summary>
+        /// event to handel SelectSweet
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="args"></param>
         private void SelectSweet(object sender, RoutedEventArgs args)
         {
             if (DataContext is Order order)
@@ -222,6 +267,11 @@ namespace PointOfSale
                 }
             }
         }
+        /// <summary>
+        /// event to handel SelectHoldIce
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="args"></param>
         private void SelectHoldIce(object sender, RoutedEventArgs args)
         {
 
