@@ -12,3 +12,11 @@ body {
     padding-right: 15px;
 }
 
+
+#bannerimage {
+    width: 100%;
+    background-image: url(/images/DinoDiner-35.png);
+    height: 500px;
+    background-color: purple;
+    background-position: center;
+}
