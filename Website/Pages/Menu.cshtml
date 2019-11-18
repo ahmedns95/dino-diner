@@ -12,3 +12,13 @@
     Sids
     Drinks
 </h2>
+
+@foreach(var combo in Model.Menu.AvailableCombos)
+{
+<div class="menu-item">
+    <h3>@combo.ToString()</h3>
+    <p>Calories: @combo.Calories </p>
+    <p>Pric: @combo.Price</p>
+    <p>Drink: @combo.Ingredients</p>
+</div>
+}

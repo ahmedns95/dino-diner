@@ -9,8 +9,8 @@ namespace Website.Pages
 {
     public class MenuModel : PageModel
     {
-        public Menu Menu { get; }
 
+        public Menu Menu { get; } = new Menu();
         public void OnGet()
         {
 
