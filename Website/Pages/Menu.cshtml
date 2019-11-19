@@ -5,43 +5,52 @@
 }
 
 <h1>Menu</h1>
-<div>
-    <h2>Combo</h2>
-    @foreach (var combo in Model.Menu.AvailableCombos)
-    {
-        <div class="menu-item">
-            <h3>@combo.ToString()</h3>
-            <p>Calories: @combo.Calories </p>
-            <p>Price: @combo.Price</p>
-            <p>Drink: @Model.Menu.Sodasaurus</p>
-            <p>Sides: @Model.Menu.Fryceritops</p>
-        </div>
-    }
-    <h2>Entrees</h2>
-    @foreach (var Entree in Model.Menu.AvailableEntrees)
-    {
-        <div class="menu-item">
-            <h3>@Entree.ToString()</h3>
-            <p>Calories: @Entree.Calories </p>
-            <p>Pric: @Entree.Price</p>
-        </div>
-    }
-    <h2>Sides</h2>
-    @foreach (var side in Model.Menu.AvailableSides)
-    {
-        <div class="menu-item">
-            <h3>@side.ToString()</h3>
-            <p>Calories: @side.Calories </p>
-            <p>Pric: @side.Price</p>
-        </div>
-    }
-    <h2>Drinks</h2>
-    @foreach (var drink in Model.Menu.AvailableDrinks)
-    {
-        <div class="menu-item">
-            <h3>@drink.ToString()</h3>
-            <p>Calories: @drink.Calories </p>
-            <p>Pric: @drink.Price</p>
-        </div>
-    }
+<div class="row">
+    <div class="column">
+        <h2>Combo</h2>
+        @foreach (var combo in Model.Menu.AvailableCombos)
+        {
+            <div class="menu-item">
+                <h3>@combo.ToString()</h3>
+                <p>Calories: @combo.Calories </p>
+                <p>Price: @combo.Price</p>
+                <p>Drink: @Model.Menu.Sodasaurus</p>
+                <p>Sides: @Model.Menu.Fryceritops</p>
+            </div>
+        }
+    </div>
+    <div class="column">
+        <h2>Entrees</h2>
+        @foreach (var Entree in Model.Menu.AvailableEntrees)
+        {
+    <div class="menu-item">
+        <h3>@Entree.ToString()</h3>
+        <p>Calories: @Entree.Calories </p>
+        <p>Price: @Entree.Price</p>
+    </div>
+        }
+    </div>
+    <div class="column">
+        <h2>Sides</h2>
+        @foreach (var side in Model.Menu.AvailableSides)
+        {
+            <div class="menu-item">
+                <h3>@side.ToString()</h3>
+                <p>Calories: @side.Calories </p>
+                <p>Price: @side.Price</p>
+            </div>
+
+        }
+    </div>
+    <div class="column">
+        <h2>Drinks</h2>
+        @foreach (var drink in Model.Menu.AvailableDrinks)
+        {
+            <div class="menu-item">
+                <h3>@drink.ToString()</h3>
+                <p>Calories: @drink.Calories</p>
+                <p>Price: @drink.Price</p>
+            </div>
+        }
+    </div>
 </div>
