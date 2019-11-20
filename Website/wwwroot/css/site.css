@@ -9,6 +9,7 @@ body {
 .body-content {
     padding-left: 15px;
     padding-right: 15px;
+    
 }
 
 
@@ -29,7 +30,6 @@ body {
     float: left;
     width: 20%;
     padding: 10px;
-    height: 1350px; 
 }
 
 .row:after {
