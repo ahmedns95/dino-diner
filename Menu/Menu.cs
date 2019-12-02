@@ -129,5 +129,31 @@ namespace DinoDiner.Menu
             return st.ToString();
         }
 
+        public List<IMenuItem> Search(List<IMenuItem> entree, string searchString)
+        {
+            List<IMenuItem> res = new List<IMenuItem>();
+            
+            foreach (IMenuItem entr in AvailableMenuItems)
+            {
+                if (entr.ToString() != null && entr.ToString().Contains(searchString))
+                {
+                    res.Add(entr);
+                }
+            }
+            return res;
+        }
+        public  List<IMenuItem> AplyFilter(List<IMenuItem> menu, List<string> side)
+        {
+            List<IMenuItem> result = new List<IMenuItem>();
+            foreach (IMenuItem sidee in menu)
+            {
+                if (side.Contains(sidee.ToString()))
+                {
+                    result.Add(sidee);
+                }
+            }
+            return result;
+        }
+
     }
 }

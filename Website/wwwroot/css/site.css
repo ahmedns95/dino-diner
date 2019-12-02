@@ -37,3 +37,10 @@ body {
     display: table;
     clear: both;
 }
+
+form {
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    min-width: 300px;
+}

@@ -13,33 +13,23 @@ namespace Website.Pages
         public Menu Menu { get; } = new Menu();
         [BindProperty]
         public string search { get; set; }
-        public Entree Entree { get; } 
+        public List<Entree> Entrees { get; set; }
+        public List<Side> Sides { get; set; }
+        public List<Drink> Drinks { get; set; }
+        public List<CretaceousCombo> Combos { get; set; }
+
+        public List<IMenuItem> items { get; set; } 
         public void OnGet()
         {
+            items = Menu.AvailableMenuItems;
         }
-        public static List<IMenuItem> Search(List<IMenuItem> entree, string searchString)
+        public void OnPost()
         {
-            List<IMenuItem> res = new List<IMenuItem>();
-            foreach (Entree entr in entree)
+            if (search != null)
             {
-                if (entr.ToString() != null && entr.ToString().Contains(searchString, StringComparison.InvariantCultureIgnoreCase))
-                {
-                    res.Add(entr);
-                }
+                items = Menu.Search(items, search);
             }
-            return res;
-        }
-        public static List<IMenuItem> FilterBySide(List<IMenuItem> menu, List<string> side)
-        {
-            List<IMenuItem> result = new List<IMenuItem>();
-            foreach (Side sidee in menu)
-            {
-                if (side.Contains(sidee.ToString()))
-                {
-                    result.Add(sidee);
-                }
-            }
-            return result;
+
         }
     }
 }
