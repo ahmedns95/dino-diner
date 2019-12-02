@@ -4,6 +4,21 @@
     ViewData["Title"] = "Menu";
 }
 
+    <h>
+        <form method="post">
+            <input type="text" name="search" id="search" value="@Model.search" />
+            <input type="submit" name="Search" />
+            <input type="reset" value="Clear" />
+
+            <h2>
+                MPAA Rating
+            </h2>
+            <label>
+                <input type="checkbox" name="mpaa" value="G"  />
+                Rated G
+            </label>
+        </form>
+    </h>
 <h1>Menu</h1>
 <div class="row">
     <div class="column">
