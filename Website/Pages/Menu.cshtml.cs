@@ -16,19 +16,30 @@ namespace Website.Pages
         public Entree Entree { get; } 
         public void OnGet()
         {
-
         }
-        public static List<Entree> Search(List<Entree> entree, string searchString)
+        public static List<IMenuItem> Search(List<IMenuItem> entree, string searchString)
         {
-            List<Entree> res = new List<Entree>();
-            foreach (Entree entre in entree)
+            List<IMenuItem> res = new List<IMenuItem>();
+            foreach (Entree entr in entree)
             {
-                if (entre.ToString() != null && entre.ToString().Contains(searchString, StringComparison.InvariantCultureIgnoreCase))
+                if (entr.ToString() != null && entr.ToString().Contains(searchString, StringComparison.InvariantCultureIgnoreCase))
                 {
-                    res.Add(entre);
+                    res.Add(entr);
                 }
             }
             return res;
+        }
+        public static List<IMenuItem> FilterBySide(List<IMenuItem> menu, List<string> side)
+        {
+            List<IMenuItem> result = new List<IMenuItem>();
+            foreach (Side sidee in menu)
+            {
+                if (side.Contains(sidee.ToString()))
+                {
+                    result.Add(sidee);
+                }
+            }
+            return result;
         }
     }
 }

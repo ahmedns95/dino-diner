@@ -4,21 +4,6 @@
     ViewData["Title"] = "Menu";
 }
 
-    <h>
-        <form method="post">
-            <input type="text" name="search" id="search" value="@Model.search" />
-            <input type="submit" name="Search" />
-            <input type="reset" value="Clear" />
-
-            <h2>
-                MPAA Rating
-            </h2>
-            <label>
-                <input type="checkbox" name="mpaa" value="G"  />
-                Rated G
-            </label>
-        </form>
-    </h>
 <h1>Menu</h1>
 <div class="row">
     <div class="column">
@@ -68,8 +53,6 @@
             </div>
 
         }
-    </div>
-    <div class="column">
         <h2>Drinks</h2>
         @foreach (var drink in Model.Menu.AvailableDrinks)
         {
@@ -83,5 +66,41 @@
                 <p>Price: @drink.Price</p>
             </div>
         }
+    </div>
+    <div class="column">
+        <form method="post">
+            <input type="text" name="search" id="search" value="@Model.search" />
+            <input type="submit" name="Search" />
+            <input type="reset" value="Clear" />
+            <input type="submit" name="filter" id="filter" value="ApplyFilter" />
+            <div class="menu-item">
+                <h1>Menu Category</h1>
+                <label>
+                    <input type="checkbox" name="filter" value="Combo" />
+                    Combo
+                </label>
+                <label>
+                    <input type="checkbox" name="Entree" value="Entree" />
+                    Entree
+                </label>
+                <label>
+                    <input type="checkbox" name="Side" value="Side" />
+                    Side
+                </label>
+                <label>
+                    <input type="checkbox" name="Drink" value="Drink" />
+                    Drink
+                </label>
+                <h1>Price</h1>
+                <label>
+                    Min
+                    <input type="number" min="0" max="10" step="0.1" name="minIMDB" value="" />
+                </label>
+                <label>
+                    Max
+                    <input type="number" min="0" max="10" step="0.1" name="maxIMDB" value="" />
+                </label>
+            </div>
+        </form>
     </div>
 </div>
