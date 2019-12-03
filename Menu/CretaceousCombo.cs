@@ -127,7 +127,7 @@ namespace DinoDiner.Menu
                 ingredients.AddRange(Entree.Ingredients);
                 ingredients.AddRange(Side.Ingredients);
                 ingredients.AddRange(Drink.Ingredients);
-                return Ingredients;
+                return ingredients;
             }
         }
         /// <summary>

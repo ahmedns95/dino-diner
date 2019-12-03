@@ -23,97 +23,108 @@
 <div class="row">
     <div class="column">
         <h2>Combo</h2>
-        @foreach (var combo in Model.Menu.AvailableCombos)
+        @foreach (var item in Model.Items)
         {
-            <div class="menu-item">
-                <h3>@combo.ToString()</h3>
-                <p>Calories: @combo.Calories </p>
-                <p>Price: @combo.Price</p>
-                @foreach (string s in combo.Ingredients)
-                {
-                    <p>@s</p>
-                }
-                <p>Drink: @Model.Menu.Sodasaurus</p>
-                <p>Sides: @Model.Menu.Fryceritops</p>
-            </div>
+            if (item is CretaceousCombo combo)
+            {
+                <div class="menu-item">
+                    <h3>@combo.ToString()</h3>
+                    <p>Calories: @combo.Calories </p>
+                    <p>Price: @combo.Price</p>
+                    @foreach (string s in combo.Ingredients)
+                    {
+                        <p>@s</p>
+                    }
+                    <p>Drink: @combo.Drink</p>
+                    <p>Sides: @combo.Side</p>
+                </div>
+            }
         }
     </div>
     <div class="column">
+        
         <h2>Entrees</h2>
-        @foreach (var Entree in Model.Menu.AvailableEntrees)
+        @foreach (var entree in Model.Items)
         {
-            <div class="menu-item">
-                <h3>@Entree.ToString()</h3>
-                @foreach (string s in Entree.Ingredients)
-                {
-                    <p>@s</p>
-                }
-                <p>Calories: @Entree.Calories </p>
-                <p>Price: @Entree.Price</p>
-            </div>
+            if (entree is Entree)
+            {
+                <div class="menu-item">
+                    <h3>@entree.ToString()</h3>
+                    @foreach (string s in entree.Ingredients)
+                    {
+                        <p>@s</p>
+                    }
+                    <p>Calories: @entree.Calories </p>
+                    <p>Price: @entree.Price</p>
+                </div>
+            }
         }
     </div>
     <div class="column">
         <h2>Sides</h2>
-        @foreach (var side in Model.Menu.AvailableSides)
+        @foreach (var side in Model.Items)
         {
-            <div class="menu-item">
-                <h3>@side.ToString()</h3>
-                @foreach (string s in side.Ingredients)
-                {
-                    <p>@s</p>
-                }
-                <p>Calories: @side.Calories </p>
-                <p>Price: @side.Price</p>
-            </div>
-
+            if (side is Side)
+            {
+                <div class="menu-item">
+                    <h3>@side.ToString()</h3>
+                    @foreach (string s in side.Ingredients)
+                    {
+                        <p>@s</p>
+                    }
+                    <p>Calories: @side.Calories </p>
+                    <p>Price: @side.Price</p>
+                </div>
+            }
         }
         <h2>Drinks</h2>
-        @foreach (var drink in Model.Menu.AvailableDrinks)
+        @foreach (var drink in Model.Items)
         {
-            <div class="menu-item">
-                <h3>@drink.ToString()</h3>
-                @foreach (string s in drink.Ingredients)
-                {
-                    <p>@s</p>
-                }
-                <p>Calories: @drink.Calories</p>
-                <p>Price: @drink.Price</p>
-            </div>
+            if (drink is Drink)
+            {
+                <div class="menu-item">
+                    <h3>@drink.ToString()</h3>
+                    @foreach (string s in drink.Ingredients)
+                    {
+                        <p>@s</p>
+                    }
+                    <p>Calories: @drink.Calories</p>
+                    <p>Price: @drink.Price</p>
+                </div>
+            }
         }
     </div>
     <div class="column">
         <form method="post">
-            <input type="text" name="searchText" id="search" value="@Model.search" />
+            <input type="text" name="search" id="search" value="@Model.search" />
             <input type="submit" name="Search" />
-            <input type="submit" name="filter" id="filter" value="@Model.applyFilter" />
 
-            <div class="menu-item">
+            <div class="menuCategory">
                 <h1>Menu Category</h1>
                 <label>
-                    <input type="checkbox" name="menuCategory" value="Combo" checked="" />
+                    <input type="checkbox" name="menuCategory" value="Combo" checked="@Model.menuCategory.Contains("Combo")" />
                     Combo
                 </label>
                 <label>
-                    <input type="checkbox" name="menuCategory" value="Entree" checked=""  />
+                    <input type="checkbox" name="menuCategory" value="Entree" checked="@Model.menuCategory.Contains("Entree")"  />
                     Entree
                 </label>
                 <label>
-                    <input type="checkbox" name="menuCategory" value="Side" checked=""  />
+                    <input type="checkbox" name="menuCategory" value="Side" checked="@Model.menuCategory.Contains("Side")"  />
                     Side
                 </label>
                 <label>
-                    <input type="checkbox" name="menuCategory" value="Drink" checked=""  />
+                    <input type="checkbox" name="menuCategory" value="Drink" checked="@Model.menuCategory.Contains("Drink")"  />
                     Drink
                 </label>
                 <h1>Price</h1>
                 <label>
                     Min
-                    <input id="minimum-price" type="number" min="0" max="10" step="0.1" name="filter" value="@Model.applyFilter" />
+                    <input id="minimum-price" type="number" min="0" max="10" step="0.1" name="filter" value="" />
                 </label>
                 <label>
                     Max
-                    <input id="maximum-price" type="number" min="0" max="10" step="0.1" name="filter" value="@Model.applyFilter" />
+                    <input id="maximum-price" type="number" min="0" max="10" step="0.1" name="filter" value="" />
                 </label>
             </div>
         </form>

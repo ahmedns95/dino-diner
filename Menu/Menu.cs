@@ -17,6 +17,13 @@ namespace DinoDiner.Menu
             {
                 List<IMenuItem> avaiMenuItems = new List<IMenuItem>
                 {
+                    new CretaceousCombo(new Brontowurst()),
+                    new CretaceousCombo (new DinoNuggets()),
+                    new CretaceousCombo (new PrehistoricPBJ()),
+                    new CretaceousCombo (new SteakosaurusBurger()),
+                    new CretaceousCombo (new TRexKingBurger()),
+                    new CretaceousCombo (new VelociWrap()),
+                    new CretaceousCombo (new PrehistoricPBJ()),
                     new Brontowurst(),
                     new DinoNuggets(),
                     new PrehistoricPBJ(),
@@ -99,13 +106,13 @@ namespace DinoDiner.Menu
             {
                 List<IMenuItem> avaiCombos = new List<IMenuItem>
                 {
-                    new Brontowurst(),
-                    new DinoNuggets(),
-                    new PrehistoricPBJ(),
-                    new SteakosaurusBurger(),
-                    new TRexKingBurger(),
-                    new VelociWrap(),
-                    new PrehistoricPBJ()
+                    new CretaceousCombo(new Brontowurst()),
+                   new CretaceousCombo (new DinoNuggets()),
+                   new CretaceousCombo (new PrehistoricPBJ()),
+                   new CretaceousCombo (new SteakosaurusBurger()),
+                   new CretaceousCombo (new TRexKingBurger()),
+                   new CretaceousCombo (new VelociWrap()),
+                   new CretaceousCombo (new PrehistoricPBJ())
                 };
                 return avaiCombos;
             }
@@ -142,12 +149,27 @@ namespace DinoDiner.Menu
             }
             return res;
         }
-        public  List<IMenuItem> AplyFilter(List<IMenuItem> searchRes)
+        public  List<IMenuItem> AplyFilter(List<IMenuItem> searchRes, List<string> menuCatogri)
         {
             List<IMenuItem> result = new List<IMenuItem>();
-            foreach (IMenuItem filters in searchRes)
+            foreach (IMenuItem item in searchRes)
             {
-                
+                if(item is Entree && menuCatogri.Contains("Entree"))
+                {
+                    result.Add(item);
+                }
+                else if (item is CretaceousCombo && menuCatogri.Contains("Combo"))
+                {
+                    result.Add(item);
+                }
+                else if (item is Side && menuCatogri.Contains("Side"))
+                {
+                    result.Add(item);
+                }
+                else if (item is Drink && menuCatogri.Contains("Drink"))
+                {
+                    result.Add(item);
+                }
             }
             return result;
         }
@@ -164,6 +186,5 @@ namespace DinoDiner.Menu
             }
             return results;
         }
-
     }
 }

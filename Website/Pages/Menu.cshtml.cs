@@ -9,7 +9,6 @@ namespace Website.Pages
 {
     public class MenuModel : PageModel
     {
-
         public Menu Menu { get; } = new Menu();
         [BindProperty]
         public string search { get; set; }
@@ -22,7 +21,7 @@ namespace Website.Pages
         //[BindProperty]
         public List<CretaceousCombo> Combos { get; set; }
         [BindProperty]
-        public string applyFilter { get; set; }
+        public List<string> menuCategory { get; set; } = new List<string>();
         public List<IMenuItem> Items { get; set; } 
         public void OnGet()
         {
@@ -30,14 +29,16 @@ namespace Website.Pages
         }
         public void OnPost()
         {
+            Items = Menu.AvailableMenuItems;
+
             if (search != null)
             {
                 Items = Menu.Search(Items,search);
             }
-            //if(Entrees != null)
-            //{
-            //    //Items = Menu.AplyFilter(Menu.AvailableEntrees);
-            //}
+            if (menuCategory.Count != 0)
+            {
+                Items = Menu.AplyFilter(Items,menuCategory);
+            }
 
         }
     }
