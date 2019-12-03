@@ -145,7 +145,7 @@ namespace DinoDiner.Menu
         public  List<IMenuItem> AplyFilter(List<IMenuItem> menu, List<string> side)
         {
             List<IMenuItem> result = new List<IMenuItem>();
-            foreach (IMenuItem sidee in menu)
+            foreach (IMenuItem sidee in AvailableMenuItems)
             {
                 if (side.Contains(sidee.ToString()))
                 {
@@ -153,6 +153,19 @@ namespace DinoDiner.Menu
                 }
             }
             return result;
+        }
+        public  List<IMenuItem> FilterByPrice(List<IMenuItem> movies, float minPrice, float maxPrice)
+        {
+            List<IMenuItem> results = new List<IMenuItem>();
+            foreach (IMenuItem items in AvailableMenuItems)
+            {
+                if (items.Price != 0 && minPrice >= items.Price
+                    && maxPrice <= items.Price)
+                {
+                    results.Add(items);
+                }
+            }
+            return results;
         }
 
     }

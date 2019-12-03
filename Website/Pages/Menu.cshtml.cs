@@ -13,11 +13,16 @@ namespace Website.Pages
         public Menu Menu { get; } = new Menu();
         [BindProperty]
         public string search { get; set; }
+        [BindProperty]
         public List<Entree> Entrees { get; set; }
+        [BindProperty]
         public List<Side> Sides { get; set; }
+        [BindProperty]
         public List<Drink> Drinks { get; set; }
+        [BindProperty]
         public List<CretaceousCombo> Combos { get; set; }
-
+        [BindProperty]
+        public string applyFilter { get; set; }
         public List<IMenuItem> items { get; set; } 
         public void OnGet()
         {
@@ -28,6 +33,10 @@ namespace Website.Pages
             if (search != null)
             {
                 items = Menu.Search(items, search);
+            }
+            if(Entrees != null)
+            {
+                //items = Menu.AplyFilter(Menu.AvailableEntrees);
             }
 
         }

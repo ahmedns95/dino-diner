@@ -7,10 +7,7 @@
 <h1>Menu</h1>
 @foreach (var item in Model.items)
 {
-    @if (item is Entree)
-    {
-        @Model.Entrees.Add(item);
-    }
+    
 }
 <div class="row">
     <div class="column">
@@ -83,31 +80,31 @@
             <input type="submit" name="filter" id="filter" value="ApplyFilter" />
             <div class="menu-item">
                 <h1>Menu Category</h1>
-                <label>
-                    <input type="checkbox" name="filter" value="Combo" checked="@Model.Entree" />
-                    Combo
-                </label>
-                <label>
-                    <input type="checkbox" name="Entree" value="Entree" />
-                    Entree
-                </label>
-                <label>
-                    <input type="checkbox" name="Side" value="Side" />
-                    Side
-                </label>
-                <label>
-                    <input type="checkbox" name="Drink" value="Drink" />
-                    Drink
-                </label>
-                <h1>Price</h1>
-                <label>
-                    Min
-                    <input id="minimum-price" type="number" min="0" max="10" step="0.1" name="filter" value="" />
-                </label>
-                <label>
-                    Max
-                    <input id="maximum-price" type="number" min="0" max="10" step="0.1" name="filter" value="" />
-                </label>
+                    <label>
+                        <input type="checkbox" name="menuCategory" value="Combo" checked="@Model.Combos" />
+                        Combo
+                    </label>
+                    <label>
+                        <input type="checkbox" name="menuCategory" value="Entree" checked="@Model.Entrees"/>
+                        Entree
+                    </label>
+                    <label>
+                        <input type="checkbox" name="menuCategory" value="Side" checked="@Model.Sides"/>
+                        Side
+                    </label>
+                    <label>
+                        <input type="checkbox" name="menuCategory" value="Drink" checked="@Model.Drinks"/>
+                        Drink
+                    </label>
+                    <h1>Price</h1>
+                    <label>
+                        Min
+                        <input id="minimum-price" type="number" min="0" max="10" step="0.1" name="filter" value="@Model.applyFilter" />
+                    </label>
+                    <label>
+                        Max
+                        <input id="maximum-price" type="number" min="0" max="10" step="0.1" name="filter" value="@Model.applyFilter" />
+                    </label>
             </div>
         </form>
     </div>
