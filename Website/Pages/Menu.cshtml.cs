@@ -13,13 +13,13 @@ namespace Website.Pages
         public Menu Menu { get; } = new Menu();
         [BindProperty]
         public string search { get; set; }
-        [BindProperty]
+        //[BindProperty]
         public List<Entree> Entrees { get; set; }
-        [BindProperty]
+        //[BindProperty]
         public List<Side> Sides { get; set; }
-        [BindProperty]
+        //[BindProperty]
         public List<Drink> Drinks { get; set; }
-        [BindProperty]
+        //[BindProperty]
         public List<CretaceousCombo> Combos { get; set; }
         [BindProperty]
         public string applyFilter { get; set; }
@@ -34,10 +34,10 @@ namespace Website.Pages
             {
                 items = Menu.Search(items, search);
             }
-            if(Entrees != null)
-            {
-                //items = Menu.AplyFilter(Menu.AvailableEntrees);
-            }
+            //if(Entrees != null)
+            //{
+            //    //items = Menu.AplyFilter(Menu.AvailableEntrees);
+            //}
 
         }
     }
