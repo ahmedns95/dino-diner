@@ -12,7 +12,7 @@ namespace Website.Pages
 
         public Menu Menu { get; } = new Menu();
         [BindProperty]
-        public string search { get; set; }
+        public string Search { get; set; }
         //[BindProperty]
         public List<Entree> Entrees { get; set; }
         //[BindProperty]
@@ -30,9 +30,9 @@ namespace Website.Pages
         }
         public void OnPost()
         {
-            if (search != null)
+            if (Search != null)
             {
-                Items = Menu.Search(Items, search);
+                Items = Menu.Search(searchText.value);
             }
             //if(Entrees != null)
             //{
