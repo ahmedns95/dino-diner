@@ -23,20 +23,20 @@ namespace Website.Pages
         public List<CretaceousCombo> Combos { get; set; }
         [BindProperty]
         public string applyFilter { get; set; }
-        public List<IMenuItem> items { get; set; } 
+        public List<IMenuItem> Items { get; set; } 
         public void OnGet()
         {
-            items = Menu.AvailableMenuItems;
+            Items = Menu.AvailableMenuItems;
         }
         public void OnPost()
         {
             if (search != null)
             {
-                items = Menu.Search(items, search);
+                Items = Menu.Search(Items, search);
             }
             //if(Entrees != null)
             //{
-            //    //items = Menu.AplyFilter(Menu.AvailableEntrees);
+            //    //Items = Menu.AplyFilter(Menu.AvailableEntrees);
             //}
 
         }
