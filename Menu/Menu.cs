@@ -129,7 +129,7 @@ namespace DinoDiner.Menu
             return st.ToString();
         }
 
-        public List<IMenuItem> Search( string searchString)
+        public List<IMenuItem> Search(List<IMenuItem> items, string searchString)
         {
             List<IMenuItem> res = new List<IMenuItem>();
             
@@ -142,15 +142,12 @@ namespace DinoDiner.Menu
             }
             return res;
         }
-        public  List<IMenuItem> AplyFilter(List<IMenuItem> searchRes, List<string> side)
+        public  List<IMenuItem> AplyFilter(List<IMenuItem> searchRes)
         {
             List<IMenuItem> result = new List<IMenuItem>();
-            foreach (IMenuItem filt in searchRes)
+            foreach (IMenuItem filters in searchRes)
             {
-                foreach(Entree entree in searchRes)
-                {
-                    if()
-                }
+                
             }
             return result;
         }

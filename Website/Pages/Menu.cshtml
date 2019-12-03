@@ -23,7 +23,6 @@
 <div class="row">
     <div class="column">
         <h2>Combo</h2>
-
         @foreach (var combo in Model.Menu.AvailableCombos)
         {
             <div class="menu-item">
@@ -85,7 +84,7 @@
     </div>
     <div class="column">
         <form method="post">
-            <input type="text" name="searchText" id="search" value="@Model.Search" />
+            <input type="text" name="searchText" id="search" value="@Model.search" />
             <input type="submit" name="Search" />
             <input type="submit" name="filter" id="filter" value="@Model.applyFilter" />
 
