@@ -12,17 +12,21 @@ namespace Website.Pages
         public Menu Menu { get; } = new Menu();
         [BindProperty]
         public string search { get; set; }
-        //[BindProperty]
-        public List<Entree> Entrees { get; set; }
-        //[BindProperty]
-        public List<Side> Sides { get; set; }
-        //[BindProperty]
-        public List<Drink> Drinks { get; set; }
-        //[BindProperty]
-        public List<CretaceousCombo> Combos { get; set; }
+        ////[BindProperty]
+        //public List<Entree> Entrees { get; set; }
+        ////[BindProperty]
+        //public List<Side> Sides { get; set; }
+        ////[BindProperty]
+        //public List<Drink> Drinks { get; set; }
+        ////[BindProperty]
+        //public List<CretaceousCombo> Combos { get; set; }
         [BindProperty]
         public List<string> menuCategory { get; set; } = new List<string>();
-        public List<IMenuItem> Items { get; set; } 
+        public List<IMenuItem> Items { get; set; }
+        [BindProperty]
+        public float? minPrice { get; set; }
+        [BindProperty]
+        public float? maxPrice { get; set; }
         public void OnGet()
         {
             Items = Menu.AvailableMenuItems;
@@ -37,7 +41,11 @@ namespace Website.Pages
             }
             if (menuCategory.Count != 0)
             {
-                Items = Menu.AplyFilter(Items,menuCategory);
+                Items = Menu.ApplyFilter(Items,menuCategory);
+            }
+            if(minPrice!=null && maxPrice!=null)
+            {
+                Items = Menu.FilterByPrice(Items,minPrice,maxPrice);
             }
 
         }

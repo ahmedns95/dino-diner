@@ -106,7 +106,7 @@ namespace DinoDiner.Menu
             {
                 List<IMenuItem> avaiCombos = new List<IMenuItem>
                 {
-                    new CretaceousCombo(new Brontowurst()),
+                   new CretaceousCombo(new Brontowurst()),
                    new CretaceousCombo (new DinoNuggets()),
                    new CretaceousCombo (new PrehistoricPBJ()),
                    new CretaceousCombo (new SteakosaurusBurger()),
@@ -149,7 +149,7 @@ namespace DinoDiner.Menu
             }
             return res;
         }
-        public  List<IMenuItem> AplyFilter(List<IMenuItem> searchRes, List<string> menuCatogri)
+        public  List<IMenuItem> ApplyFilter(List<IMenuItem> searchRes, List<string> menuCatogri)
         {
             List<IMenuItem> result = new List<IMenuItem>();
             foreach (IMenuItem item in searchRes)

@@ -5,21 +5,7 @@
 }
 
 <h1>Menu</h1>
-@*@foreach (var item in @Model.Items)
-{
-    @if (item is Entree)
-    {
-        @Model.Entrees.Contains(item);
-    }
-    @if (item is Side)
-    {
-        @Model.Sides.Contains(item);
-    }
-    @if (item is Drink)
-    {
-        @Model.Drinks.Contains(item);
-    }
-}*@
+
 <div class="row">
     <div class="column">
         <h2>Combo</h2>
@@ -41,8 +27,7 @@
             }
         }
     </div>
-    <div class="column">
-        
+    <div class="column">    
         <h2>Entrees</h2>
         @foreach (var entree in Model.Items)
         {
@@ -120,11 +105,11 @@
                 <h1>Price</h1>
                 <label>
                     Min
-                    <input id="minimum-price" type="number" min="0" max="10" step="0.1" name="filter" value="" />
+                    <input id="minimum-price" type="number" min="0" max="10" step="0.1" name="minimumPrice" value="@Model.minPrice" />
                 </label>
                 <label>
                     Max
-                    <input id="maximum-price" type="number" min="0" max="10" step="0.1" name="filter" value="" />
+                    <input id="maximum-price" type="number" min="0" max="10" step="0.1" name="maximumPrice" value="@Model.maxPrice" />
                 </label>
             </div>
         </form>
