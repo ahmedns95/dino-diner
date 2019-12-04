@@ -41,11 +41,15 @@ namespace Website.Pages
             }
             if (menuCategory.Count != 0)
             {
-                Items = Menu.ApplyFilter(Items,menuCategory);
+                Items = Menu.ApplyFilter(Items, menuCategory);
             }
-            if(minPrice!=null && maxPrice!=null)
+            if(minPrice!=null )
             {
-                Items = Menu.FilterByPrice(Items,minPrice,maxPrice);
+                Items = Menu.FilterByMinPrice(Items,(float)minPrice);
+            }
+            if(maxPrice != null)
+            {
+                Items = Menu.FilterByMinPrice(Items, (float)maxPrice);
             }
 
         }

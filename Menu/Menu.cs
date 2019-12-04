@@ -162,7 +162,7 @@ namespace DinoDiner.Menu
                 {
                     result.Add(item);
                 }
-                else if (item is Side && menuCatogri.Contains("Side"))
+                else if (item is Side && menuCatogri.Contains("Side") )
                 {
                     result.Add(item);
                 }
@@ -173,13 +173,12 @@ namespace DinoDiner.Menu
             }
             return result;
         }
-        public  List<IMenuItem> FilterByPrice(List<IMenuItem> movies, float minPrice, float maxPrice)
+        public  List<IMenuItem> FilterByMinPrice(List<IMenuItem> movies, float minPrice)
         {
             List<IMenuItem> results = new List<IMenuItem>();
             foreach (IMenuItem items in AvailableMenuItems)
             {
-                if (items.Price != 0 && minPrice >= items.Price
-                    && maxPrice <= items.Price)
+                if (items.Price != 0 && minPrice <= items.Price)
                 {
                     results.Add(items);
                 }
