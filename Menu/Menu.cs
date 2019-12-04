@@ -117,43 +117,25 @@ namespace DinoDiner.Menu
                 return avaiCombos;
             }
         }
-        public List<string> possibleIngridents
+        
+        public HashSet<string> possibleIngridentss
         {
             get
             {
-                List<string> possible = new List<string>();
+                HashSet<string> possible = new HashSet<string>();
                 {
-                    possible.Add("Bun");
-                    possible.Add("Peppers");
-                    possible.Add("Onions");
-                    possible.Add("Chicken Nugget");
-                    possible.Add("Peanut Butter");
-                    possible.Add("Jelly");
-                    possible.Add("Chicken");
-                    possible.Add("Pickle");
-                    possible.Add("Ketchup");
-                    possible.Add("Mustard");
-                    possible.Add("Tomato");
-                    possible.Add("Mayo");
-                    possible.Add("Lettuce");
-                    possible.Add("Tortilla");
-                    possible.Add("Chicken Breast");
-                    possible.Add("Ceasar Dressing");
-                    possible.Add("Parmesan Cheese");
-                    possible.Add("Steakburger Pattie");
-                    possible.Add("Wing Sauce");
-                    possible.Add("Potato");
-                    possible.Add("Salt");
-                    possible.Add("Vegetable oil");
-                    possible.Add("Macroni Noodles");
-                    possible.Add("Cheese Product");
-                    possible.Add("Pork Sausage");
-                    possible.Add("Breading");
+                    foreach(IMenuItem item in AvailableMenuItems)
+                    {
+                        foreach(string s in item.Ingredients)
+                        {
+                            possible.Add(s);
+                        }
+                    }
                 }
                 return possible;
             }
         }
-            
+
 
 
         public Drink Sodasaurus { get; set; } = new Sodasaurus();
@@ -212,27 +194,34 @@ namespace DinoDiner.Menu
             }
             return result;
         }
-        public  List<IMenuItem> FilterByMinPrice(List<IMenuItem> movies, float minPrice)
+        public  List<IMenuItem> FilterByMinPrice(List<IMenuItem> theItems, float minPrice ,float maxPrice)
         {
             List<IMenuItem> results = new List<IMenuItem>();
-            foreach (IMenuItem items in AvailableMenuItems)
+            foreach (IMenuItem items in theItems)
             {
-                if (items.Price != 0 && minPrice >= items.Price)
+                if (items.Price != 0 && minPrice <= items.Price && maxPrice >= items.Price)
                 {
                     results.Add(items);
                 }
             }
             return results;
         }
-        public List<IMenuItem> FilterByMaxPrice(List<IMenuItem> movies, float maxPrice)
+        public List<IMenuItem> FilterByIngridients(List<IMenuItem> theItems, List<string> ing)
         {
             List<IMenuItem> results = new List<IMenuItem>();
-            foreach (IMenuItem items in AvailableMenuItems)
+            foreach (IMenuItem items in theItems)
             {
-                if (items.Price != 0 && maxPrice <= items.Price)
+                bool flag = true;
+                foreach(string s in ing)
                 {
-                    results.Add(items);
+                    if(items.Ingredients.Contains(s))
+                    {
+                        flag = false;
+                        break;
+                    }
+                    
                 }
+                if(flag) results.Add(items);
             }
             return results;
         }

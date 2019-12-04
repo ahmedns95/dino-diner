@@ -38,13 +38,23 @@ namespace Website.Pages
             {
                 Items = Menu.ApplyFilter(Items, menuCategory);
             }
-            if(minPrice!=null )
+            if(minPrice!=null && maxPrice != null)
             {
-                Items = Menu.FilterByMinPrice(Items,(float)minPrice);
+                Items = Menu.FilterByMinPrice(Items,(float)minPrice, (float)maxPrice);
+            }else if(minPrice == null && maxPrice== null)
+            {
+                Items = Menu.FilterByMinPrice(Items, 0, 100);
+            }else if(maxPrice == null)
+            {
+                Items = Menu.FilterByMinPrice(Items, (float)minPrice , 100);
             }
-            if(maxPrice != null)
+            else if(minPrice ==null)
             {
-                Items = Menu.FilterByMaxPrice(Items, (float)maxPrice);
+                Items = Menu.FilterByMinPrice(Items, 0, (float)maxPrice);
+            }
+            if(excludeIngredient != null)
+            {
+                Items = Menu.FilterByIngridients(Items, excludeIngredient);
             }
 
         }

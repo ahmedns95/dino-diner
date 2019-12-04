@@ -105,120 +105,118 @@
                 <h1>Price</h1>
                 <label>
                     Min
-                    <input id="minimum-price" type="number" min="0" max="10" step="0.1" name="minimumPrice" value="@Model.minPrice" />
+                    <input id="minimum-price" type="number" min="0" max="10" step="0.1" name="minPrice" value="@Model.minPrice" />
                 </label>
                 <label>
                     Max
-                    <input id="maximum-price" type="number" min="0" max="10" step="0.1" name="maximumPrice" value="@Model.maxPrice" />
+                    <input id="maximum-price" type="number" min="0" max="10" step="0.1" name="maxPrice" value="@Model.maxPrice" />
                 </label>
             </div>
-            <div class="exclude-ingredient">
-                <h1>Exclude Ingredient</h1>
-                <label>
-                    <input type="checkbox" name="excludeIngredient" value="Bun" checked="@Model.excludeIngredient.Contains("Bun")" />
-                    Bun
-                </label>
-                <label>
-                    <input type="checkbox" name="excludeIngredient" value="Peppers" checked="@Model.excludeIngredient.Contains("Peppers")" />
-                    Peppers
-                </label>
-                <label>
-                    <input type="checkbox" name="excludeIngredient" value="Onions" checked="@Model.excludeIngredient.Contains("Onions")" />
-                    Onions
-                </label>
-                <label>
-                    <input type="checkbox" name="excludeIngredient" value="Chicken Nugget" checked="@Model.excludeIngredient.Contains("Chicken Nugget")" />
-                    Chicken Nugget
-                </label>
-                <label>
-                    <input type="checkbox" name="excludeIngredient" value="Peanut Butter" checked="@Model.excludeIngredient.Contains("Peanut Butter")" />
-                    Peanut Butter
-                </label>
-                <label>
-                    <input type="checkbox" name="excludeIngredient" value="Jelly" checked="@Model.excludeIngredient.Contains("Jelly")" />
-                    Jelly
-                </label>
-                <label>
-                    <input type="checkbox" name="excludeIngredient" value="Chicken" checked="@Model.excludeIngredient.Contains("Chicken")" />
-                    Chicken
-                </label>
-                <label>
-                    <input type="checkbox" name="excludeIngredient" value="Pickle" checked="@Model.excludeIngredient.Contains("Pickle")" />
-                    Pickle
-                </label>
-                <label>
-                    <input type="checkbox" name="excludeIngredient" value="Pickle" checked="@Model.excludeIngredient.Contains("Pickle")" />
-                    Pickle
-                </label>
-                <label>
-                    <input type="checkbox" name="excludeIngredient" value="Mustard" checked="@Model.excludeIngredient.Contains("Mustard")" />
-                    Mustard
-                </label>
-                <label>
-                    <input type="checkbox" name="excludeIngredient" value="Tomato" checked="@Model.excludeIngredient.Contains("Tomato")" />
-                    Tomato
-                </label>
-                <label>
-                    <input type="checkbox" name="excludeIngredient" value="Mayo" checked="@Model.excludeIngredient.Contains("Mayo")" />
-                    Mayo
-                </label>
-                <label>
-                    <input type="checkbox" name="excludeIngredient" value="Lettuce" checked="@Model.excludeIngredient.Contains("Lettuce")" />
-                    Lettuce
-                </label>
-                <label>
-                    <input type="checkbox" name="excludeIngredient" value="Tortilla" checked="@Model.excludeIngredient.Contains("Tortilla")" />
-                    Tortilla
-                </label>
-                <label>
-                    <input type="checkbox" name="excludeIngredient" value="Chicken Breast" checked="@Model.excludeIngredient.Contains("Chicken Breast")" />
-                    Chicken Breast
-                </label>
-                <label>
-                    <input type="checkbox" name="excludeIngredient" value="Ceasar Dressing" checked="@Model.excludeIngredient.Contains("Ceasar Dressing")" />
-                    Ceasar Dressing
-                </label>
-                <label>
-                    <input type="checkbox" name="excludeIngredient" value="Ingredients" checked="@Model.excludeIngredient.Contains("Ceasar Dressing")" />
-                    Ceasar Dressing
-                </label>
-                <label>
-                    <input type="checkbox" name="excludeIngredient" value="Ingredients" checked="@Model.menuCategory.Contains("Steakburger Pattie")" />
-                    Steakburger Pattie
-                </label>
-                <label>
-                    <input type="checkbox" name="excludeIngredient" value="Ingredients" checked="@Model.menuCategory.Contains("Wing Sauce")" />
-                    Wing Sauce
-                </label>
-                <label>
-                    <input type="checkbox" name="excludeIngredient" value="Ingredients" checked="@Model.menuCategory.Contains("Potato")" />
-                    Potato
-                </label>
-                <label>
-                    <input type="checkbox" name="excludeIngredient" value="Ingredients" checked="@Model.menuCategory.Contains("Salt")" />
-                    Salt
-                </label>
-                <label>
-                    <input type="checkbox" name="excludeIngredient" value="Ingredients" checked="@Model.menuCategory.Contains("Vegetable oil")" />
-                    Vegetable oil
-                </label>
-                <label>
-                    <input type="checkbox" name="excludeIngredient" value="Ingredients" checked="@Model.menuCategory.Contains("Macroni Noodles")" />
-                    Macroni Noodles
-                </label>
-                <label>
-                    <input type="checkbox" name="excludeIngredient" value="Ingredients" checked="@Model.menuCategory.Contains("Cheese Product")" />
-                    Cheese Product
-                </label>
-                <label>
-                    <input type="checkbox" name="excludeIngredient" value="Ingredients" checked="@Model.menuCategory.Contains("Pork Sausage")" />
-                    Pork Sausage
-                </label>
-                <label>
-                    <input type="checkbox" name="excludeIngredient" value="Ingredients" checked="@Model.menuCategory.Contains("Breading")" />
-                    Breading
-                </label>
-
+            <div class="row">
+                <div class="exclude-ingredient">
+                    <h1>Exclude Ingredient</h1>
+                    <label>
+                        <input type="checkbox" name="excludeIngredient" value="Whole Wheat Bun" checked="@Model.excludeIngredient.Contains("Bun")" />
+                        Bun
+                    </label>
+                    <label>
+                        <input type="checkbox" name="excludeIngredient" value="Peppers" checked="@Model.excludeIngredient.Contains("Peppers")" />
+                        Peppers
+                    </label>
+                    <label>
+                        <input type="checkbox" name="excludeIngredient" value="Onions" checked="@Model.excludeIngredient.Contains("Onions")" />
+                        Onions
+                    </label>
+                    <label>
+                        <input type="checkbox" name="excludeIngredient" value="Chicken Nugget" checked="@Model.excludeIngredient.Contains("Chicken Nugget")" />
+                        Chicken Nugget
+                    </label>
+                    <label>
+                        <input type="checkbox" name="excludeIngredient" value="Peanut Butter" checked="@Model.excludeIngredient.Contains("Peanut Butter")" />
+                        Peanut Butter
+                    </label>
+                    <label>
+                        <input type="checkbox" name="excludeIngredient" value="Jelly" checked="@Model.excludeIngredient.Contains("Jelly")" />
+                        Jelly
+                    </label>
+                    <label>
+                        <input type="checkbox" name="excludeIngredient" value="Chicken" checked="@Model.excludeIngredient.Contains("Chicken")" />
+                        Chicken
+                    </label>
+                    <label>
+                        <input type="checkbox" name="excludeIngredient" value="Pickle" checked="@Model.excludeIngredient.Contains("Pickle")" />
+                        Pickle
+                    </label>
+                    
+                    <label>
+                        <input type="checkbox" name="excludeIngredient" value="Mustard" checked="@Model.excludeIngredient.Contains("Mustard")" />
+                        Mustard
+                    </label>
+                    <label>
+                        <input type="checkbox" name="excludeIngredient" value="Tomato" checked="@Model.excludeIngredient.Contains("Tomato")" />
+                        Tomato
+                    </label>
+                    <label>
+                        <input type="checkbox" name="excludeIngredient" value="Mayo" checked="@Model.excludeIngredient.Contains("Mayo")" />
+                        Mayo
+                    </label>
+                    <label>
+                        <input type="checkbox" name="excludeIngredient" value="Lettuce" checked="@Model.excludeIngredient.Contains("Lettuce")" />
+                        Lettuce
+                    </label>
+                    <label>
+                        <input type="checkbox" name="excludeIngredient" value="Tortilla" checked="@Model.excludeIngredient.Contains("Tortilla")" />
+                        Tortilla
+                    </label>
+                    <label>
+                        <input type="checkbox" name="excludeIngredient" value="Chicken Breast" checked="@Model.excludeIngredient.Contains("Chicken Breast")" />
+                        Chicken Breast
+                    </label>
+                    <label>
+                        <input type="checkbox" name="excludeIngredient" value="Ceasar Dressing" checked="@Model.excludeIngredient.Contains("Ceasar Dressing")" />
+                        Ceasar Dressing
+                    </label>
+                    <label>
+                        <input type="checkbox" name="excludeIngredient" value="Ingredients" checked="@Model.excludeIngredient.Contains("Ceasar Dressing")" />
+                        Ceasar Dressing
+                    </label>
+                    <label>
+                        <input type="checkbox" name="excludeIngredient" value="Ingredients" checked="@Model.menuCategory.Contains("Steakburger Pattie")" />
+                        Steakburger Pattie
+                    </label>
+                    <label>
+                        <input type="checkbox" name="excludeIngredient" value="Ingredients" checked="@Model.menuCategory.Contains("Wing Sauce")" />
+                        Wing Sauce
+                    </label>
+                    <label>
+                        <input type="checkbox" name="excludeIngredient" value="Ingredients" checked="@Model.menuCategory.Contains("Potato")" />
+                        Potato
+                    </label>
+                    <label>
+                        <input type="checkbox" name="excludeIngredient" value="Ingredients" checked="@Model.menuCategory.Contains("Salt")" />
+                        Salt
+                    </label>
+                    <label>
+                        <input type="checkbox" name="excludeIngredient" value="Ingredients" checked="@Model.menuCategory.Contains("Vegetable oil")" />
+                        Vegetable oil
+                    </label>
+                    <label>
+                        <input type="checkbox" name="excludeIngredient" value="Ingredients" checked="@Model.menuCategory.Contains("Macroni Noodles")" />
+                        Macroni Noodles
+                    </label>
+                    <label>
+                        <input type="checkbox" name="excludeIngredient" value="Ingredients" checked="@Model.menuCategory.Contains("Cheese Product")" />
+                        Cheese Product
+                    </label>
+                    <label>
+                        <input type="checkbox" name="excludeIngredient" value="Ingredients" checked="@Model.menuCategory.Contains("Pork Sausage")" />
+                        Pork Sausage
+                    </label>
+                    <label>
+                        <input type="checkbox" name="excludeIngredient" value="Ingredients" checked="@Model.menuCategory.Contains("Breading")" />
+                        Breading
+                    </label>
+                </div>
             </div>
         </form>
     </div>
