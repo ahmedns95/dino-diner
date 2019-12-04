@@ -19,6 +19,9 @@ namespace Website.Pages
         public float? minPrice { get; set; }
         [BindProperty]
         public float? maxPrice { get; set; }
+        [BindProperty]
+        public List<string> excludeIngredient { get; set; } = new List<string>();
+
         public void OnGet()
         {
             Items = Menu.AvailableMenuItems;
