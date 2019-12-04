@@ -117,6 +117,45 @@ namespace DinoDiner.Menu
                 return avaiCombos;
             }
         }
+        public List<string> possibleIngridents
+        {
+            get
+            {
+                List<string> possible = new List<string>();
+                {
+                    possible.Add("Bun");
+                    possible.Add("Peppers");
+                    possible.Add("Onions");
+                    possible.Add("Chicken Nugget");
+                    possible.Add("Peanut Butter");
+                    possible.Add("Jelly");
+                    possible.Add("Chicken");
+                    possible.Add("Pickle");
+                    possible.Add("Ketchup");
+                    possible.Add("Mustard");
+                    possible.Add("Tomato");
+                    possible.Add("Mayo");
+                    possible.Add("Lettuce");
+                    possible.Add("Tortilla");
+                    possible.Add("Chicken Breast");
+                    possible.Add("Ceasar Dressing");
+                    possible.Add("Parmesan Cheese");
+                    possible.Add("Steakburger Pattie");
+                    possible.Add("Wing Sauce");
+                    possible.Add("Potato");
+                    possible.Add("Salt");
+                    possible.Add("Vegetable oil");
+                    possible.Add("Macroni Noodles");
+                    possible.Add("Cheese Product");
+                    possible.Add("Pork Sausage");
+                    possible.Add("Breading");
+                }
+                return possible;
+            }
+        }
+            
+
+
         public Drink Sodasaurus { get; set; } = new Sodasaurus();
         public Side Fryceritops { get; set; } = new Fryceritops();
 
@@ -178,7 +217,19 @@ namespace DinoDiner.Menu
             List<IMenuItem> results = new List<IMenuItem>();
             foreach (IMenuItem items in AvailableMenuItems)
             {
-                if (items.Price != 0 && minPrice <= items.Price)
+                if (items.Price != 0 && minPrice >= items.Price)
+                {
+                    results.Add(items);
+                }
+            }
+            return results;
+        }
+        public List<IMenuItem> FilterByMaxPrice(List<IMenuItem> movies, float maxPrice)
+        {
+            List<IMenuItem> results = new List<IMenuItem>();
+            foreach (IMenuItem items in AvailableMenuItems)
+            {
+                if (items.Price != 0 && maxPrice <= items.Price)
                 {
                     results.Add(items);
                 }
