@@ -56,7 +56,6 @@ namespace Website.Pages
             {
                 Items = Menu.FilterByIngridients(Items, excludeIngredient);
             }
-
         }
     }
 }

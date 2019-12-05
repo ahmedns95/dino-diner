@@ -219,7 +219,6 @@ namespace DinoDiner.Menu
                         flag = false;
                         break;
                     }
-                    
                 }
                 if(flag) results.Add(items);
             }
