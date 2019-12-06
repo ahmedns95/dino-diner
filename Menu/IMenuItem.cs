@@ -21,5 +21,7 @@ namespace DinoDiner.Menu
         /// property with a getter for Ingredients
         /// </summary>
         List<string> Ingredients { get; }
+
+        string Category { get; set; }
     }
 }
