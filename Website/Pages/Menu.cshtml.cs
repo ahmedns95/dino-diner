@@ -35,8 +35,8 @@ namespace Website.Pages
 
             if (search != null)
             {
-                Items = Menu.AvailableMenuItems.Where(menuItem => menuItem.Contains(Items, search));
-                //Items = Menu.Search(Items,search);
+                //Items = Menu.AvailableMenuItems.Where(menuItem => menuItem.Contains(Items, search));
+                ////Items = Menu.Search(Items,search);
             }
             if (menuCategory.Count != 0)
             {

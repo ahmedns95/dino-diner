@@ -170,5 +170,7 @@ namespace DinoDiner.Menu
                 return special.ToArray();
             }
         }
+
+        public string Category { get => ((IMenuItem)entree).Category; set => ((IMenuItem)entree).Category = value; }
     }
 }
