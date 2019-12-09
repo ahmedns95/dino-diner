@@ -13,7 +13,7 @@ namespace Website.Pages
     {
         public Menu Menu { get; } = new Menu();
         public IEnumerable<IMenuItem> Items;
-
+        public Size Size { get; }
         [BindProperty]
         public string search { get; set; }
         [BindProperty]
@@ -36,10 +36,9 @@ namespace Website.Pages
 
             if (search != null)
             {
-                foreach (IMenuItem item in Items)
-                {
-                    Items = Menu.AvailableMenuItems.Where(menuItem => menuCategory.Contains(search));
-                }
+               
+                 Items = Menu.AvailableMenuItems.Where(menuItem => menuItem.ToString().Contains(search ,StringComparison.OrdinalIgnoreCase));
+                
                 //Items = Menu.AvailableMenuItems.Where(menuItem => menuCategory.Contains(menuItem.Category));
                 ////Items = Menu.Search(Items,search);
             }

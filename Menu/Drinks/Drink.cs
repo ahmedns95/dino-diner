@@ -89,6 +89,6 @@ namespace DinoDiner.Menu
 
         public virtual string Description { get; }
         public virtual string[] Special { get; }
-        public virtual string Category { get; set; }
+        public string Category { get; } = "Drink";
     }
 }

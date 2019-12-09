@@ -171,6 +171,6 @@ namespace DinoDiner.Menu
             }
         }
 
-        public string Category { get => ((IMenuItem)entree).Category; set => ((IMenuItem)entree).Category = value; }
+        public string Category { get; } = "Combo";
     }
 }

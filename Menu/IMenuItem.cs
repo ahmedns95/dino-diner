@@ -22,6 +22,6 @@ namespace DinoDiner.Menu
         /// </summary>
         List<string> Ingredients { get; }
 
-        string Category { get; set; }
+        string Category { get;  }
     }
 }
