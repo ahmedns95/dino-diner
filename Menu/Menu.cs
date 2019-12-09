@@ -160,7 +160,6 @@ namespace DinoDiner.Menu
         public List<IMenuItem> Search(List<IMenuItem> items, string searchString)
         {
             List<IMenuItem> res = new List<IMenuItem>();
-            
             foreach (IMenuItem entr in AvailableMenuItems)
             {
                 if (entr.ToString().Contains(searchString))

@@ -49,7 +49,6 @@ namespace DinoDiner.Menu
         /// Adds the ingredients
         /// </summary>
         public Sodasaurus() {
-            //this.Ice = true;///////////
             this.Size = Size.Small;
         }
         public override List<string> Ingredients
