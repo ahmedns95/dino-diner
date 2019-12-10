@@ -24,7 +24,6 @@ namespace Website.Pages
         public float? maxPrice { get; set; }
         [BindProperty]
         public List<string> excludeIngredient { get; set; } = new List<string>();
-
         public void OnGet()
         {
             Items = Menu.AvailableMenuItems.OrderBy(menuItem => menuItem.Category);
@@ -36,39 +35,25 @@ namespace Website.Pages
 
             if (search != null)
             {
-               
                  Items = Menu.AvailableMenuItems.Where(menuItem => menuItem.ToString().Contains(search ,StringComparison.OrdinalIgnoreCase));
-                
-                //Items = Menu.AvailableMenuItems.Where(menuItem => menuCategory.Contains(menuItem.Category));
-                ////Items = Menu.Search(Items,search);
             }
             if (menuCategory.Count != 0)
             {
                 Items = Menu.AvailableMenuItems.Where(menuItem => menuCategory.Contains(menuItem.Category));
-                //Items = Menu.ApplyFilter(Items, menuCategory);
             }
-            //if(minPrice!=null && maxPrice != null)
-            //{
-            //    //Items = Menu.FilterByMinPrice(Items,(float)minPrice, (float)maxPrice);
-            //}else if(minPrice == null && maxPrice== null)
-            //{
-            //    //Items = Menu.FilterByMinPrice(Items, 0, 100);
-            //}
             if(maxPrice != null)
             {
-                Items = Menu.AvailableMenuItems.Where(menuItem => menuItem.Price >= minPrice);
-                //Items = Menu.FilterByMinPrice(Items, (float)minPrice , 100);
+                Items = Menu.AvailableMenuItems.Where(menuItem => menuItem.Price <= maxPrice);
             }
             else if(minPrice != null)
             {
-                Items = Menu.AvailableMenuItems.Where(menuItem => menuItem.Price <= maxPrice);
+                Items = Menu.AvailableMenuItems.Where(menuItem => menuItem.Price >= minPrice);
             }
             if (excludeIngredient != null)
             {
                 foreach(string s in excludeIngredient)
                 {
                     Items = Menu.AvailableMenuItems.Where(menuItem => !menuItem.Ingredients.Contains(s));
-
                 }
             }
         }

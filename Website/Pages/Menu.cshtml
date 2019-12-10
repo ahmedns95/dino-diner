@@ -26,15 +26,17 @@
                             <td>@combo.Price</td>
                             <td>@combo.Calories </td>
                         </tr>
+                        @{combo.Size = Size.Medium; }
                         <tr>
                             <td>Medium</td>
-                            <td>show price</td>
-                            <td>show Calories</td>
+                            <td>@combo.Price</td>
+                            <td>@combo.Calories </td>
                         </tr>
+                        @{ combo.Size = Size.Large;}
                         <tr>
                             <td>Large</td>
-                            <td>show price</td>
-                            <td>show Calories</td>
+                            <td>@combo.Price</td>
+                            <td>@combo.Calories </td>
                         </tr>
                     </table>
                     @foreach (string s in combo.Ingredients)
@@ -50,47 +52,28 @@
 
     <div class="column">
         <h2>Entrees</h2>
-        @foreach (var entree in Model.Items)
+        @foreach (var item in Model.Items)
         {
-            if (entree is Entree)
+            if (item is Entree entree)
             {
                 <div class="menu-item">
                     <h3>@entree.ToString()</h3>
-                    <table class="table">
-                        <tr>
-                            <th>Size</th>
-                            <th>Price</th>
-                            <th>Calories</th>
-                        </tr>
-                        <tr>
-                            <td>Small</td>
-                            <td>@entree.Price</td>
-                            <td>@entree.Calories </td>
-                        </tr>
-                        <tr>
-                            <td>Medium</td>
-                            <td>show price</td>
-                            <td>show Calories</td>
-                        </tr>
-                        <tr>
-                            <td>Large</td>
-                            <td>show price</td>
-                            <td>show Calories</td>
-                        </tr>
-                    </table>
+
                     @foreach (string s in entree.Ingredients)
                     {
                         <p>@s</p>
                     }
+                    <p>@entree.Price</p>
+                    <p>@entree.Calories </p>
                 </div>
             }
         }
     </div>
     <div class="column">
         <h2>Sides</h2>
-        @foreach (var side in Model.Items)
+        @foreach (var item in Model.Items)
         {
-            if (side is Side)
+            if (item is Side side)
             {
                 <div class="menu-item">
                     <h3>@side.ToString()</h3>
@@ -105,15 +88,17 @@
                             <td>@side.Price</td>
                             <td>@side.Calories </td>
                         </tr>
+                        @{side.Size = Size.Medium; }
                         <tr>
                             <td>Medium</td>
-                            <td>show price</td>
-                            <td>show Calories</td>
+                            <td>@side.Price</td>
+                            <td>@side.Calories</td>
                         </tr>
+                        @{ side.Size = Size.Large;}
                         <tr>
                             <td>Large</td>
-                            <td>show price</td>
-                            <td>show Calories</td>
+                            <td> @side.Price</td>
+                            <td> @side.Calories</td>
                         </tr>
                     </table>
                     @foreach (string s in side.Ingredients)
@@ -150,8 +135,8 @@
                         @{drink.Size = Size.Large;}
                         <tr>
                             <td>Large</td>
-                            <td>@drink.Price</td>
-                            <td>@drink.Calories</td>
+                            <td>Price: @drink.Price</td>
+                            <td>Calories: @drink.Calories</td>
                         </tr>
                     </table>
                     @foreach (string s in drink.Ingredients)
